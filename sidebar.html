@@ -1,0 +1,193 @@
+<style type="text/css">
+#myOverlay{position:absolute;height:100%;width:100%;}
+#myOverlay{background:black;opacity:.7;z-index:3;display:none;}
+
+#loadingGIF{position:absolute;top:30%;left:25%;z-index:3;display:none;}
+  </style>
+<div id="myOverlay" style="display: none;"></div>
+<div id="loadingGIF" style="display: none;"><img src="/upload/loading.gif"></div>
+ <div class="wrapper">
+                    <div class="content">
+                        <div class="content-top">
+                            <div class="logo">
+                               <!--  <a href="#" class="text">
+                                    <img src="assets/img/logo1.png" height="100px" width="180px">
+                                    <span>Peak</span>
+                                </a> --><center > <a href="#" class="text">
+                                    <img id="user_image" src="" height="70px" width="70px" class="img-circle peaktp"><br>
+                                    <span class="peak" id="username" style="color:#fff;"></span>
+                                </a></center>
+                                
+                            </div>
+                            
+                            <div class="sidebar-heading">
+                               
+                            </div>
+                        </div>
+                        <div class="content-bottom">
+                            <div class="left-sidebar-section">
+                                <!-- <div class="section-title">Navigation</div> -->
+                                 <ul class="list-unstyled" id="navigation">
+                                    <li>
+                                        <a href="index.php"><button class="btn btn-flat ">
+                                                                            <!-- <span class="tag tag-rounded tag-danger tag-sm">5</span> -->
+                                    <span class="btn-title">Dashboard</span>
+                                    <i class="material-icons pull-left icon">dashboard</i>
+                                    
+                                </button> </a>
+                                       
+                                    </li>
+                                      <li>
+                                        <a href="my_leads.php"><button class="btn btn-flat ">
+                                         
+                                            <span class="btn-title">My Contact</span>
+                                            <i class="material-icons pull-left icon">people_outline</i>
+
+                                        </button> </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="viewBcard.php?zxc=DBC100761" target="_blank"><button class="btn btn-flat ">
+                                           
+                                            <span class="btn-title">See DBCard</span>
+                                         <i class="fa fa-id-card" aria-hidden="true"></i>
+                                 
+
+                                        </button> </a>
+                                    </li>
+                                    <li>
+                                        <a href="profile.php"><button class="btn btn-flat ">
+                                           
+                                            <span class="btn-title">Change DBCard Info</span>
+                                            <i class="fa fa-pencil-square-o"></i>
+                                 
+
+                                        </button> </a>
+                                    </li>
+                                      <li>
+                                        <a href="vcard_share_msg.php"><button class="btn btn-flat ">
+                                           
+                                            <span class="btn-title">DBCard Message Template</span>
+                                             <i class="material-icons pull-left icon">share</i>
+                                 
+
+                                        </button> </a>
+                                    </li>
+                                  <!--    <li>
+                                        <a href="all_task.php"><button class="btn btn-flat ">
+                                           
+                                            <span class="btn-title">To Do List</span>
+                                             <i class="material-icons pull-left icon"> date_range</i>
+                                 
+
+                                        </button> </a>
+                                    </li> -->
+                                     <li>
+                                        <a href="my-referral.php"><button class="btn btn-flat ">
+                                           
+                                            <span class="btn-title">My Referral</span>
+                                             <i class="fa fa-link"></i>
+                                 
+
+                                        </button> </a>
+                                    </li>
+
+                                      <li>
+                                        <a href="redeem.php"><button class="btn btn-flat ">
+                                           
+                                            <span class="btn-title">My Redeem</span>
+                                             <i class="fa fa-exchange"></i>
+                                 
+
+                                        </button> </a>
+                                    </li>
+
+
+                                      <li>
+                                        <a href="directory.php"><button class="btn btn-flat ">
+                                           
+                                            <span class="btn-title">My Directory</span>
+                                             <i class="material-icons pull-left icon">next_week</i>
+                                 
+
+                                        </button> </a>
+                                    </li>
+
+                                <!--      <li>
+                                        <a href="sms_broad.php"><button class="btn btn-flat ">
+                                      
+                                            <span class="btn-title">Bulk SMS</span>
+                                            <i class="material-icons pull-left icon">mail</i>
+                                          
+
+                                        </button> </a>
+                                    </li> -->
+                      <!--                <li>
+                                        <a href="birth_anniversory.php"><button class="btn btn-flat ">
+                                           
+                                            <span class="btn-title">Birthday & Anniversary</span>
+                                             <i class="material-icons pull-left icon">cake</i>
+                                 
+
+                                        </button> </a>
+                                    </li> -->
+
+                                    <li>
+                                        <a href="support.php"><button class="btn btn-flat ">
+                                           
+                                            <span class="btn-title">Customer Care</span>
+                                             <i class="material-icons pull-left icon">contact_phone</i>
+                                 
+
+                                        </button> </a>
+                                    </li>
+                                     <li>
+                                        <a href="change-password.php"><button class="btn btn-flat ">
+                                           
+                                            <span class="btn-title">Settings</span>
+                                             <i class="fa fa-cogs pull-left icon"></i>
+                                 
+
+                                        </button> </a>
+                                    </li>
+                                     
+                                     <li>
+                                        <button onclick="logout();" class="btn btn-flat ">
+                                      
+                                            <span class="btn-title">SignOut</span>
+                                             <i class="material-icons pull-left icon">exit_to_app</i>
+                                          
+
+                                        </button> 
+                                    </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    
+                                   
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(document).ready(function(){
+                      
+                 });
+                </script>
