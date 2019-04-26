@@ -1,226 +1,512 @@
-<html xmlns="http://www.w3.org/1999/html"><head><script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
 
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
 
+    <!-- Your app title -->
+    <title>My App</title>
 
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
 
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
 
+    <link rel="stylesheet" href="css/styles.css">
+      <link rel="apple-touch-icon" href="img/f7-icon-square.html">
+    <link rel="icon" href="img/f7-icon.html">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-4.1.3/css/bootstrap.min.css">
 
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
 
+    <!-- swiper carousel CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
 
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-       <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i|Comfortaa:300,400,500,700" rel="stylesheet">
-         <link rel="stylesheet" type="text/css" href="https://digitalbcards.in/css/style.css">
-         <link rel="icon" type="image/x-icon" href="https://digitalbcards.in/images/favicon1.ico">
-
-    
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <link rel="manifest" href="/manifest.json">
-     <script src="https://digitalbcards.in/js/service-worker.js "></script>
-     <script src="https://digitalbcards.in/js/jquery.validate.js "></script>
-
-
-
-<style type="text/css">
-
-.dblogo
-{
-    width: 100px;
-}
-
-
-
-@media only screen and (max-width:767px)  {
- 
-}
-</style>
-
+    <!-- app CSS -->
+    <link id="theme" rel="stylesheet" href="css/style.css" type="text/css">
+    <link  rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="css/select2.min.css">
+<link rel="stylesheet" href="css/intlTelInput.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.css">
+  <link rel="stylesheet" href="newassets/css/style.css">
 </head>
 
-<body style="background-image:url(#);    background-size: cover;    background-position: center;
-    background-repeat: no-repeat;">
-<div id="myOverlay" style="display: none;"></div>
-<div id="loadingGIF" style="display: none;"><img src="/upload/loading.gif"></div>
-<div class="container-fluid pad1 view-main ">
-    <div class="row ">
-        <div class="col-md-12">
-          <div class="col-md-2 col-sm-12 col-xs-12">
-       <a href="login.php">
-       <!-- <a href="../newcardo/index.php"> -->
-         <img src="https://digitalbcards.in/assets/img/dbc.svg" class="icns dblogo">
-         <!-- 
-         <img src="assets/img/logo1.png" class="icns icns1"> -->
-       </a> 
-       </div>
-      </div>
-        <div class="col-md-4 col-sm-offset-3 col-sm-6 col-xs-12 col-md-offset-4  tplogin1">
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
 
-
-             <!--<center><img src="assets/img/user.png" class="icns" style="width: 86px;    top: -54px;"></center> -->
-
-            <div class="panel panel-default panel-color">
-                <div class="panel panel-heading panel-color">
-                    
-
-                    <h3 class="text-center t1">Login</h3>
-                </div>
-                <div class="panel panel-body">
-            <form id="login_form" method="post">
-            <div class="form-group row col-sm-offset-3 ">
-                
-                     <!-- <label>Email Id</label> -->
-                    <div class="col-md-8 col-sm-8 input-group">
-                      
-                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input class="form-control" type="text" id="email" name="email" placeholder=" Email Id " required="">
-                </div>
-               
-                
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal sidebar sidebar-left ">
+       <!--  <div class="content-block">
+            <p>Left panel content goes here</p>
+        </div> -->
+        <div class="profile-link">
+                <a href="#" class="media">
+                    <div class="w-auto h-100">
+                        <figure class="avatar avatar-40"><img id="user_image"  alt=""> </figure>
+                    </div>
+                    <div class="media-body">
+                        <h5 id="user" class=" mb-0">John Doe <span class="status-online bg-success"></span></h5>
+                        <!-- <p>India</p> -->
+                    </div>
+                </a>
             </div>
-            <div class="form-group row col-sm-offset-3">
-               
-                    <!-- <label>Password</label> -->
-                <div class="col-md-8 col-sm-8 input-group">
+             <nav class="navbar" style="background: none;">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="home.html" class="sidebar-close activex" >
+                            <div class="item-title">
+                                <i class="material-icons">dashboard</i> Dashboard
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="lead.html" class="sidebar-close ">
+                            <div class="item-title">
+                                <i class="fa fa-users"></i> My Contact
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="viewcard.html" class="sidebar-close ">
+                            <div class="item-title">
+                                <i class="fa fa-id-card" aria-hidden="true"></i> See DBCard
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="sidebar-close activex">
+                            <div class="item-title">
+                                <i class="fa fa-pencil-square-o"></i> Change DBCard Info
+                            </div>
+                        </a>
+                    </li>
+                      <li class="nav-item">
+                        <a href="index.html" class="sidebar-close activex">
+                            <div class="item-title">
+                                <i class="material-icons pull-left icon">share</i> Card Message Template
+                            </div>
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a href="index.html" class="sidebar-close activex">
+                            <div class="item-title">
+                               <i class="fa fa-link"></i> My Referral
+                            </div>
+                        </a>
+                    </li>
+
+                     <li class="nav-item">
+                        <a href="index.html" class="sidebar-close activex">
+                            <div class="item-title">
+                              <i class="material-icons pull-left icon">next_week</i> My Directory
+                            </div>
+                        </a>
+                    </li> 
+                    <li class="nav-item">
+                        <a href="index.html" class="sidebar-close activex">
+                            <div class="item-title">
+                             <i class="material-icons pull-left icon">contact_phone</i> Customer Care
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html" class="sidebar-close activex">
+                            <div class="item-title">
+                            <i class="fa fa-cogs pull-left icon"></i> Settings
+                            </div>
+                        </a>
+                    </li>                    
                     
-                    <span class="input-group-addon"><i class="fa fa-key"></i> </span>
-                    <input class="form-control" type="password" id="password" name="password" placeholder="Password" required="">
+                     <li class="nav-item">
+                        <a href="#" onclick="logout()" class="sidebar-close">
+                            <div class="item-title">
+                              <i class="material-icons pull-left icon">exit_to_app</i> Sign Out
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+    </div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+            <div class="navbar" style="display: none;">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding">Awesome App</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                    </div>
                 </div>
-         
             </div>
-                <center>
-                <input type="hidden" value="virus" name="secrete"  >
-                <input type="submit" value="LOGIN" name="save" class="btn btn-default  btn-color1 ">
-            </center>
-               <center>
-                <p class="mgt"><a href="homepage.html" style="color:#333;">Forgot Password ?</a><a href="register.html"> <span class="color">Create an account</span></a></p>
-               </center>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content" >
+                        <div class="loader justify-content-center ">
+        <div class="maxui-roller align-self-center">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+                        <script type="text/javascript">
+                            function my_toast(){
+    $('.snackbar').css('visibility','visible');
+  setTimeout(function(){ $('.snackbar').css('visibility','hidden'); }, 3000);
+}
 
-            </form>
+ function collapse(id){
 
+
+ $('.user-image').hide();
+   $('.social').hide();
+   $('.middle-block').css('visibility', 'hidden');
+   
+       if (id!=1) {
+       if(($('#collapse1').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse1').removeClass('in');
+   };
+
+     }
+     
+
+     if (id!=2) {
+       if(($('#collapse2').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse2').removeClass('in');
+
+  
+      
+
+   };
+
+     }
+
+
+     if (id!=3) {
+      if(($('#collapse3').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse3').removeClass('in');
+   };
+   //   $('.user-image').hide();
+   // $('.social').hide();
+   // $('.middle-block').css('visibility', 'hidden');
+      
+
+}
+   
+   if (id!=4) {
+   if(($('#collapse4').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse4').removeClass('in');
+   };}
+
+if (id!=5) {
+   if(($('#collapse5').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse5').removeClass('in');
+   };}
+
+   if (id!=6) {
+   if(($('#collapse6').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse6').removeClass('in');
+   };}
+
+   if (id!=7) {
+   if(($('#collapse7').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse7').removeClass('in');
+   };}
+
+   if (id!=8) {
+   if(($('#collapse8').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse8').removeClass('in');
+   };}
+
+   if (id!=9) {
+   if(($('#collapse9').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse9').removeClass('in');
+   };}
+
+   if (id!=10) {
+   if(($('#collapse10').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse10').removeClass('in');
+   };}
+
+   if (id!=11){
+   if(($('#collapse11').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse11').removeClass('in');
+   };
+   }
+
+   if (id!=12){
+   if(($('#collapse12').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse12').removeClass('in');
+   };
+   }
+
+   if (id!=13){
+   if(($('#collapse13').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse13').removeClass('in');
+   };
+   }
+
+      if (id!=14){
+   if(($('#collapse14').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse14').removeClass('in');
+   };
+   }
+
+
+     if(($('#collapse'+id).attr('class'))=='panel-collapse collapse in'){
+      // $('#collapse1').removeClass('in');
+       $('.user-image').show();
+      $('.social').show();
+      $('.middle-block').css('visibility', 'visible');
+      
+   };
+  
+
+
+
+
+  }
+
+
+    function zoomimage(id){
+                
+                var target='#zoom'+id;
+                 
+
+                $(target).fancybox({
+                    openEffect  : 'elastic',
+        closeEffect : 'elastic',
+
+        helpers : {
+            title : {
+                type : 'inside'
+            }
+        }
+              });
+ 
+            }
+
+                 function zoomimages(id){
+                
+                var target='#zooms'+id;
+                 
+
+                $(target).fancybox({
+                    openEffect  : 'elastic',
+        closeEffect : 'elastic',
+
+        helpers : {
+            title : {
+                type : 'inside'
+            }
+        }
+              });
+ 
+            }
+
+      function check_email_exist(){
+     
+         var email = $('#email').val();
+         var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+
+         if(email != ''){
+            if (testEmail.test(email)){
+             // alert("hii");
+            }
+            else{
+               $('.snackbar').html("Please Enter Valid Email-Id");
+               my_toast();
+                $('#email').val('');
+                }
+            }
+
+         if(email != ''){
+                 jQuery.ajax({
+                            type: 'POST',
+                            data: {'action': 'check_email', 'email': email},
+                            url: 'https://digitalbcards.in/ajax.php',
+                            success: function (data) {
+                              // alert(data);
+                                if(data){
+$('.snackbar').html('Email-Id Already Exist.');
+my_toast();
+                                    $('#email').val('');
+                                }
+                                
+                            },
+                            error: function (e) {
+
+                            }
+                            });
+             }
+        
+        }
+        function share_social(link){
+            // alert(link);
+            window.location.href = link;
+        }
+
+         function check_repass(){
+
+         var pass = $('#password').val();
+         var re_pass = $('#re_pass').val();
+         if(pass != '' && re_pass != ''){
+           if(pass != re_pass){
+            //myApp.alert('Password not matched.');
+            $('.snackbar').html('Password not matched.');
+            my_toast();
+
+            $('#re_pass').val('');
+           }
+         }
+
+        }
+         function logout(){
+      localStorage.clear()
+                window.localStorage.setItem("login",0);
+ window.location = "index.html";
+           // window.location.href = "index.html";
+    // $$('#loginn').trigger("click");
+
+    }
+
+                        </script>
+                        <div class="content-block">
+                          
+    </div>
+    <div class="wrapper">
+        <!-- page main start -->
+        <div class="page">
+            <div class="page-content h-100" style="background: blue;">
+                <div class="background theme-header"></div>
+                <div class="row mx-0 h-100 justify-content-center">
+                    <div class="col-10 col-md-6 col-lg-4 my-3 mx-auto text-center align-self-center">
+                        <img src="img/logo-w.png"  alt="" >
+                        <h1 class="login-title"><small>Welcome to,</small><br>DigitalBcards</h1>
+                        <br>
+                        <h5 class="text-white mb-4">Sing in</h5>
+                        <form id="login_form" method="POST">
+                        <div class="login-input-content ">
+                            <div class="form-group">
+                                <input type="text" id="email" name="email" class="form-control rounded text-center" placeholder="Username">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" name="password" class="form-control rounded text-center" placeholder="Password">
+                            </div>
+                            <input type="hidden" value="virus" name="secrete"  >
+
+                            <input type="submit" name="" id="login_user" class="btn btn-block btn-success rounded border-0 z-3" value="Sign in">
+                        </div>
+                    </form>
+
+                        <br>
+                        <br>
+                         <div class="snackbar">Some text some message..</div>
+       
+                        <div class="row no-gutters">
+                            <a href="home.html" id="home">
+                            <a href="index.html" id="loginn">
+                            <div class="col-6 text-left"><a href="forgot-password.html" class="text-white mt-3">Forget Password?</a></div>
+                            <div class="col-6 text-right"><a href="register.html" class="text-white text-center mt-3">Sign up</a></div>
+                        </div>                        
+                    </div>
+                </div>
+
+                <br>
+
+            
+
+        </div>
+        <!-- page main ends -->
+
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <!-- <div class="toolbar">
+                <div class="toolbar-inner" style="background: blue">
+                  
+                    <a href="#" class="link">Link 1</a>
+                    <a href="#" class="link">Link 2</a>
+                </div>
+            </div> -->
         </div>
     </div>
 
-</div>
-</div>
-</div>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1.3/js/bootstrap.min.js"></script>
+
+<!-- <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script> -->
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+    <!-- Cookie jquery file -->
+    <script src="vendor/cookie/jquery.cookie.js"></script>
+
+    <!-- sparklines chart jquery file -->
+    <script src="vendor/sparklines/jquery.sparkline.min.js"></script>
+
+    <!-- Circular progress gauge jquery file -->
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+
+    <!-- Swiper carousel jquery file -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- Application main common jquery file -->
+    <script src="js/main.js"></script>
+    <script src="js/select2.min.js"></script>
+  <script src="js/intlTelInput.js"></script>
+  <script class="iti-load-utils" async="" src="js/utils.js?1537717752654"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.js"></script>
+
+</body>
 <style type="text/css">
-#myOverlay{position:absolute;height:100%;width:100%;}
-#myOverlay{background:black;opacity:.7;z-index:3;display:none;}
+    
+    .modal1{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1050;display:none;overflow:hidden;outline:0}
+</style>
 
-#loadingGIF{position:absolute;top:30%;left:25%;z-index:3;display:none;}
-  </style>
-
-
-<script>
- if ('serviceWorker' in navigator) {
-    // console.log("Will the service worker register?");
-    navigator.serviceWorker.register('service-worker.js')
-      .then(function(reg){
-        
-     }).catch(function(err) {
-      
-    });
- }
-
-  $(document).ready(function () {
-// window.localStorage.setItem("login",0);
-var islogin = window.localStorage.getItem("login");
-// alert(islogin); 
-if(islogin == 1){
-      window.location.href = "homepage.html";
-  }
-$('#myOverlay').show();
-    $('#loadingGIF').show();
-setTimeout(function(){ 
-$('#myOverlay').hide();
-    $('#loadingGIF').hide();
- }, 2000);
-
-    $('#login_form').validate({ // initialize the plugin
-        errorLabelContainer: "#cs-error-note",
-   
-     errorClass: 'errors',
-    rules: {
-     
-       
-        email: {
-           
-            required: true,
-            email:true,
-            
-        },
-         password: {
-           
-            required: true,
-            
-        },
-        
-    },
-    messages: {
-       
-        
-         email: {
-           
-            required: "Please enter  Email.",
-            email:"Please Enter Proper Email",
-            
-        },
-         password: {
-           
-            required: "Please enter  Password.",
-            
-            
-        },
-        
-       
-         
-    },
-        submitHandler: function (form) { // for demo
-          form =$('#login_form').serialize();
-          var  action = $('#action').val();
-          var  email = $('#email').val();
-          $('#myOverlay').show();
-    $('#loadingGIF').show();
-     $.ajax({
-            url: "https://digitalbcards.in/api/login/", 
-            method: "POST",
-            data:form, 
-            dataType:"json",            
-           
-            success: function(data) {
-              if(data.status == 0){
-                $('#myOverlay').hide();
-    $('#loadingGIF').hide();
-                alert(data.message);
-              }else{
-
-                window.localStorage.setItem("login",1);
-                window.localStorage.setItem("email",email);
-                alert(data.message);
-                  $('#myOverlay').hide();
-    $('#loadingGIF').hide();
-            window.location.href = "homepage.html";
-              }
-            //location.reload();
-          }
-        })
-            return false; // for demo
-        }
-    });
-
-
-
-
-
-});
-</script>
-
-
-
-
-</body></html>
+</html>
