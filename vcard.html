@@ -1,0 +1,173 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <!-- <a href="javascript:void(0)" class="menu-left"><i class="material-icons">menu</i></a> -->
+            <a href="#" class="link icon-only open-panel menu-left"><i class="icon icon-bars"></i></a>
+            <!-- <a href="#" class="back link"> -->
+                <!-- <i class="icon icon-back"></i> -->
+                <!-- <span>Back</span> -->
+            <!-- </a> -->
+        </div>
+        <div class="center sliding">DBCard Message Template</div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="vcard" class="page">
+       <div class="page-content">
+            <div class="content-sticky-footer" >
+                    
+                    
+                   
+                           <div class="snackbar">Some text some message..</div>
+                
+                    <div class="container" style="padding: 0px 0px 0px 0px;position: fixed;overflow-y: scroll;overflow-x: hidden;height: 640px; ">
+                        <div class="row">
+                            <div class="col-12" style="padding:0px;">
+                                <div class=" rounded-20 border-0 mb-3 bg-primary">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="card-title text-white">Message Update</h5>
+                                            </div>
+                                         
+                                        </div>
+                                    </div>
+
+                                               <form method="post" id="template_form">
+                                    <div class="card-body  text-white">
+                                        <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
+                                        <div class="row">
+                                              <div class="col-12">
+                                                <div class="form-group">
+                                                <label>Please Select language</label>
+                                                <div class="row mx-0">
+                        
+                        <div class="col-12 mb-3">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" name="language"  value="0" class="custom-control-input setlanguage" id="customradio1">
+                                <label class="custom-control-label" for="customradio1">English</label>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-3">
+                            <div class="custom-control custom-radio">
+                                <input type="radio" value="1"  name="language" class="custom-control-input setlanguage" id="customradio2" >
+                                <label class="custom-control-label" for="customradio2">Hindi</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+
+                            <div class="custom-control custom-radio">
+                                <input type="radio" value="2" name="language" class="custom-control-input setlanguage" id="customradio3">
+                                <label class="custom-control-label" for="customradio3">Gujarati</label>
+                            </div>
+                        </div>
+                    </div>
+                                                  <input type="hidden" name="secrete" value="virus">
+                                                  <input type="hidden" name="user_id" id="user_idd">
+
+                                                   </div>
+                                       
+                                            </div>
+                                   
+                                               
+                                                <!-- <p>You SMS credit is 1</p> -->
+                                             <div class="col-12">
+                                               <div class="form-group">
+                                               <label>Use {name} to change with your contact name.</label> <br>
+                                               <label>Use {bcardurl} to change with your BCard Link.</label> 
+                                                <br>
+                                                <br>
+                                               
+                                <label for="exampleFormControlTextarea1">Email Template</label>
+                                <textarea class="form-control" id="about_me" rows="3"></textarea>
+                            </div>
+                                            </div>
+                                             <div class="col-12">
+                                                <div class="form-group">
+                                                    <label>Email Subject</label>
+                                                    <input type="text" class="form-control" id="email_subject" name="email_subject">
+                                                    <!-- <input type="text" class="form-control  text-white" value="+91"> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                               <div class="form-group">
+                                               
+                                               
+                                <label for="exampleFormControlTextarea1">Whatsapp Template</label>
+                                <textarea class="form-control" id="whatsapp_template" name="whatsapp_template" rows="3"></textarea>
+                            </div>
+                                            </div>
+                                             <div class="col-12">
+                                               <div class="form-group">
+                                               
+                                               
+                                <label for="exampleFormControlTextarea1">SMS Template</label>
+                                <textarea class="form-control" id="sms_template" name="sms_template" rows="3"></textarea>
+                            </div>
+                                            </div>
+                                           
+                                        </div>
+                                        </div>
+                                        <br>
+                                        <div class="text-center">
+                                            <input type="hidden" name="add_am" value="1">
+                                           <!-- <button type="submit" id="save_button" class="button button-rounded button-green-3d button-green">Submit</button> -->
+                                            <button  type="button" name="add_am" id="save_button"  class="btn  mb-1 btn-light text-primary px-4">Submit</button>
+                                           <a href="home.html"  class="btn  mb-1 btn-light text-primary px-4">Share Bcard</a>
+                                           <!-- <a href="vcard.html" id="v"></a> -->
+                                            
+                                            
+                                </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                     
+                    </div>
+                    <br>
+            </div>
+            <div class="modal1 fade" id="colorscheme" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header border-bottom theme-header">
+                        <p class="text-uppercase font-weight-bold text-white my-2">Choose your color</p>
+                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center theme-color">
+                            <p class="text-uppercase font-weight-bold text-dark text-center">Share Me</p>
+                            <p>Share my Digital BCard in your network.</p>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
+                            <button class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
+                            <button class="m-2 btn btn-warning rounded sq-btn text-white" data-theme="color-theme-yellow"><i class="fa fa-twitter facardtt"></i></button>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
+                            <br>
+                            <button class="m-2 btn btn-pink rounded sq-btn text-white" data-theme="color-theme-pink"><i class="fa fa-linkedin facardld"></i></button>
+                            <button class="m-2 btn btn-orange rounded sq-btn text-white" data-theme="color-theme-orange"><i class="fa fa-envelope facardml"></i></button>
+                         
+                        </div>
+                        <hr class="mt-4">
+                        <div class="row align-items-center mt-4">
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+               
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    
+</script>

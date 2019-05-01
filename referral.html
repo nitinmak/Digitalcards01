@@ -1,0 +1,156 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <!-- <a href="javascript:void(0)" class="menu-left"><i class="material-icons">menu</i></a> -->
+            <a href="#" class="link icon-only open-panel menu-left"><i class="icon icon-bars"></i></a>
+            <!-- <a href="#" class="back link"> -->
+                <!-- <i class="icon icon-back"></i> -->
+                <!-- <span>Back</span> -->
+            <!-- </a> -->
+        </div>
+        <div class="center sliding">My Referral</div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="referral" class="page">
+       <div class="page-content">
+            <div class="content-sticky-footer" style="padding-bottom: 135px;">
+                     <div class="footer-wrapper shadow-15"style="position: fixed;z-index: 9999;width: 100%;">
+                    
+                   
+                           <div class="snackbar">Some text some message..</div>
+                </div>
+                    <div class="container" style="padding: 0px 0px 0px 0px;position: fixed;overflow-y: scroll;overflow-x: hidden;height: auto; ">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class=" rounded-100 border-0 mb-3 bg-primary">
+                                   <!--  <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="card-title text-white">Message Update</h5>
+                                            </div>
+                                         
+                                        </div>
+                                    </div> -->
+
+                                               <form method="post" id="template_form">
+                                    <div class="card-body  text-white">
+                                        <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
+                                       
+                                        <div class="row">
+                                           
+
+                                      <div class=" col-xs-6 col-xl-6  ">
+                                                    <div class="form-group bmd-form-group">
+                                                     <!--    <label class="bmd-label-static">My Referral Link</label> -->
+                                                        <input disabled="disabled" type="text" class="form-control" id="code" name="email" placeholder="My Referral Link">
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                                </div>
+                                     <div class="col-xl-6  col-xs-6 myrefel text-center mb-3">
+                                        
+
+                                <a href="#"><button class="btn btn-primary " onclick="copyToClipboard('#code')"  type="button" name="">Copy</button></a></div>
+
+                                   </div>
+                                    <div class="row" style="padding-top:3%;">
+                                    <div class="col-xs-12 table-responsive">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <!-- <th>Sr. No</th> -->
+                                                     <th>View User</th>
+                                                     <th>Active User</th>
+                                                     <th>Register User</th>
+                                                     <!-- <th>Earning</th> -->
+                                                     <th>End Subscription</th>
+                                                    <!-- <th>Status</th> -->
+
+                                                   
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                 <tr>
+                                                    <!-- <td>1</td> -->
+                                                    <td id="view_count"></td>
+                                                    <td id="active_count"></td>
+                                                    <td id="count"></td>
+                                                     <!-- <td><?=$earning?></td> -->
+                                                      <td id="end_count"></td>
+                                                <!-- <td><a href="#" class="btn activuser" data-toggle="modal" data-target="#myModal"> Active</a></td> -->
+                                                </tr>
+                                               
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                             
+                                   
+                                               
+                                                <!-- <p>You SMS credit is 1</p> -->
+                                          
+                                            
+                                           
+                                        </div>
+                                        </div>
+                                        
+                                        
+                                        
+                                           <!-- <a href="vcard.html" id="v"></a> -->
+                                            
+                                            
+                                </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                     
+                    </div>
+                    <br>
+            </div>
+            <div class="modal1 fade" id="colorscheme" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header border-bottom theme-header">
+                        <p class="text-uppercase font-weight-bold text-white my-2">Choose your color</p>
+                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center theme-color">
+                            <p class="text-uppercase font-weight-bold text-dark text-center">Share Me</p>
+                            <p>Share my Digital BCard in your network.</p>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
+                            <button class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
+                            <button class="m-2 btn btn-warning rounded sq-btn text-white" data-theme="color-theme-yellow"><i class="fa fa-twitter facardtt"></i></button>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
+                            <br>
+                            <button class="m-2 btn btn-pink rounded sq-btn text-white" data-theme="color-theme-pink"><i class="fa fa-linkedin facardld"></i></button>
+                            <button class="m-2 btn btn-orange rounded sq-btn text-white" data-theme="color-theme-orange"><i class="fa fa-envelope facardml"></i></button>
+                         
+                        </div>
+                        <hr class="mt-4">
+                        <div class="row align-items-center mt-4">
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+               
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    
+</script>

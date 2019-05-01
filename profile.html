@@ -1,0 +1,236 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <!-- <a href="javascript:void(0)" class="menu-left"><i class="material-icons">menu</i></a> -->
+            <a href="#" class="link icon-only open-panel menu-left"><i class="icon icon-bars"></i></a>
+            <!-- <a href="#" class="back link"> -->
+                <!-- <i class="icon icon-back"></i> -->
+                <!-- <span>Back</span> -->
+            <!-- </a> -->
+        </div>
+        <div class="center sliding">Dashboard</div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="profile" class="page">
+       <div class="page-content" style="padding: 33px 0px 0px 0px">
+            <div class="content-sticky-footer" >
+                     <div class="footer-wrapper shadow-15" style="position: fixed;z-index: 9999;width: 100%;">
+                    <div class="footer">
+                        <div class="row mx-0">
+                            <div class="col">
+                                YOUR DBCARD
+                            </div>
+                            <div class="col-7 text-right">
+                                <a href="profile.html"  class="social"> <i class="fa fa-pencil-square-o"></i></a>
+                               <!--  <a href="#" class="social"><img src="img/googleplus.png" alt=""></a>
+                                <a href="#" class="social"><img src="img/linkedin.png" alt=""></a>
+                                <a href="#" class="social"><img src="img/twitter.png" alt=""></a> -->
+                            </div>
+                        </div>
+                    </div>
+                    <style type="text/css">
+    .call{
+        font-size: 20px;
+    }
+</style>
+                   
+                           <div class="snackbar">Some text some message..</div>
+                </div>
+                    <div class="container" style="padding: 55px 0px 0px 0px;position: fixed;overflow-y: scroll;overflow-x: hidden;height: 640px; ">
+                        <div class="row">
+                            <div class="col-12" style="padding: 0px;">
+                                <div class="card rounded-50 border-0  bg-primary">
+                                   
+
+                                     <form method="post" id="share_form">   
+                                    <div class="card-body  text-white">
+                                        <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
+                                        
+                                        <div class=" py-3 bg-primary">
+                        <div class="row no-gutters mb-5">
+                            <div class="col text-center">
+                                <i class="material-icons text-white icon-1x">person</i>
+                                 
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white">About Me</h7>
+                            </div>
+                            <div class="col text-center ">
+                                <i class="material-icons text-white icon-1x">portrait</i>
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white">Display Photo</h7>
+                            </div>
+                            <div class="col text-center ">
+                                <i class="material-icons text-white icon-1x">contact_mail</i>
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white">Contact Info</h7>
+                            </div>
+                        </div>
+
+                         <div class="row no-gutters mb-5">
+                            <div class="col text-center">
+                                <i class="material-icons text-white icon-1x">domain</i>
+                                 
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white">Company Logo</h7>
+                            </div>
+                            <div class="col text-center ">
+                                <i class="material-icons text-white icon-1x">border_color</i>
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white"> Expertise</h7>
+                            </div>
+                            <div class="col text-center ">
+                                <i class="fa fa-trophy  call" ></i>
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white">Achievements</h7>
+                            </div>
+                        </div>
+
+                          <div class="row no-gutters mb-5">
+                            <div class="col text-center">
+                                <i class="material-icons text-white icon-1x">insert_comment</i>
+                                 
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white">Testimonials</h7>
+                            </div>
+                            <div class="col text-center ">
+                                <i class="fa fa-briefcase call " > </i>
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white"> Experience</h7>
+                            </div>
+                            <div class="col text-center ">
+                                <i class="fa fa-mortar-board  call" ></i>
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white">Education</h7>
+                            </div>
+                        </div>
+
+
+                         <div class="row no-gutters mb-5">
+                            <div class="col text-center">
+                                <i class="fa fa-building-o call"></i>
+                                 
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white">Company</h7>
+                            </div>
+                            <div class="col text-center ">
+                                <i class="material-icons call text-white icon-1x">web</i>
+                                
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white"> Products</h7>
+                            </div>
+                            <div class="col text-center ">
+                                <i class="material-icons call text-white icon-1x">share</i>
+                                
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white">Social Links</h7>
+                            </div>
+                        </div>
+
+
+                         <div class="row no-gutters mb-5">
+                            <div class="col text-center">
+                                <i class="fa fa-link call"></i>
+                                 
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white">Payment Link</h7>
+                            </div>
+                            <div class="col text-center ">
+                                <i class="material-icons call">photo_library</i>
+                                
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white"> Product Album</h7>
+                            </div>
+                            <div class="col text-center ">
+                                <i class="material-icons call">class</i>
+                                
+                                <br>
+                                <br>
+                                <h7 class="mt-1 text-white">Offers</h7>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+                                        <div class="row">
+                                            <div class="col-4">
+                                           <a href="#"  id="button" class="btn  mb-1 btn-light text-primary px-4">More</a>
+                                       </div>
+                                            <div class="col-4">
+
+                                       
+                                            <button  type="reset" onclick="location.href='index.html'" id="button" class="btn k mb-1 btn-light text-primary px-4" >Reset</button>
+                                        </div>
+                                            <div class="col-4">
+
+                                            <button type="submit" id="save_only" name="save_only" class="btn mb-1 btn-light text-primary px-4">SAVE</button>
+                                        </div>
+                                    </div>
+                           
+                                </form>
+                                </div>
+                            </div>
+                         
+                        </div>
+                     
+                    </div>
+                    <br>
+            </div>
+            <div class="modal1 fade" id="colorscheme" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header border-bottom theme-header">
+                        <p class="text-uppercase font-weight-bold text-white my-2">Choose your color</p>
+                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center theme-color">
+                            <p class="text-uppercase font-weight-bold text-dark text-center">Share Me</p>
+                            <p>Share my Digital BCard in your network.</p>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
+                            <button class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
+                            <button class="m-2 btn btn-warning rounded sq-btn text-white" data-theme="color-theme-yellow"><i class="fa fa-twitter facardtt"></i></button>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
+                            <br>
+                            <button class="m-2 btn btn-pink rounded sq-btn text-white" data-theme="color-theme-pink"><i class="fa fa-linkedin facardld"></i></button>
+                            <button class="m-2 btn btn-orange rounded sq-btn text-white" data-theme="color-theme-orange"><i class="fa fa-envelope facardml"></i></button>
+                         
+                        </div>
+                        <hr class="mt-4">
+                        <div class="row align-items-center mt-4">
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+               
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+</script>

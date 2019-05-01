@@ -1,0 +1,142 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <!-- <a href="javascript:void(0)" class="menu-left"><i class="material-icons">menu</i></a> -->
+            <a href="#" class="link icon-only open-panel menu-left"><i class="icon icon-bars"></i></a>
+            <!-- <a href="#" class="back link"> -->
+                <!-- <i class="icon icon-back"></i> -->
+                <!-- <span>Back</span> -->
+            <!-- </a> -->
+        </div>
+        <div class="center sliding">Settings</div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="settings" class="page">
+       <div class="page-content">
+            <div class="content-sticky-footer" style="padding-bottom: 135px;">
+                     <div class="footer-wrapper shadow-15">
+                    
+                   
+                           <div class="snackbar">Some text some message..</div>
+                </div>
+                    <div class="container" style="padding: 0px 0px 0px 0px;position: fixed;overflow-y: scroll;overflow-x: hidden;height: 640px; ">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class=" rounded-0 border-0 mb-3 bg-primary">
+                                    <div class="card-header">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="card-title text-center text-white">Password Change</h5>
+                                            </div>
+                                         
+                                        </div>
+                                    </div>
+
+                                               <form method="post" id="setting_form">
+                                    <div class="card-body  text-white">
+                                        <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
+                                        <div class="row">
+                                              <div class="col-12">
+                                                <div class="form-group">
+                                              
+                                     
+                                                  <input type="hidden" name="secrete" value="virus">
+                                                  <input type="hidden" name="user_id" id="user_idd">
+                                                  <input type="hidden" name="email" id="emaill">
+
+                                                   </div>
+                                       
+                                            </div>
+                                   
+                                               
+                                                <!-- <p>You SMS credit is 1</p> -->
+                                             <div class="col-12">
+                                 <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">Old Password</label>
+                                                        <input type="password" id="inputPassword" name="old_password"  class="form-control" >
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+                                             <div class="col-12">
+                                            <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">New Password</label>
+                                                        <input type="password" class="form-control" id="password" name="password" onblur="check_repass();" >
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+                                            <div class="col-12">
+                                            <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">Confirm Password</label>
+                                                        <input type="password" class="form-control" id="re_pass" name="re_pass" onblur="check_repass();" >
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+                                           
+                                           
+                                        </div>
+                                        </div>
+                                        <div class="text-center">
+                                            <input type="hidden" name="save " value="1">
+                                           <!-- <button type="submit" id="save_button" class="button button-rounded button-green-3d button-green">Submit</button> -->
+                                            <input  type="submit" name="save" id="save_button"  class="btn  mb-1 btn-light text-primary px-4" value="Submit">
+                                           <!-- <a href="home.html"  class="btn  mb-1 btn-light text-primary px-4">Share Bcard</a> -->
+                                           <!-- <a href="vcard.html" id="v"></a> -->
+                                            
+                                </form>
+                                        </div>
+                                        <br>
+                                        
+                                            
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                     
+                    </div>
+                    <br>
+            </div>
+            <div class="modal1 fade" id="colorscheme" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header border-bottom theme-header">
+                        <p class="text-uppercase font-weight-bold text-white my-2">Choose your color</p>
+                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center theme-color">
+                            <p class="text-uppercase font-weight-bold text-dark text-center">Share Me</p>
+                            <p>Share my Digital BCard in your network.</p>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
+                            <button class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
+                            <button class="m-2 btn btn-warning rounded sq-btn text-white" data-theme="color-theme-yellow"><i class="fa fa-twitter facardtt"></i></button>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
+                            <br>
+                            <button class="m-2 btn btn-pink rounded sq-btn text-white" data-theme="color-theme-pink"><i class="fa fa-linkedin facardld"></i></button>
+                            <button class="m-2 btn btn-orange rounded sq-btn text-white" data-theme="color-theme-orange"><i class="fa fa-envelope facardml"></i></button>
+                         
+                        </div>
+                        <hr class="mt-4">
+                        <div class="row align-items-center mt-4">
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+               
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    
+</script>

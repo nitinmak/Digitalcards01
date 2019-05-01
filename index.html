@@ -77,42 +77,42 @@
              <nav class="navbar" style="background: none;">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a href="home.html" class="sidebar-close activex" >
+                        <a href="home.html" onclick="close_sidebar();" class="sidebar-close activex" >
                             <div class="item-title">
                                 <i class="material-icons">dashboard</i> Dashboard
                             </div>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="lead.html" class="sidebar-close ">
+                        <a href="lead.html" onclick="close_sidebar();" class="sidebar-close ">
                             <div class="item-title">
                                 <i class="fa fa-users"></i> My Contact
                             </div>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="viewcard.html" class="sidebar-close ">
+                        <a href="viewcard.html" onclick="close_sidebar();" class="sidebar-close ">
                             <div class="item-title">
                                 <i class="fa fa-id-card" aria-hidden="true"></i> See DBCard
                             </div>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html" class="sidebar-close activex">
+                        <a href="profile.html" onclick="close_sidebar();" class="sidebar-close activex">
                             <div class="item-title">
                                 <i class="fa fa-pencil-square-o"></i> Change DBCard Info
                             </div>
                         </a>
                     </li>
                       <li class="nav-item">
-                        <a href="index.html" class="sidebar-close activex">
+                        <a href="vcard.html" onclick="close_sidebar();" class="sidebar-close activex">
                             <div class="item-title">
                                 <i class="material-icons pull-left icon">share</i> Card Message Template
                             </div>
                         </a>
                     </li>
                      <li class="nav-item">
-                        <a href="index.html" class="sidebar-close activex">
+                        <a href="referral.html" onclick="close_sidebar();" class="sidebar-close activex">
                             <div class="item-title">
                                <i class="fa fa-link"></i> My Referral
                             </div>
@@ -120,21 +120,21 @@
                     </li>
 
                      <li class="nav-item">
-                        <a href="index.html" class="sidebar-close activex">
+                        <a href="directory.html" onclick="close_sidebar();" class="sidebar-close activex">
                             <div class="item-title">
                               <i class="material-icons pull-left icon">next_week</i> My Directory
                             </div>
                         </a>
                     </li> 
                     <li class="nav-item">
-                        <a href="index.html" class="sidebar-close activex">
+                        <a href="support.html" onclick="close_sidebar();" class="sidebar-close activex">
                             <div class="item-title">
                              <i class="material-icons pull-left icon">contact_phone</i> Customer Care
                             </div>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.html" class="sidebar-close activex">
+                        <a href="settings.html" onclick="close_sidebar();" class="sidebar-close activex">
                             <div class="item-title">
                             <i class="fa fa-cogs pull-left icon"></i> Settings
                             </div>
@@ -142,7 +142,7 @@
                     </li>                    
                     
                      <li class="nav-item">
-                        <a href="#" onclick="logout()" class="sidebar-close">
+                        <a href="#" onclick="logout(),close_sidebar()" class="sidebar-close">
                             <div class="item-title">
                               <i class="material-icons pull-left icon">exit_to_app</i> Sign Out
                             </div>
@@ -303,8 +303,19 @@ if (id!=5) {
 
 
 
-
   }
+  function myFunction() {
+    //   navigator.notification.confirm('Do you want to quit', 
+    //     function(){
+    //         if(button == "1"){
+    //             navigator.myApp.exitApp(); 
+    //         }
+    //     }, 
+    //     'QUIT TITLE', 
+    //     'OK,Cancel'  
+    // );
+  
+}
 
 
     function zoomimage(id){
@@ -343,6 +354,7 @@ if (id!=5) {
  
             }
 
+
       function check_email_exist(){
      
          var email = $('#email').val();
@@ -380,6 +392,18 @@ my_toast();
              }
         
         }
+           function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).val()).select();
+  document.execCommand("copy");
+  $temp.remove();
+  // alert('');
+  $('.snackbar').html('Copied successfully');
+  
+                my_toast();
+}
+
         function share_social(link){
             // alert(link);
             window.location.href = link;
@@ -400,6 +424,37 @@ my_toast();
          }
 
         }
+          function view_card(ref_id,id){
+                              //alert(id);
+                              //alert(ref_id);
+                              $.ajax({
+            url: "https://digitalbcards.in/api/card_data/", 
+            method: "POST",
+            data:{zxc:ref_id,user_id:id,secrete:"virus"}, 
+            dataType:"json",            
+           
+            success: function(data) {
+                // var data = JSON.stringify(data);
+// alert(data);
+$('#card_body').html(data);
+$('#view_card_in_popup').modal('show');
+                              $('.title').html('DBCard');
+    // $('.loader').css('display','none');
+
+            //    $('#username').html(data.name);
+             //   $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+              
+            //location.reload();
+          }
+        });  
+                              
+                            }
+                            function close_sidebar(){
+                              $('body').removeClass('with-panel-left-reveal');
+                              // $('body').css('width','100%');
+                              $('.sidebar-left').removeClass('active');
+                              $('.sidebar-left').css('display','none');
+                            }
          function logout(){
       localStorage.clear()
                 window.localStorage.setItem("login",0);
@@ -410,20 +465,21 @@ my_toast();
     }
 
                         </script>
+              
                         <div class="content-block">
                           
     </div>
     <div class="wrapper">
         <!-- page main start -->
         <div class="page">
-            <div class="page-content h-100" style="background: blue;">
+            <div class="page-content h-100" style="background: #EEEEEEEE;">
                 <div class="background theme-header"></div>
                 <div class="row mx-0 h-100 justify-content-center">
                     <div class="col-10 col-md-6 col-lg-4 my-3 mx-auto text-center align-self-center">
-                        <img src="img/logo-w.png"  alt="" >
-                        <h1 class="login-title"><small>Welcome to,</small><br>DigitalBcards</h1>
+                        <img src="img/dbc.svg" width="200px"  height="200px" alt="" >
+                        <!-- <h1 class="login-title"><small>Welcome to,</small><br>DigitalBcards</h1> -->
                         <br>
-                        <h5 class="text-white mb-4">Sing in</h5>
+                        <h5 class="text-dark mb-4">Sing in</h5>
                         <form id="login_form" method="POST">
                         <div class="login-input-content ">
                             <div class="form-group">
@@ -444,14 +500,15 @@ my_toast();
        
                         <div class="row no-gutters">
                             <a href="home.html" id="home">
+                              
                             <a href="index.html" id="loginn">
-                            <div class="col-6 text-left"><a href="forgot-password.html" class="text-white mt-3">Forget Password?</a></div>
-                            <div class="col-6 text-right"><a href="register.html" class="text-white text-center mt-3">Sign up</a></div>
+                            <div class="col-6 text-left"><a href="forgot-password.html" class="text-dark mt-3">Forget Password?</a></div>
+                            <div class="col-6 text-right"><a href="register.html" class="text-dark text-center mt-3">Sign up</a></div>
                         </div>                        
                     </div>
                 </div>
 
-                <br>
+                
 
             
 

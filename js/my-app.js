@@ -135,7 +135,423 @@ $$(document).on('pageInit', function (e) {
         // Following code will be executed for page with data-page attribute equal to "about"
     }
 })
+$$(document).on('pageInit', '.page[data-page="referral"]', function (e) {
+  var referral =  window.localStorage.getItem("referral");
+ var user_id =  window.localStorage.getItem("user_id");
+ // alert(referral)
+ $('#code').val(referral);
 
+ $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+      $.ajax({
+            url: "https://digitalbcards.in/api/referral/", 
+            method: "POST",
+            data:{secrete:"virus",referral:referral,user_id:user_id}, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.active);
+              $('#active_count').html(data.active);
+              $('#view_count').html(data.view_count);
+              $('#count').html(data.count);
+              $('#end_count').html(data.end);
+              
+
+    $('.loader').css('display','none');
+                // location.reload();
+
+          }
+        });  
+
+
+});
+$$(document).on('pageInit', '.page[data-page="vcard"]', function (e) {
+// myFunction();
+ var user_id =  window.localStorage.getItem("user_id");
+ // alert(user_id);
+  $('#user_idd').val(user_id);
+  var redirect = confirm('please make a payment RS 500  to use Bcard features.');
+   if (redirect == true) {
+    // alert('fdfd');
+    // $$('#home').trigger("click");
+    // location.reload();
+       // document.forms['customerData'].submit();
+   }else{
+    location.reload();
+    // $$('#home').trigger("click");
+   }
+                      var language =  window.localStorage.getItem("language");
+                      // alert(language)
+
+   $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+      $.ajax({
+            url: "https://digitalbcards.in/api/message_update/", 
+            method: "POST",
+            data:{secrete:"virus",language:language,user_id:user_id}, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.email);
+              if(data.email != ''){
+
+                $("#about_me").val(data.email_subject);
+                        $('#email_subject').val(data.email_subject);
+                        $('#whatsapp_template').val(data.whatsapp);
+                        $('#sms_template').val(data.sms);
+              }else{
+                 if(language == 0){
+                        $("#customradio1").attr('checked', 'checked');
+                        $("#about_me").val('Hello {name},\r\nYou can see my Digital Business Card from given below link:{bcardurl}\n Regards');
+                        $('#email_subject').val('View my Digital Business Card.');
+                        $('#whatsapp_template').val('Hello  {name},\r\nYou can see my Digital Business Card from given below link:{bcardurl}\n Regards');
+                        $('#sms_template').val('Hello  {name},\r\nYou can see my Digital Business Card from given below link:{bcardurl}\n Regards');
+                      }else if(language == 1){
+                        $("#customradio2").attr('checked', 'checked');
+                        $("#about_me").val('हैलो {name},कृपया नीचे दिए गए लिंक से मेरा कार्ड देखें: \n {bcardurl} सादर');
+                        $('#email_subject').val('मेरा डिजिटल बीकार्ड देखें।.');
+                        $('#whatsapp_template').val('हैलो {name},\nकृपया नीचे दिए गए लिंक से मेरा कार्ड देखें: \n {bcardurl} सादर');
+                        $('#sms_template').val('हैलो {name},\nकृपया नीचे दिए गए लिंक से मेरा कार्ड देखें: \n {bcardurl} सादर');
+                      }else{
+                        $("#customradio3").attr('checked', 'checked');
+                        $("#about_me").val('હેલો {name},\n તમે {bcardurl} જોઈ શકો છો શુભેચ્છાઓ');
+                        $('#email_subject').val('મારું ડિજિટલ બી કાર્ડ જુઓ.');
+                        $('#whatsapp_template').val('હેલો {name},\n પ્લઝ મારા કાર્ડને નીચે આપેલી લિંકથી જોશે: \n {bcardurl} શુભેચ્છાઓ');
+                        $('#sms_template').val('હેલો {name},\n પ્લઝ મારા કાર્ડને નીચે આપેલી લિંકથી જોશે: \n {bcardurl} શુભેચ્છાઓ');
+
+                      }
+              }
+
+    $('.loader').css('display','none');
+                // location.reload();
+
+          }
+        });  
+
+                     
+
+
+
+$("input[type='radio']").bind( "change", function(event, ui) {
+// $(document).on('pagebeforeshow', '.setlanguage', function(){       
+
+   // $(".setlanguage").click(function() {
+ 
+ var user_id =  window.localStorage.getItem("user_id");
+
+ var lan = $(this).val();
+    if(lan == 0){
+                        $("#customradio1").attr('checked', 'checked');
+                        $("#about_me").val('Hello {name},\r\nYou can see my Digital Business Card from given below link:{bcardurl}\n Regards');
+                        $('#email_subject').val('View my Digital Business Card.');
+                        $('#whatsapp_template').val('Hello  {name},\r\nYou can see my Digital Business Card from given below link:{bcardurl}\n Regards');
+                        $('#sms_template').val('Hello  {name},\r\nYou can see my Digital Business Card from given below link:{bcardurl}\n Regards');
+                      }else if(lan == 1){
+                        $("#customradio2").attr('checked', 'checked');
+                        $("#about_me").val('हैलो {name},कृपया नीचे दिए गए लिंक से मेरा कार्ड देखें: \n {bcardurl} सादर');
+                        $('#email_subject').val('मेरा डिजिटल बीकार्ड देखें।.');
+                        $('#whatsapp_template').val('हैलो {name},\nकृपया नीचे दिए गए लिंक से मेरा कार्ड देखें: \n {bcardurl} सादर');
+                        $('#sms_template').val('हैलो {name},\nकृपया नीचे दिए गए लिंक से मेरा कार्ड देखें: \n {bcardurl} सादर');
+                      }else{
+                        $("#customradio3").attr('checked', 'checked');
+                        $("#about_me").val('હેલો {name},\n તમે {bcardurl} જોઈ શકો છો શુભેચ્છાઓ');
+                        $('#email_subject').val('મારું ડિજિટલ બી કાર્ડ જુઓ.');
+                        $('#whatsapp_template').val('હેલો {name},\n પ્લઝ મારા કાર્ડને નીચે આપેલી લિંકથી જોશે: \n {bcardurl} શુભેચ્છાઓ');
+                        $('#sms_template').val('હેલો {name},\n પ્લઝ મારા કાર્ડને નીચે આપેલી લિંકથી જોશે: \n {bcardurl} શુભેચ્છાઓ');
+
+                      }
+  })
+ $("#save_button").click(function() {
+   var form =$('#template_form').serialize();
+                        // alert(form);
+
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/message_update/", 
+            method: "POST",
+            data:form, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+  
+    $('.loader').css('display','none');
+                my_toast();
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+                 if(data.email != ''){
+
+                $("#about_me").val(data.email);
+                        $('#email_subject').val(data.email_subject);
+                        $('#whatsapp_template').val(data.whatsapp);
+                        $('#sms_template').val(data.sms);
+              }
+                 // alert(data.message);
+
+                 $('.snackbar').html(data.message);
+  
+                my_toast();
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        });  
+                      
+
+                      })
+                
+})
+$$(document).on('pageInit', '.page[data-page="support"]', function (e) {
+
+    $(document).on('click', '#save_button', function(){  
+ 
+$('#support_form').validate({ // initialize the plugin
+        errorLabelContainer: "#cs-error-note",
+   
+     errorClass: 'errors',
+    rules: {
+     
+        query: {
+           
+            required: true,
+           
+            
+        },
+        mobile: {
+           
+            required: true,
+            number:true,
+            maxlength:10,
+            minlength:10,
+           
+            
+        },
+        email: {
+           
+            required: true,
+            email:true,
+            
+        },
+         
+        
+    },
+    messages: {
+       
+         query: {
+           
+            required: "Please enter  Query.",
+          
+            
+        },
+         email: {
+           
+            required: "Please enter  Email.",
+            email:"Please Enter Proper Email",
+            
+        },
+         mobile: {
+           
+            required: "Please enter  Mobile.",
+            number:"Please Enter Proper Mobile",
+            maxlength:"Please Enter Proper Mobile",
+            minlength:"Please Enter Proper Mobile",
+            
+        },
+        
+        
+       
+         
+    },
+        submitHandler: function (form) { // for demo
+          form =$('#support_form').serialize();
+       
+          // var  email = $('#email').val();
+           $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    $('.loader').css('display','flex');
+     $.ajax({
+            url: "https://digitalbcards.in/api/support/", 
+            method: "POST",
+            data:form, 
+            dataType:"json",            
+           
+            success: function(data) {
+              if(data.status == 0){
+                $('#support_form')[0].reset();
+                // myApp.alert(data.message);
+                $('.snackbar').html(data.message);
+                my_toast();
+    $('.loader').css('display','none');
+
+              }else{
+
+              $('#support_form')[0].reset();
+               
+                  $('.snackbar').html(data.message);
+
+                my_toast();
+          $('.loader').css('display','none');
+              }
+           
+          }
+        })
+            return false; // for demo
+        }
+    });
+})
+
+})
+$$(document).on('pageInit', '.page[data-page="settings"]', function (e) {
+ var user_id =  window.localStorage.getItem("user_id");
+ var email =  window.localStorage.getItem("email");
+ $('#user_idd').val(user_id);
+ $('#emaill').val(email);
+    $(document).on('click', '#save_button', function(){  
+ 
+$('#setting_form').validate({ // initialize the plugin
+        errorLabelContainer: "#cs-error-note",
+   
+     errorClass: 'errors',
+    rules: {
+     
+        old_password: {
+           
+            required: true,
+           
+            
+        },
+        password: {
+           
+            required: true,
+            
+        },
+         re_pass: {
+                    equalTo: "#password"
+                },
+         
+        
+    },
+    messages: {
+       
+         old_password: {
+           
+            required: "Please enter  Old Password.",
+          
+            
+        },
+        password: {
+           
+            required: "Please enter  Password.",
+            
+            
+        },
+        re_pass:{
+           equalTo: "Password Not Match.",
+        }
+        
+        
+       
+         
+    },
+        submitHandler: function (form) { // for demo
+          form =$('#setting_form').serialize();
+       
+          // var  email = $('#email').val();
+           $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    $('.loader').css('display','flex');
+     $.ajax({
+            url: "https://digitalbcards.in/api/setting/", 
+            method: "POST",
+            data:form, 
+            dataType:"json",            
+           
+            success: function(data) {
+              if(data.status == 0){
+                $('#setting_form')[0].reset();
+                // myApp.alert(data.message);
+                $('.snackbar').html(data.message);
+                my_toast();
+    $('.loader').css('display','none');
+
+              }else{
+
+              $('#setting_form')[0].reset();
+               
+                  $('.snackbar').html(data.message);
+
+                my_toast();
+          $('.loader').css('display','none');
+              }
+           
+          }
+        })
+            return false; // for demo
+        }
+    });
+})
+
+})
+$$(document).on('pageInit', '.page[data-page="directory"]', function (e) {
+
+  var search = '';
+                      // alert(user_id);
+                      get_contacts(search);
+                        
+
+    $('#search').on('input', function(e){
+      var search = $(this).val();
+      // var search = $(this).val();
+        get_contacts(search);
+       
+    })        
+
+        function get_contacts(search){
+          // alert(search);
+           var email =  window.localStorage.getItem("email");
+           var mobile =  window.localStorage.getItem("mobile");
+           var whatsapp =  window.localStorage.getItem("whatsapp");
+           if(whatsapp == 'undefined'){
+            var wh = '';
+          
+           }else{
+            var wh = whatsapp
+
+           }
+
+           $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    $('.loader').css('display','flex');
+ var user_id =  window.localStorage.getItem("user_id");
+ // alert(search);
+                                $.ajax({
+            url: "https://digitalbcards.in/api/directory/", 
+            method: "POST",
+            data:{user_id:user_id,search:search,secrete:"virus",email:email,mobile:mobile,whatsapp:wh}, 
+            dataType:"json",            
+           
+            success: function(data) {
+                // var data = JSON.stringify(data);
+// alert(data);
+$('#my_leadssss').html(data);
+
+    $('.loader').css('display','none');
+
+            //    $('#username').html(data.name);
+             //   $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+              
+            //location.reload();
+          }
+        });  
+                            } 
+                          
+
+})
 $$(document).on('pageInit', '.page[data-page="viewcard"]', function (e) {
  var referral =  window.localStorage.getItem("referral");
  // var user_id =  window.localStorage.getItem("user_id");
@@ -224,9 +640,13 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
            
             success: function(data) {
                 // var data = JSON.stringify(data);
+
                window.localStorage.setItem("user_id",data.id);
                window.localStorage.setItem("language",data.language);
                window.localStorage.setItem("referral",data.Refferal_id);
+               window.localStorage.setItem("mobile",data.mobile);
+                
+               window.localStorage.setItem("whatsapp",data.whatsapp);
                window.localStorage.setItem("name",data.name);
                //window.localStorage.setItem("username",data.name);
                window.localStorage.setItem("user_image",data.profile_img);
@@ -541,6 +961,7 @@ $('#register_form').validate({ // initialize the plugin
         }
     });
 })
+  
 
    // $('.navbar').show();
     //$('.back').hide();

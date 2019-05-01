@@ -10,15 +10,15 @@
                 <!-- <span>Back</span> -->
             <!-- </a> -->
         </div>
-        <div class="center sliding">My Contact</div>
+        <div class="center sliding">My Directory</div>
         <div class="right">
         </div>
     </div>
 </div>
 <div class="pages">
-    <div data-page="lead" class="page">
-       <div class="page-content" >
-            <div class="content-sticky-footer" >
+    <div data-page="directory" class="page">
+       <div class="page-content">
+            <div class="content-sticky-footer" style="padding-bottom: 135px;">
                      <div class="footer-wrapper shadow-15" style="position: fixed;z-index: 9999;width: 100%;">
                     <div class="footer">
                         <div class="row mx-0">
@@ -36,12 +36,12 @@
                 </div>
                     <div class="container" style="padding: 55px 0px 0px 0px;position: fixed; ">
                         <div class="row">
-                            <div class="col-12" style="padding: 0px;">
-                                <div class="card rounded-0 border-0 mb-3 bg-primary">
+                            <div class="col-12">
+                                <div class=" rounded-0 border-0 mb-3 bg-primary">
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-12">
-                                                <h5 class=" text-center text-white">My contact</h5>
+                                                <h5 class="card-title text-white">My Directory</h5>
                                             </div>
                                             <!-- <div class="col-5 text-right mt-3">
                                                 <a href="#" data-toggle="modal" data-target="#colorscheme"><i class="fa fa-share-alt text-white" ></i></a>
@@ -52,35 +52,57 @@
                                     <div class="card-body  text-white">
                                         <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
                                         <div class="row">
-                                              <div class="col-12" style="overflow-y: scroll;overflow-x: hidden;height: 640px;">
-                                                <table class="responsive table border-1" style="height: auto;" >
+                                              <div class="col-12" style="overflow: scroll;">
+                                                <table class="responsive table" >
                                                     <thead>
                                                         <tr>
           <th>Name</th>
-          <th>Email</th>
-          <th>Mobile</th>
-          <th>Mobile2</th>
-          <th>WhatsApp</th>
-          <th>Company Name</th>
-          <th>Position</th>
-          <th>Address</th>
-          <th>Address2</th>
-          <th>City</th>
-          <th>Zip Code</th>
-          <th>State</th>
-          <th>Country</th>
+          <th>Date</th>
+          
       </tr>
                                                     </thead>
-                                                    <tbody id="my_leads" style="overflow: scroll;">
+                                                    <tbody id="my_leadssss">
                                                         
                                                     </tbody>
                                                 </table>
                                             </div>
+                                                      <div class="modal1 fade" style="top:40px;" id="view_card_in_popup" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header border-bottom theme-header">
+                        <p class="title text-uppercase font-weight-bold text-dark my-2">Choose your color</p>
+                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="card_body" style="overflow: scroll;height: 680px;">
+                        <div class="text-center theme-color">
+                            <p class="text-uppercase font-weight-bold text-dark text-center">Share Me</p>
+                            <p>Share my Digital BCard in your network.</p>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
+                            <button class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
+                            <button class="m-2 btn btn-warning rounded sq-btn text-white" data-theme="color-theme-yellow"><i class="fa fa-twitter facardtt"></i></button>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
+                            <br>
+                            <button class="m-2 btn btn-pink rounded sq-btn text-white" data-theme="color-theme-pink"><i class="fa fa-linkedin facardld"></i></button>
+                            <button class="m-2 btn btn-orange rounded sq-btn text-white" data-theme="color-theme-orange"><i class="fa fa-envelope facardml"></i></button>
+                         
+                        </div>
+                        <hr class="mt-4">
+                        <div class="row align-items-center mt-4">
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
                                            
          
                
         </div>
     </div>
+
 </div>
 <script type="text/javascript">
     
