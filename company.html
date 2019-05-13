@@ -11,103 +11,134 @@
                 <!-- <span>Back</span> -->
             <!-- </a> -->
         </div>
-        <div class="center sliding">Customer Care</div>
+        <div class="center sliding">  Company Info</div>
         <div class="right">
         </div>
     </div>
 </div>
 <div class="pages">
-    <div data-page="support" class="page">
+    <div data-page="company" class="page">
        <div class="page-content">
-            <div class="content-sticky-footer" style="padding-bottom: 135px;">
-                     <div class="footer-wrapper shadow-15">
+            <div class="content-sticky-footer" >
                     
+                    <style type="text/css">
+    .cke_chrome{
+        margin-top: 3% !important;
+    }
+
+.dbiframe
+{
+    width: 420px;
+      height:350px;
+}
+
+@media screen and (max-width: 480px)
+{
+.dbiframe
+{
+    width: 200px;
+      height:200px;
+}
+
+}
+
+</style>
                    
                            <div class="snackbar">Some text some message..</div>
-                </div>
+                
                     <div class="container" style="padding: 0px 0px 0px 0px;position: fixed;overflow-y: scroll;overflow-x: hidden;height: 640px; ">
                         <div class="row">
-                            <div class="col-12">
-                                <div class=" rounded-0 border-0 mb-3 bg-primary">
+                            <div class="col-12" style="padding:0px;">
+                                <div class=" rounded-20 border-0 mb-3 bg-primary">
                                     <div class="card-header">
                                         <div class="row">
                                             <div class="col-12">
-                                                <h5 class="card-title text-center text-white">Support</h5>
+                                                <h5 class="card-title text-white" style="margin: 11px 0px 0px 18px;"> Update Company Info</h5>
                                             </div>
                                          
                                         </div>
                                     </div>
 
-                                               <form method="post" id="support_form">
+                                               <form method="post" id="contact_form">
                                     <div class="card-body  text-white">
                                         <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
-                                        <div class="row">
-                                              <div class="col-12" style="text-align: center;margin-bottom: -15px;line-height: 0;">
-                                                <div class="form-group">
-                                              
-                                                <div class="row mx-0">
-                        
-                       <div class="col-4">
-                            <label class="bmd-label-static" onclick="location.href='tel:8156077700';"><i class="fa fa-phone"></i> Call</label>
-                                         </div>
-                        <div class="col-4 ">
-                            <label class="bmd-label-static" onclick="location.href='sms:8156077700';"><i class="fa fa-envelope" aria-hidden="true"></i> SMS</label>
-                        </div>
-                        <div class="col-4">
-
-                        <label class="bmd-label-static" onclick="location.href='mailto:bclickdigital@gmail.com';"><i class="fa fa-envelope" aria-hidden="true"></i> Email</label>
-                        </div>
-                    </div>
-                                                  <input type="hidden" name="secrete" value="virus">
-                                                  <input type="hidden" name="user_id" id="user_idd">
-
-                                                   </div>
                                        
-                                            </div>
-                                   
                                                
                                                 <!-- <p>You SMS credit is 1</p> -->
                                              <div class="col-12">
-                                               <div class="form-group">
-                                              
-                                             
-                                                <br>
-                                               
-                                <!-- <label for="exampleFormControlTextarea1">Query</label> -->
-                               <input type="text" class="form-control" placeholder="Enter your Query" id="" name="query" value="" >
-                               <small class="form-control-feedback"></small>
-                            </div>
+                                                  <input type="hidden" name="secrete" value="virus">
+
+                                            <input type="hidden" name="user_id" id="user_idq">
+                                            <input type="hidden" name="add_am" value="1" id="add_am">
                                             </div>
                                              <div class="col-12">
-                                            <div class="form-group bmd-form-group">
-                                                        <!-- <label class="bmd-label-static">Call Us </label> -->
-                                                        <input type="text" class="form-control" id="phone" value="" name="mobile" minlength="10" maxlength="10"  placeholder="enter your Mobile" inputmode="numeric">
+                                                <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">Company Name</label>
+                                                        <input type="text" class="form-control" id="c_name" name="c_name" >
                                                         <small class="form-control-feedback"></small>
                                                     </div>
                                             </div>
                                             <div class="col-12">
-                                              <div class="form-group bmd-form-group">
-                                                        <!-- <label class="bmd-label-static">Email </label> -->
-                                                        <input type="email" class="form-control" id="" name="email" value="" placeholder="Enter Your Email" >
+                                               <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static"> Vision </label>
+                                                        <input type="text" class="form-control" id="vision" name="vision" >
                                                         <small class="form-control-feedback"></small>
                                                     </div>
                                             </div>
+                                             <div class="col-12">
+                                                <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static"> Mission </label>
+                                                        <input type="text" class="form-control" id="mission" name="mission">
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+
+                                              <div class="col-12">
+                                              <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">About Company</label>
+                                                        <textarea class="form-control" id="about_comp" name="about_comp"></textarea>
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+                                             
+
+                                            <div class="col-12">
+                                                <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">Company Address</label>
+                                                        <textarea class="form-control" id="comp_address" name="comp_address" required></textarea>
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+
+                                            <div class="col-12">
+                                                 <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">Address Map Link</label>
+                                                        <input type="url" class="form-control" id="map_link" name="map_link" >
+                                                        <small class="form-control-feedback"></small>
+                                                    </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group bmd-form-group">
+                                                        <label class="bmd-label-static">About Company Youtube Link</label>
+                                                        <input class="form-control" type="url" id="about_cyoutube" name="about_cyoutube" >
+                                                        <small class="form-control-feedback"></small>
+                                                </div>
+                                            </div>
                                            
-                                           
-                                        </div>
-                                        </div>
+                                        
+                                        <br>
                                         <div class="text-center">
-                                            <input type="hidden" name="save " value="1">
+                                            <!-- <input type="hidden" name="add_am" value="1"> -->
                                            <!-- <button type="submit" id="save_button" class="button button-rounded button-green-3d button-green">Submit</button> -->
-                                            <input  type="submit" name="save" id="save_button"  class="btn  mb-1 btn-light text-primary px-4" value="Submit">
-                                           <!-- <a href="home.html"  class="btn  mb-1 btn-light text-primary px-4">Share Bcard</a> -->
+                                            <button  type="button-green" name="add_am" id="save_button"  class="btn  mb-1 btn-light text-primary px-4">Submit</button>
+                                           <a href="#"   class="btn view_card mb-1 btn-light text-primary px-4" style="text-align: center;margin: 0px 10px 0px 10px;">Preview Card</a>
+                                           <a href="profile.html"  class="btn  mb-1 btn-light text-primary px-4">Back</a>
                                            <!-- <a href="vcard.html" id="v"></a> -->
+                                            
+                                        </div>
                                             
                                 </form>
                                         </div>
-                                        <br>
-                                        
-                                            
                                     </div>
                                 </div>
                             </div>
@@ -117,6 +148,10 @@
                     </div>
                     <br>
             </div>
+
+
+
+
             <div class="modal1 fade" id="colorscheme" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content ">

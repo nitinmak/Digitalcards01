@@ -553,15 +553,9 @@ header a:active:focus {
 }
 .btn-primary,
 .gradient-primary {
-    background-color: #8f94fb;
-    background-image: -webkit-linear-gradient(to top, #8f94fb, #4e54c8);
     background-image: linear-gradient(to bottom, #8f94fb, #4e54c8);
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: 0px 3px 15px #8f94fb;
-    -ms-box-shadow: 0px 3px 15px #8f94fb;
-    -moz-box-shadow: 0px 3px 15px #8f94fb;
-    -webkit-box-shadow: 0px 3px 15px #8f94fb;
     color: #ffffff;
     border: 0;
 }
@@ -795,7 +789,7 @@ header a:active:focus {
     background: #ff5e62 !important;
 }
 .bg-primary {
-    background: #D49101 !important;
+    background: #07314a !important;
 }
 .bg-warning {
     background: #F2C94C !important;
@@ -1324,7 +1318,6 @@ a:hover {
     position: relative;
     left: 0;
     padding: 0;
-    border-radius: 10px;
     overflow: hidden;
 }
 .fixed-footer .footer-wrapper {
@@ -1342,12 +1335,10 @@ a:hover {
     width: 100%;
     background: #e8eaf3;
     color: #666666;
-    border-radius: 10px 10px 0 0;
-    -ms-border-radius: 10px 10px 0 0;
+   
 }
 .footer:last-child {
-    border-radius: 0 0 10px 10px;
-    -ms-border-radius: 0 0 10px 10px;
+   
 }
 .footer.dark {
     color: #ffffff;

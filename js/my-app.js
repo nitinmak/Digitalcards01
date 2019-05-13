@@ -121,7 +121,7 @@ if(islogin == 1){
 // Now we need to run the code that will be executed only for About page.
 
 // Option 1. Using page callback for page (for "about" page in this case) (recommended way):
-myApp.onPageInit('about', function (page) {
+myApp.onPageInit('skils', function (page) {
     // Do something here for "about" page
 
 })
@@ -135,6 +135,1398 @@ $$(document).on('pageInit', function (e) {
         // Following code will be executed for page with data-page attribute equal to "about"
     }
 })
+$$(document).on('pageInit', '.page[data-page="achievement"]', function (e) {
+
+ var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ // myApp.alert(user_id);
+ var form_d = 'secrete=virus&user_id='+user_id+'';
+ skils_action(form_d);
+                  $("#add_tag").click(function() {
+   var form =$('#add_achievement_form').serialize()+ "&add_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+                   $("#update_tag").click(function() {
+   var form =$('#update_achievement_form').serialize()+ "&update_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+ function skils_action(form_data){
+ // alert(form_data);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/achievement/", 
+            method: "POST",
+            data:form_data, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+              // alert(data.data);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_achievement').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+                 $('#my_achievement').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+ } 
+
+})
+$$(document).on('pageInit', '.page[data-page="testimonial"]', function (e) {
+
+ var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ // myApp.alert(user_id);
+ var form_d = 'secrete=virus&user_id='+user_id+'';
+ skils_action(form_d);
+                  $("#add_tag").click(function() {
+   var form =$('#add_testimonial_form').serialize()+ "&add_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+                   $("#update_tag").click(function() {
+   var form =$('#update_testimonial_form').serialize()+ "&update_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+ function skils_action(form_data){
+ // alert(form_data);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/testimonial/", 
+            method: "POST",
+            data:form_data, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+              // alert(data.data);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_testimonial').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+                 $('#my_testimonial').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+ } 
+
+})
+
+
+
+$$(document).on('pageInit', '.page[data-page="experience"]', function (e) {
+
+ var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ // myApp.alert(user_id);
+ var form_d = 'secrete=virus&user_id='+user_id+'';
+ skils_action(form_d);
+                  $("#add_tag").click(function() {
+   var form =$('#add_experience_form').serialize()+ "&add_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+                   $("#update_tag").click(function() {
+   var form =$('#update_experience_form').serialize()+ "&update_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+ function skils_action(form_data){
+ // alert(form_data);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/experience/", 
+            method: "POST",
+            data:form_data, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+              // alert(data.data);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_experience').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+                 $('#my_experience').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+ } 
+
+})
+$$(document).on('pageInit', '.page[data-page="offer"]', function (e) {
+    
+ var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ // myApp.alert(user_id);
+ var form_d = 'secrete=virus&user_id='+user_id+'';
+ skils_action(form_d);
+
+                  $(".btnsz1").click(function() {
+                    $('#image_demo').hide();
+                       $('.modal-title').html('Add Offer');
+            $('.crop_image').html('Submit');
+            $('#add_offer_form')[0].reset();
+            $('.edit_img_preview').hide();
+            $('.o_btn').attr('id','add_tag');
+                  })
+                  $(".crop_image").click(function() {
+                         $image_crop.croppie('result', {
+                                    type: 'canvas',
+                                    size: 'viewport'
+                                }).then(function(response){
+                                  // alert(response);
+
+                                    $('#crop_me_img').val(response);
+                                    // $('#div2').show();
+                                    // $('#abc').hide();
+                                    // $('#div2').css( 'pointer-events', 'none' );
+                                    // $('#div3').hide();
+                                    
+                                       $('#'+ $('.o_btn').attr('id')).trigger( "click" );
+
+
+                                });
+                              });
+                                $("#add_tag").click(function() {
+                    if('add_tag' == $('.o_btn').attr('id')){
+                    // alert('add');
+
+   var form =$('#add_offer_form').serialize()+ "&add_tag=1&" +form_d;
+ }else{
+   var form =$('#add_offer_form').serialize()+ "&update_tag=1&" +form_d;
+
+ }
+
+skils_action(form);
+
+                  })
+                   $("#update_tag").click(function() {
+                    alert('update');
+   var form =$('#add_offer_form').serialize()+ "&update_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+ function skils_action(form_data){
+ // alert(form_data);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/offer/", 
+            method: "POST",
+            data:form_data, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+              // alert(data.data);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_offer').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+                 $('#my_offer').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+ } 
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+                        document.querySelectorAll('img').forEach(function(img){
+                            img.onerror = function(){this.style.display='none';};
+                        })
+                    });
+                    (function($) {
+                        $(document).ready(function(){
+                            // $('#div1').hide();
+
+                            $('#div2').hide();
+                            $image_crop = $('#image_demo').croppie({
+                                enableExif: true,
+                                viewport: {
+                                    width:200,
+                                    height:200,
+                                    type:'square' //circle
+                                },
+                                boundary:{
+                                    width:300,
+                                    height:300
+                                }
+                            });
+                             
+                            $('#upload_image').on('change', function(){
+                                var reader = new FileReader();
+                                reader.onload = function (event) {
+                                    $image_crop.croppie('bind', {
+                                        url: event.target.result
+                                    }).then(function(){
+                                        console.log('jQuery bind complete');
+                                    });
+                                }
+                                reader.readAsDataURL(this.files[0]);
+                                /* $('#uploadimageModal').modal('show');*/
+                                $('#image_demo').show();
+                                $('#imagePreview0').hide();
+                            });
+
+                          
+
+                        });
+                    })(jQuery);
+
+
+                        function checkfile(sender) {
+                        var validExts = new Array(".jpg", ".png");
+                        var fileExt = sender.value;
+                        fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+                        if (validExts.indexOf(fileExt) < 0) {
+                        alert("Invalid file selected, valid files are of " +
+                           validExts.toString() + " types.");
+                           //document.getElementById('upload_form').reset();
+                           document.getElementById("image").value = "";
+
+                        return false;
+                        }
+                        else return true;
+                        }
+  $(function () {
+                $("#image").on("change", function ()
+                {
+                    var img = $("#image").val();
+                    if (img == '') {
+                        $("#imagePreview0").removeAttr("style");
+                    }
+                    var files = !!this.files ? this.files : [];
+                    if (!files.length || !window.FileReader)
+                        return; // no file selected, or no FileReader support
+
+                    if (/^image/.test(files[0].type)) { // only image file
+                        var reader = new FileReader(); // instance of the FileReader
+                        reader.readAsDataURL(files[0]); // read the local file
+
+                        reader.onloadend = function () { // set image data as background of div
+                            $("#imagePreview0").css("background-image", "url(" + this.result + ")");
+                        }
+                    }
+                });
+            });
+})
+
+
+
+$$(document).on('pageInit', '.page[data-page="gallery"]', function (e) {
+    
+ var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ // myApp.alert(user_id);
+ var form_d = 'secrete=virus&user_id='+user_id+'';
+ skils_action(form_d);
+
+                  $(".btnsz1").click(function() {
+                    $('#image_demo').hide();
+                       $('.modal-title').html('Add Image');
+            $('.crop_image').html('Submit');
+            $('#add_gallery_form')[0].reset();
+            $('.edit_img_preview').hide();
+            $('.o_btn').attr('id','add_tag');
+                  })
+                  $(".crop_image").click(function() {
+                         $image_crop.croppie('result', {
+                                    type: 'canvas',
+                                    size: 'viewport'
+                                }).then(function(response){
+                                  // alert(response);
+
+                                    $('#crop_me_img').val(response);
+                                    // $('#div2').show();
+                                    // $('#abc').hide();
+                                    // $('#div2').css( 'pointer-events', 'none' );
+                                    // $('#div3').hide();
+                                    
+                                       $('#'+ $('.o_btn').attr('id')).trigger( "click" );
+
+
+                                });
+                              });
+                                $("#add_tag").click(function() {
+                    if('add_tag' == $('.o_btn').attr('id')){
+                    // alert('add');
+
+   var form =$('#add_gallery_form').serialize()+ "&add_tag=1&" +form_d;
+ }else{
+   var form =$('#add_gallery_form').serialize()+ "&update_tag=1&" +form_d;
+
+ }
+
+skils_action(form);
+
+                  })
+                   $("#update_tag").click(function() {
+                    alert('update');
+   var form =$('#add_gallery_form').serialize()+ "&update_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+ function skils_action(form_data){
+ // alert(form_data);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/gallery/", 
+            method: "POST",
+            data:form_data, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+              // alert(dataType.data);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_gallery').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+                 $('#my_gallery').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+ } 
+
+        document.addEventListener("DOMContentLoaded", function(event) {
+                        document.querySelectorAll('img').forEach(function(img){
+                            img.onerror = function(){this.style.display='none';};
+                        })
+                    });
+                    (function($) {
+                        $(document).ready(function(){
+                            // $('#div1').hide();
+
+                            $('#div2').hide();
+                            $image_crop = $('#image_demo').croppie({
+                                enableExif: true,
+                                viewport: {
+                                    width:200,
+                                    height:200,
+                                    type:'square' //circle
+                                },
+                                boundary:{
+                                    width:300,
+                                    height:300
+                                }
+                            });
+                             
+                            $('#upload_image').on('change', function(){
+                                var reader = new FileReader();
+                                reader.onload = function (event) {
+                                    $image_crop.croppie('bind', {
+                                        url: event.target.result
+                                    }).then(function(){
+                                        console.log('jQuery bind complete');
+                                    });
+                                }
+                                reader.readAsDataURL(this.files[0]);
+                                /* $('#uploadimageModal').modal('show');*/
+                                $('#image_demo').show();
+                                $('#imagePreview0').hide();
+                            });
+
+                          
+
+                        });
+                    })(jQuery);
+
+
+                        function checkfile(sender) {
+                        var validExts = new Array(".jpg", ".png");
+                        var fileExt = sender.value;
+                        fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+                        if (validExts.indexOf(fileExt) < 0) {
+                        alert("Invalid file selected, valid files are of " +
+                           validExts.toString() + " types.");
+                           //document.getElementById('upload_form').reset();
+                           document.getElementById("image").value = "";
+
+                        return false;
+                        }
+                        else return true;
+                        }
+  $(function () {
+                $("#image").on("change", function ()
+                {
+                    var img = $("#image").val();
+                    if (img == '') {
+                        $("#imagePreview0").removeAttr("style");
+                    }
+                    var files = !!this.files ? this.files : [];
+                    if (!files.length || !window.FileReader)
+                        return; // no file selected, or no FileReader support
+
+                    if (/^image/.test(files[0].type)) { // only image file
+                        var reader = new FileReader(); // instance of the FileReader
+                        reader.readAsDataURL(files[0]); // read the local file
+
+                        reader.onloadend = function () { // set image data as background of div
+                            $("#imagePreview0").css("background-image", "url(" + this.result + ")");
+                        }
+                    }
+                });
+            });
+})
+
+
+
+
+$$(document).on('pageInit', '.page[data-page="memberships"]', function (e) {
+    
+ var user_id =  window.localStorage.getItem("user_id");
+ $('#user_id_q').val(user_id);
+ 
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ // myApp.alert(user_id);
+ // var form_d = 'secrete=virus&user_id='+user_id+'';
+  var formData = new FormData($("#add_memberships_form")[0]); 
+ skils_action(formData);
+
+                  $(".btnsz1").click(function() {
+
+                    $('#image_demo').hide();
+                       $('.modal-title').html('Add Memberships');
+            $('.crop_image').html('Submit');
+
+            $('.imgd').attr('id','image');
+            $('#add_memberships_form')[0].reset();
+            $('#imagePreview0').hide();
+            $('.o_btn').attr('id','add_tag');
+            $('#action').attr('name','add_tag');
+                  })
+                
+                                $("#add_tag").click(function() {
+                    if('add_tag' == $('.o_btn').attr('id')){
+   
+  var formData = new FormData($("#add_memberships_form")[0]);                    
+ }else{
+  var formData = new FormData($("#add_memberships_form")[0]); 
+
+ }
+ 
+skils_action(formData);
+
+                  })
+                   $("#update_tag").click(function() {
+                    alert('update');
+   var formData = new FormData($("#add_memberships_form")[0]); 
+skils_action(formData);
+
+                  })
+ function skils_action(form_data){
+ // alert(form_data);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/membership/", 
+            method: "POST",
+            data:form_data, 
+            dataType:"json",            
+           contentType: false,       // The content type used when sending data to the server.
+cache: false,             // To unable request pages to be cached
+processData:false, 
+            success: function(data) {
+              // alert(data.status);
+              // alert(data.data);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_membership').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+                 $('#my_membership').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+ } 
+
+     
+                  
+
+
+                        function checkfile(sender) {
+                        var validExts = new Array(".jpg", ".png");
+                        var fileExt = sender.value;
+                        fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+                        if (validExts.indexOf(fileExt) < 0) {
+                        alert("Invalid file selected, valid files are of " +
+                           validExts.toString() + " types.");
+                           //document.getElementById('upload_form').reset();
+                           document.getElementById("image").value = "";
+
+                        return false;
+                        }
+                        else return true;
+                        }
+                            
+ $(function () {
+
+     $("#uploadFile0").on("change", function ()
+                           {
+                               var img = $("#uploadFile0").val();
+                               alert(img);
+                               if (img == '') {
+                                   $("#imagePreview0").removeAttr("style");
+                               }
+                               var files = !!this.files ? this.files : [];
+                               if (!files.length || !window.FileReader)
+                                   return; // no file selected, or no FileReader support
+
+                               if (/^image/.test(files[0].type)) { // only image file
+                                   var reader = new FileReader(); // instance of the FileReader
+                                   reader.readAsDataURL(files[0]); // read the local file
+
+                                   reader.onloadend = function () { // set image data as background of div
+                                       $("#imagePreview0").css("background-image", "url(" + this.result + ")");
+                                   }
+                               }
+                           });
+                $("#image").on("change", function ()
+                {
+                  // alert('dsds')
+                    var img = $("#image").val();
+                    if (img == '') {
+                        $("#imagePreview0").removeAttr("style");
+                    }
+                    var files = !!this.files ? this.files : [];
+                    if (!files.length || !window.FileReader)
+                        return; // no file selected, or no FileReader support
+
+                    if (/^image/.test(files[0].type)) { // only image file
+                        var reader = new FileReader(); // instance of the FileReader
+                        reader.readAsDataURL(files[0]); // read the local file
+                        // alert(this.result);
+                        reader.onloadend = function () { // set image data as background of div
+                          $("#imagePreview0").css('display','inline-block');
+                            $("#imagePreview0").css("background-image", "url(" + this.result + ")");
+                        }
+                    }
+                });
+            });
+})
+$$(document).on('pageInit', '.page[data-page="company_logo"]', function (e) {
+var user_id =  window.localStorage.getItem("user_id"); 
+ var referral =  window.localStorage.getItem("referral"); 
+ var company_img =  window.localStorage.getItem("company_img"); 
+ var bg ='url("https://digitalbcards.in/upload/'+company_img+'")';
+                            $("#imagePreview0").css("background-image",bg);
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+   $('#user_idq').val(user_id);
+     $(function () {
+                           $("#uploadFile0").on("change", function ()
+                           {
+                               var img = $("#uploadFile0").val();
+                               if (img == '') {
+                                   $("#imagePreview0").removeAttr("style");
+                               }
+                               var files = !!this.files ? this.files : [];
+                               if (!files.length || !window.FileReader)
+                                   return; // no file selected, or no FileReader support
+
+                               if (/^image/.test(files[0].type)) { // only image file
+                                   var reader = new FileReader(); // instance of the FileReader
+                                   reader.readAsDataURL(files[0]); // read the local file
+
+                                   reader.onloadend = function () { // set image data as background of div
+                                       $("#imagePreview0").css("background-image", "url(" + this.result + ")");
+                                   }
+                               }
+                           });
+                       });
+       document.addEventListener("DOMContentLoaded", function(event) {
+                        document.querySelectorAll('img').forEach(function(img){
+                            img.onerror = function(){this.style.display='none';};
+                        })
+                    });
+                    (function($) {
+                        $(document).ready(function(){
+                            // $('#div1').hide();
+                            $('#div2').hide();
+                            $image_crop = $('#image_demo').croppie({
+                                enableExif: true,
+                                viewport: {
+                                    width:200,
+                                    height:200,
+                                    type:'square' //circle
+                                },
+                                boundary:{
+                                    width:300,
+                                    height:300
+                                }
+                            });
+
+                            $('#upload_image').on('change', function(){
+                                var reader = new FileReader();
+                                reader.onload = function (event) {
+                                    $image_crop.croppie('bind', {
+                                        url: event.target.result
+                                    }).then(function(){
+                                        console.log('jQuery bind complete');
+                                    });
+                                }
+                                reader.readAsDataURL(this.files[0]);
+                                /* $('#uploadimageModal').modal('show');*/
+                                $('#image_demo').show();
+                                $('#imagePreview0').hide();
+                            });
+
+                            $('.crop_image').click(function(event){
+                               
+                                $image_crop.croppie('result', {
+                                    type: 'canvas',
+                                    size: 'viewport'
+                                }).then(function(response){
+                                    // alert(response);
+                                    $('#crop_me_img').val(response);
+                                    // $('#div2').show();
+                                    // $('#abc').hide();
+                                    // $('#div2').css( 'pointer-events', 'none' );
+                                    // $('#div3').hide();
+                                       $('#save_button').trigger( "click" );
+
+
+                                })
+                            });
+
+                        });
+                    })(jQuery);
+  $("#save_button").click(function() {
+                    
+   
+  var formData = new FormData($("#company_form")[0]);                    
+ // alert(formData);
+ 
+
+ 
+
+   $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/company_logo/", 
+            method: "POST",
+            data:formData, 
+            dataType:"json",            
+           contentType: false,       // The content type used when sending data to the server.
+cache: false,             // To unable request pages to be cached
+processData:false, 
+            success: function(data) {
+              // alert(data.message);
+              $('.snackbar').html(data.message);
+               my_toast();
+    $('.loader').css('display','none');
+    location.reload();
+
+            }
+          })
+                              })
+
+})
+$$(document).on('pageInit', '.page[data-page="key_client"]', function (e) {
+    
+ var user_id =  window.localStorage.getItem("user_id");
+ $('#user_id_q').val(user_id);
+ 
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ // myApp.alert(user_id);
+ // var form_d = 'secrete=virus&user_id='+user_id+'';
+  var formData = new FormData($("#add_key_client_form")[0]); 
+ skils_action(formData);
+
+                  $(".btnsz1").click(function() {
+
+                    $('#image_demo').hide();
+                       $('.modal-title').html('Add Key Client');
+            $('.crop_image').html('Submit');
+
+            $('.imgd').attr('id','image');
+            $('#add_key_client_form')[0].reset();
+            $('#imagePreview0').hide();
+            $('.o_btn').attr('id','add_tag');
+            $('#action').attr('name','add_tag');
+                  })
+                
+                                $("#add_tag").click(function() {
+                    if('add_tag' == $('.o_btn').attr('id')){
+   
+  var formData = new FormData($("#add_key_client_form")[0]);                    
+ }else{
+  var formData = new FormData($("#add_key_client_form")[0]); 
+
+ }
+ 
+skils_action(formData);
+
+                  })
+                   $("#update_tag").click(function() {
+                    alert('update');
+   var formData = new FormData($("#add_key_client_form")[0]); 
+skils_action(formData);
+
+                  })
+ function skils_action(form_data){
+ // alert(form_data);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/key_client/", 
+            method: "POST",
+            data:form_data, 
+            dataType:"json",            
+           contentType: false,       // The content type used when sending data to the server.
+cache: false,             // To unable request pages to be cached
+processData:false, 
+            success: function(data) {
+              // alert(data.status);
+              // alert(data.data);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_key_client').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+                 $('#my_key_client').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+ } 
+
+     
+                  
+
+
+                        function checkfile(sender) {
+                        var validExts = new Array(".jpg", ".png");
+                        var fileExt = sender.value;
+                        fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+                        if (validExts.indexOf(fileExt) < 0) {
+                        alert("Invalid file selected, valid files are of " +
+                           validExts.toString() + " types.");
+                           //document.getElementById('upload_form').reset();
+                           document.getElementById("image").value = "";
+
+                        return false;
+                        }
+                        else return true;
+                        }
+                            
+ $(function () {
+
+     $("#uploadFile0").on("change", function ()
+                           {
+                               var img = $("#uploadFile0").val();
+                               alert(img);
+                               if (img == '') {
+                                   $("#imagePreview0").removeAttr("style");
+                               }
+                               var files = !!this.files ? this.files : [];
+                               if (!files.length || !window.FileReader)
+                                   return; // no file selected, or no FileReader support
+
+                               if (/^image/.test(files[0].type)) { // only image file
+                                   var reader = new FileReader(); // instance of the FileReader
+                                   reader.readAsDataURL(files[0]); // read the local file
+
+                                   reader.onloadend = function () { // set image data as background of div
+                                       $("#imagePreview0").css("background-image", "url(" + this.result + ")");
+                                   }
+                               }
+                           });
+                $("#image").on("change", function ()
+                {
+                  // alert('dsds')
+                    var img = $("#image").val();
+                    if (img == '') {
+                        $("#imagePreview0").removeAttr("style");
+                    }
+                    var files = !!this.files ? this.files : [];
+                    if (!files.length || !window.FileReader)
+                        return; // no file selected, or no FileReader support
+
+                    if (/^image/.test(files[0].type)) { // only image file
+                        var reader = new FileReader(); // instance of the FileReader
+                        reader.readAsDataURL(files[0]); // read the local file
+                        // alert(this.result);
+                        reader.onloadend = function () { // set image data as background of div
+                          $("#imagePreview0").css('display','inline-block');
+                            $("#imagePreview0").css("background-image", "url(" + this.result + ")");
+                        }
+                    }
+                });
+            });
+})
+$$(document).on('pageInit', '.page[data-page="education"]', function (e) {
+
+ var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ // myApp.alert(user_id);
+ var form_d = 'secrete=virus&user_id='+user_id+'';
+ skils_action(form_d);
+                  $("#add_tag").click(function() {
+   var form =$('#add_education_form').serialize()+ "&add_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+                   $("#update_tag").click(function() {
+   var form =$('#update_education_form').serialize()+ "&update_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+ function skils_action(form_data){
+ // alert(form_data);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/education/", 
+            method: "POST",
+            data:form_data, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+              // alert(data.data);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_education').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+                 $('#my_education').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+ } 
+
+})
+$$(document).on('pageInit', '.page[data-page="payment_link"]', function (e) {
+
+ var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ // myApp.alert(user_id);
+ var form_d = 'secrete=virus&user_id='+user_id+'';
+ skils_action(form_d);
+                  $("#add_tag").click(function() {
+   var form =$('#add_payment_link_form').serialize()+ "&add_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+                   $("#update_tag").click(function() {
+   var form =$('#update_payment_link_form').serialize()+ "&update_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+ function skils_action(form_data){
+ // alert(form_data);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/payment_link/", 
+            method: "POST",
+            data:form_data, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+              // alert(data.data);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_payment_link').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+                 $('#my_payment_link').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+ } 
+
+})
+$$(document).on('pageInit', '.page[data-page="social_link"]', function (e) {
+
+ var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ // myApp.alert(user_id);
+ var form_d = 'secrete=virus&user_id='+user_id+'';
+ skils_action(form_d);
+                  $("#add_tag").click(function() {
+   var form =$('#add_social_link_form').serialize()+ "&add_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+                   $("#update_tag").click(function() {
+   var form =$('#update_social_link_form').serialize()+ "&update_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+ function skils_action(form_data){
+ // alert(form_data);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+                
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/social_link/", 
+            method: "POST",
+            data:form_data, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+              // alert(data.title);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#s_name').html('');
+                 $('#e_name').html('');
+
+                 $('#s_name').append(data.title);
+                 $('#e_name').append(data.title);
+                 $('#my_social_link').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+     $('#s_name').html('');
+                 $('#e_name').html('');
+                 $('#my_social_link').html(data.data);
+                 $('#s_name').append(data.title);
+                 $('#e_name').append(data.title);
+                 
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+ } 
+
+})
+$$(document).on('pageInit', '.page[data-page="product"]', function (e) {
+
+ var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ // myApp.alert(user_id);
+ var form_d = 'secrete=virus&user_id='+user_id+'';
+ skils_action(form_d);
+                  $("#add_tag").click(function() {
+   var form =$('#add_product_form').serialize()+ "&add_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+                   $("#update_tag").click(function() {
+   var form =$('#update_product_form').serialize()+ "&update_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+ function skils_action(form_data){
+ // alert(form_data);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/product/", 
+            method: "POST",
+            data:form_data, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+              // alert(data.data);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_product').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+                 $('#my_product').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+ } 
+
+})
+$$(document).on('pageInit', '.page[data-page="skils"]', function (e) {
+
+ var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ // myApp.alert(user_id);
+ var form_d = 'secrete=virus&user_id='+user_id+'';
+ skils_action(form_d);
+                  $("#add_tag").click(function() {
+   var form =$('#add_expertise_form').serialize()+ "&add_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+                   $("#update_tag").click(function() {
+   var form =$('#update_expertise_form').serialize()+ "&update_tag=1&" +form_d;
+skils_action(form);
+
+                  })
+ function skils_action(form_data){
+ // alert(form_data);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/skils/", 
+            method: "POST",
+            data:form_data, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+              // alert(data.data);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_skils').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+                 $('#my_skils').html(data.data);
+            $('#add_expertise').modal('hide');
+            $('#update_expertise').modal('hide');
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+ } 
+
+})
+
 $$(document).on('pageInit', '.page[data-page="referral"]', function (e) {
   var referral =  window.localStorage.getItem("referral");
  var user_id =  window.localStorage.getItem("user_id");
@@ -165,6 +1557,397 @@ $$(document).on('pageInit', '.page[data-page="referral"]', function (e) {
 
 
 });
+$$(document).on('pageInit', '.page[data-page="company"]', function (e) {
+ var user_id =  window.localStorage.getItem("user_id"); 
+ var referral =  window.localStorage.getItem("referral"); 
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+ 
+ var company_name =  window.localStorage.getItem("company_name"); 
+ alert(company_name);
+ var vision =  window.localStorage.getItem("vision"); 
+ var mission =  window.localStorage.getItem("mission"); 
+ var about_comp =  window.localStorage.getItem("about_comp"); 
+ var comp_address =  window.localStorage.getItem("comp_address"); 
+ var map_link =  window.localStorage.getItem("map_link"); 
+ var about_cyoutube =  window.localStorage.getItem("about_cyoutube"); 
+// alert(fb_url);
+ $('#user_idq').val(user_id);
+ $('#c_name').val(company_name);
+ $('#vision').val(vision);
+ $('#mission').val(mission);
+ $('#about_comp').val(about_comp);
+ $('#comp_address').val(comp_address);
+ $('#map_link').val(map_link);
+ $('#about_cyoutube').val(about_cyoutube);
+
+    $("#save_button").click(function() {
+                    // var content = $( 'textarea.editor' ).val();
+                    //alert( );
+// $('#about_me_vl').val(editor.getData());
+   var form =$('#contact_form').serialize();
+                        // alert(form);
+$('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/company/", 
+            method: "POST",
+            data:form, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+  
+    $('.loader').css('display','none');
+                my_toast();
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+                 $('.snackbar').html(data.message);
+  
+                my_toast();
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        });  
+                      
+
+                      })
+
+ })
+$$(document).on('pageInit', '.page[data-page="contact_detail"]', function (e) {
+ var user_id =  window.localStorage.getItem("user_id"); 
+ var mobile =  window.localStorage.getItem("mobile"); 
+ var email =  window.localStorage.getItem("email"); 
+ var whatsapp_no =  window.localStorage.getItem("whatsapp_no"); 
+ var skype =  window.localStorage.getItem("skype"); 
+ var fb_url =  window.localStorage.getItem("fb_url"); 
+// alert(fb_url);
+ $('#user_idq').val(user_id);
+ $('#phone').val(mobile);
+ $('#email').val(email);
+ $('#whatsapp_no').val(whatsapp_no);
+ $('#skype').val(skype);
+ $('#fb_url').val(fb_url);
+
+  $("#phone").keypress(function (e) {
+                 //if the letter is not digit then display error and don't type anything
+                 if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    //display error message
+                    //$("#errmsg").html("Digits Only").show().fadeOut("slow");
+                           return false;
+                }
+               });
+
+              $("#whatsapp_no").keypress(function (e) {
+                 //if the letter is not digit then display error and don't type anything
+                 if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    //display error message
+                    //$("#errmsg").html("Digits Only").show().fadeOut("slow");
+                           return false;
+                }
+               });
+
+
+                  $("#save_button").click(function() {
+                    // var content = $( 'textarea.editor' ).val();
+                    //alert( );
+// $('#about_me_vl').val(editor.getData());
+   var form =$('#contact_form').serialize();
+                        // alert(form);
+$('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/contact_info/", 
+            method: "POST",
+            data:form, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+  
+    $('.loader').css('display','none');
+                my_toast();
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+                 $('.snackbar').html(data.message);
+  
+                my_toast();
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        });  
+                      
+
+                      })
+
+})
+$$(document).on('pageInit', '.page[data-page="upload_profile"]', function (e) {
+var user_id =  window.localStorage.getItem("user_id"); 
+ var referral =  window.localStorage.getItem("referral"); 
+ var user_image =  window.localStorage.getItem("user_image"); 
+ var bg ='url("https://digitalbcards.in/upload/'+user_image+'")';
+                            $("#imagePreview0").css("background-image",bg);
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+   $('#user_idq').val(user_id);
+     $(function () {
+                           $("#uploadFile0").on("change", function ()
+                           {
+                               var img = $("#uploadFile0").val();
+                               if (img == '') {
+                                   $("#imagePreview0").removeAttr("style");
+                               }
+                               var files = !!this.files ? this.files : [];
+                               if (!files.length || !window.FileReader)
+                                   return; // no file selected, or no FileReader support
+
+                               if (/^image/.test(files[0].type)) { // only image file
+                                   var reader = new FileReader(); // instance of the FileReader
+                                   reader.readAsDataURL(files[0]); // read the local file
+
+                                   reader.onloadend = function () { // set image data as background of div
+                                       $("#imagePreview0").css("background-image", "url(" + this.result + ")");
+                                   }
+                               }
+                           });
+                       });
+       document.addEventListener("DOMContentLoaded", function(event) {
+                        document.querySelectorAll('img').forEach(function(img){
+                            img.onerror = function(){this.style.display='none';};
+                        })
+                    });
+                    (function($) {
+                        $(document).ready(function(){
+                            // $('#div1').hide();
+                            $('#div2').hide();
+                            $image_crop = $('#image_demo').croppie({
+                                enableExif: true,
+                                viewport: {
+                                    width:200,
+                                    height:200,
+                                    type:'square' //circle
+                                },
+                                boundary:{
+                                    width:300,
+                                    height:300
+                                }
+                            });
+
+                            $('#upload_image').on('change', function(){
+                                var reader = new FileReader();
+                                reader.onload = function (event) {
+                                    $image_crop.croppie('bind', {
+                                        url: event.target.result
+                                    }).then(function(){
+                                        console.log('jQuery bind complete');
+                                    });
+                                }
+                                reader.readAsDataURL(this.files[0]);
+                                /* $('#uploadimageModal').modal('show');*/
+                                $('#image_demo').show();
+                                $('#imagePreview0').hide();
+                            });
+
+                            $('.crop_image').click(function(event){
+                               
+                                $image_crop.croppie('result', {
+                                    type: 'canvas',
+                                    size: 'viewport'
+                                }).then(function(response){
+                                    // alert(response);
+                                    $('#crop_me_img').val(response);
+                                    // $('#div2').show();
+                                    // $('#abc').hide();
+                                    // $('#div2').css( 'pointer-events', 'none' );
+                                    // $('#div3').hide();
+                                       $('#save_button').trigger( "click" );
+
+
+                                })
+                            });
+
+                        });
+                    })(jQuery);
+  $("#save_button").click(function() {
+                    
+   
+  var formData = new FormData($("#profile_form")[0]);                    
+ // alert(formData);
+ 
+
+ 
+
+   $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/upload_profile/", 
+            method: "POST",
+            data:formData, 
+            dataType:"json",            
+           contentType: false,       // The content type used when sending data to the server.
+cache: false,             // To unable request pages to be cached
+processData:false, 
+            success: function(data) {
+              // alert(data.message);
+              $('.snackbar').html(data.message);
+               my_toast();
+    $('.loader').css('display','none');
+    location.reload();
+
+            }
+          })
+                              })
+
+})
+$$(document).on('pageInit', '.page[data-page="about_me"]', function (e) {
+ var editor = CKEDITOR.replace('editor1');
+  var referral =  window.localStorage.getItem("referral");
+ 
+ var user_id =  window.localStorage.getItem("user_id");
+ var name =  window.localStorage.getItem("name");
+ var about_me =  window.localStorage.getItem("about_me");
+ var profession =  window.localStorage.getItem("profession");
+ var y_tube_link =  window.localStorage.getItem("y_tube_link");
+ var website =  window.localStorage.getItem("website");
+ // alert(about_me);
+ $('#f_name').val(name);
+ $('#user_idq').val(user_id);
+ $('#editor1').val(about_me);
+ $('#profession').val(profession);
+ $('#video').val(y_tube_link);
+ $('#website').val(website);
+
+  var a= $("#video").val();
+
+                  if (a) {
+                    var videoLink = $('#video').val();
+                    
+                    
+                    var myid = getId(videoLink);
+
+                    var mycode = 'https://www.youtube.com/embed/' + myid;
+
+                    $('#video1').attr('src', mycode);
+                    
+                    $('#title1').val(mycode);
+                    $('#title2').val(myid);
+
+                }
+
+                
+             $(function () {
+
+
+
+                                                        $("#video").on("change", function ()
+                                                        {
+                                                            var videoLink = $('#video').val();
+                                                        
+ 
+                                                            var myid = getId(videoLink);
+
+                                                            var mycode = 'https://www.youtube.com/embed/' + myid;
+
+                                                            $('#video1').attr('src', mycode);
+                                                            
+                                                             $('#title1').val(mycode);
+                                                               $('#title2').val(myid);
+
+                                                        });
+                                                    }); 
+
+
+
+
+                                                      function getId(url) {
+
+                                                        var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+                                                        var match = url.match(regExp);
+                                                      // alert(match[2]);
+                                                
+                                                        if (match && match[2].length == 11) {
+                                                        
+                                                            return match[2];
+                                                            
+                                                        } else {
+                                                            return 'error';
+                                                        }
+                                                    }
+                   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+
+                   $("#save_button").click(function() {
+                    // var content = $( 'textarea.editor' ).val();
+                    //alert( );
+$('#about_me_vl').val(editor.getData());
+   var form =$('#about_me_form').serialize();
+                        // alert(form);
+$('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/about_me/", 
+            method: "POST",
+            data:form, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+  
+    $('.loader').css('display','none');
+                my_toast();
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+                 $('.snackbar').html(data.message);
+  
+                my_toast();
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        });  
+                      
+
+                      })
+ 
+
+
+})
 $$(document).on('pageInit', '.page[data-page="vcard"]', function (e) {
 // myFunction();
  var user_id =  window.localStorage.getItem("user_id");
@@ -591,7 +2374,6 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
 
 
 
-
    $("#button").click(function() {
       
        var lable = $("#button").text().trim();
@@ -640,17 +2422,36 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
            
             success: function(data) {
                 // var data = JSON.stringify(data);
-
+                // alert(data.fb_url);
                window.localStorage.setItem("user_id",data.id);
                window.localStorage.setItem("language",data.language);
-               window.localStorage.setItem("referral",data.Refferal_id);
+               // window.localStorage.setItem("referral",data.Refferal_id);
                window.localStorage.setItem("mobile",data.mobile);
+               window.localStorage.setItem("profession",data.profession);
+               window.localStorage.setItem("about_me",data.about_me);
+               window.localStorage.setItem("skype",data.skype);
+               window.localStorage.setItem("fb_url",data.fb_url);
+
+               window.localStorage.setItem("y_tube_link",data.y_tube_link);
+               window.localStorage.setItem("website",data.website);
                 
                window.localStorage.setItem("whatsapp",data.whatsapp);
+               window.localStorage.setItem("whatsapp_no",data.whatsapp_no);
                window.localStorage.setItem("name",data.name);
                //window.localStorage.setItem("username",data.name);
                window.localStorage.setItem("user_image",data.profile_img);
-               // alert(data.name);
+
+               window.localStorage.setItem("company_name",data.company_name);
+               window.localStorage.setItem("vision",data.vision);
+               window.localStorage.setItem("mission",data.mission);
+               window.localStorage.setItem("about_comp",data.about_comp);
+               window.localStorage.setItem("comp_address",data.comp_address);
+               window.localStorage.setItem("map_link",data.map_link);
+               window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
+               window.localStorage.setItem("company_img",data.company_img);
+
+              
+               // alert(data.fb_url);
                 $('#user').html(data.name);
                 $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
                 // $('#user_image').css("height",'80px');
@@ -661,7 +2462,8 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
               
             //location.reload();
           }
-        })            
+        }) 
+
                       var user_id =  window.localStorage.getItem("user_id");
                       // alert(user_id);
                               $.ajax({
@@ -695,7 +2497,20 @@ $("#segment").trigger('create');
              $('#language').val(language);
              $('#referral').val(referral);
              $('#user_name').val(name);
-        
+             var mail_link = 'mailto:?subject=Digital%20Bcard&body=Hey%2C%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link%20%0Ahttps%3A%2F%2Fdigitalbcards.in%2FBcard.php%3Fzxc%3D'+referral+'%20%0A%0A%0ASay%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.%0A%0A%0A'+name;
+             var linklind = 'https://www.linkedin.com/shareArticle?mini=true&url=https://digitalbcards.in/Bcard.php?zxc=DBC100751&title=Hey%2C%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link%20%0Ahttps%3A%2F%2Fdigitalbcards.in%2FBcard.php%3Fzxc%3D'+referral+'%20%0A%0A%0ASay%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.%0A%0A%0A'+name+'&source=LinkedIn';
+             var google = 'https://plus.google.com/share?url=https://digitalbcards.in/Bcard.php?zxc='+referral;
+             var twiter = 'https://twitter.com/intent/tweet?text=Hey%2C%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link%20%0Ahttps%3A%2F%2Fdigitalbcards.in%2FBcard.php%3Fzxc%3D'+referral+'%20%0A%0A%0ASay%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.%0A%0A%0A'+name+'&source=&related=shareaholic'
+             var fb_url = 'https://www.facebook.com/sharer/sharer.php?u=https://digitalbcards.in/Bcard.php?zxc='+referral+'&quote=Hey,%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link.Say%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.';
+        var wp_link  = 'https://api.whatsapp.com/send?text=Hey%2C%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link%20%0Ahttps%3A%2F%2Fdigitalbcards.in%2FBcard.php%3Fzxc%3D'+referral+'%20%0A%0A%0ASay%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.%0A%0A%0A'+name;
+   $('#wp_link').attr('onClick', 'share_social("'+wp_link+'");');
+   $('#fb_link').attr('onClick', 'share_social("'+fb_url+'");');
+   $('#twiter').attr('onClick', 'share_social("'+twiter+'");');
+   $('#google').attr('onClick', 'share_social("'+google+'");');
+   $('#linklind').attr('onClick', 'share_social("'+linklind+'");');
+   $('#mail_link').attr('onClick', 'share_social("'+mail_link+'");');
+
+
 
           $('#share_form').validate({ // initialize the plugin
         errorLabelContainer: "#cs-error-note",
@@ -966,3 +2781,172 @@ $('#register_form').validate({ // initialize the plugin
    // $('.navbar').show();
     //$('.back').hide();
 })
+function open_model(name,id,s_value) {
+        // alert(name);
+        
+            $('#update_expertise').modal('show');
+            $('#e_name').val(name);
+            $('#e_value').val(s_value);
+            $('#tag_id').val(id);
+            // alert(name+id);   
+        }
+        function edit_key_client(name,id,description,tag_line){
+            $('#add_expertise').modal('show');
+            $('#image_demo').hide();
+            $('.imgd').attr('id','uploadFile0');
+            $('#add_key_client_form')[0].reset();
+            $('#name').val(name);
+            $('#action').attr('name','update_tag');
+            $('#s_value').val(description);
+            $('.modal-title').html('Edit Key Client');
+            $('.crop_image').html('Update');
+            $('.o_btn').attr('id','update_tag');
+             $("#imagePreview0").css('display','inline-block');
+             var bg ='url("https://digitalbcards.in/upload/'+tag_line+'")';
+                            $("#imagePreview0").css("background-image",bg);
+            // $('.edit_img_preview').show();
+            //  $('.edit_img_preview').html('<img src="https://digitalbcards.in/upload/'+tag_line+'">');
+            // $('.e_crop_me_img').val(tag_line);
+            $('#tag_id').val(id);
+            
+        }
+         function edit_memberships(name,id,description,tag_line){
+            $('#add_expertise').modal('show');
+            $('#image_demo').hide();
+            $('.imgd').attr('id','uploadFile0');
+            $('#add_memberships_form')[0].reset();
+            $('#name').val(name);
+            $('#action').attr('name','update_tag');
+            $('#s_value').val(description);
+            $('.modal-title').html('Edit Memberships');
+            $('.crop_image').html('Update');
+            $('.o_btn').attr('id','update_tag');
+             $("#imagePreview0").css('display','inline-block');
+             var bg ='url("https://digitalbcards.in/upload/'+tag_line+'")';
+                            $("#imagePreview0").css("background-image",bg);
+            // $('.edit_img_preview').show();
+            //  $('.edit_img_preview').html('<img src="https://digitalbcards.in/upload/'+tag_line+'">');
+            // $('.e_crop_me_img').val(tag_line);
+            $('#tag_id').val(id);
+            
+        }
+function edit_offer(name,id,description,tag_line){
+            $('#add_expertise').modal('show');
+            $('#image_demo').hide();
+            $('#add_offer_form')[0].reset();
+            $('#name').val(name);
+            
+            $('#s_value').val(description);
+            $('.modal-title').html('Edit Offer');
+            $('.crop_image').html('Update');
+            $('.o_btn').attr('id','update_tag');
+            $('.edit_img_preview').show();
+            $('.edit_img_preview').html('<img src="https://digitalbcards.in/upload/'+tag_line+'">');
+            $('.e_crop_me_img').val(tag_line);
+            $('#tag_id').val(id);
+} 
+        function testimonial_model(name,id,description,tag_line) {
+        // alert(name);
+        
+            $('#update_expertise').modal('show');
+            $('#e_name').val(name);
+            $('#e_msg').val(description);
+            $('#e_value').val(tag_line);
+            $('#tag_id').val(id);
+            // alert(name+id);   
+        }
+          function delete_tag(id,action,lable,api_link)
+            {
+              // alert(action);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+ var user_id =  window.localStorage.getItem("user_id");
+
+                var prom;
+                 var form_d = 'secrete=virus&'+action+'=1&id='+id+'&user_id='+user_id+'';
+                 // alert(form_d);
+                prom = "Are You Sure You Want To Delete This "+lable+"?";
+
+                if (confirm(prom))
+                {
+                    setTimeout(function ()
+                    {
+                        //=========ajax==========//
+                        jQuery.ajax({
+                            type: 'POST',
+                            data: form_d,
+                            url: 'https://digitalbcards.in/api/'+api_link+'/',
+                             dataType:"json",    
+                            beforeSend: function () {
+//                                $("#loading").show();
+                            },
+                            success: function (data) {
+                                if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#my_'+api_link).html(data.data);
+            // $('#add_expertise').modal('hide');
+    
+    $('.loader').css('display','none');
+     if(data.message !=''){
+      
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+     $('.snackbar').html(data.message);
+                 $('#my_'+api_link).html(data.data);
+            // $('#add_expertise').modal('hide');
+  
+                if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+                            },
+                            error: function (e) {
+                            }
+                        });
+                        //=========End of ajax====//
+                    }, 1000);
+                }else{
+                //location.reload();
+    $('.loader').css('display','none');
+
+                }
+            }
+
+   function setfb(){
+             var val=$('#s_name').val();
+             if(val==1)
+             {
+              $('#s_value').val("https://www.facebook.com/");
+             }
+
+         }
+          function checkfile(sender) {
+                        var validExts = new Array(".jpg",".jpeg", ".png");
+                        var fileExt = sender.value;
+                        fileExt = fileExt.substring(fileExt.lastIndexOf('.'));
+                        if (validExts.indexOf(fileExt) < 0) {
+                        alert("Invalid file selected, valid files are of " +
+                           validExts.toString() + " types.");
+                           //document.getElementById('upload_form').reset();
+                           // document.getElementById("image").value = "";
+                          // $('#sub_check').attr("disabled", "disabled");
+                          location.reload();
+
+                        return false;
+                        }
+                        else {
+                             // $('#sub_check').removeAttr("disabled");          
+
+                            return true;
+                        }
+                        }

@@ -1,0 +1,142 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+            <!-- <a href="#" class="back link"> -->
+                <!-- <i class="icon icon-back"></i> -->
+                <!-- <span>Back</span> -->
+            <!-- </a> -->
+        </div>
+        <div class="center sliding">DBCards</div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="viewcard" class="page">
+        <div class="page-content">
+            <div class="content-block" style="padding: 0px 0px 0px 0px;" id="card">
+               
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+        $(document).ready(function() {
+    
+  function collapse(id){
+
+
+ $('.user-image').hide();
+   $('.social').hide();
+   $('.middle-block').css('visibility', 'hidden');
+   
+       if (id!=1) {
+       if(($('#collapse1').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse1').removeClass('in');
+   };
+
+     }
+     
+
+     if (id!=2) {
+       if(($('#collapse2').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse2').removeClass('in');
+
+  
+      
+
+   };
+
+     }
+
+
+     if (id!=3) {
+      if(($('#collapse3').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse3').removeClass('in');
+   };
+   //   $('.user-image').hide();
+   // $('.social').hide();
+   // $('.middle-block').css('visibility', 'hidden');
+      
+
+}
+   
+   if (id!=4) {
+   if(($('#collapse4').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse4').removeClass('in');
+   };}
+
+if (id!=5) {
+   if(($('#collapse5').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse5').removeClass('in');
+   };}
+
+   if (id!=6) {
+   if(($('#collapse6').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse6').removeClass('in');
+   };}
+
+   if (id!=7) {
+   if(($('#collapse7').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse7').removeClass('in');
+   };}
+
+   if (id!=8) {
+   if(($('#collapse8').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse8').removeClass('in');
+   };}
+
+   if (id!=9) {
+   if(($('#collapse9').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse9').removeClass('in');
+   };}
+
+   if (id!=10) {
+   if(($('#collapse10').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse10').removeClass('in');
+   };}
+
+   if (id!=11){
+   if(($('#collapse11').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse11').removeClass('in');
+   };
+   }
+
+   if (id!=12){
+   if(($('#collapse12').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse12').removeClass('in');
+   };
+   }
+
+   if (id!=13){
+   if(($('#collapse13').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse13').removeClass('in');
+   };
+   }
+
+      if (id!=14){
+   if(($('#collapse14').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse14').removeClass('in');
+   };
+   }
+
+
+     if(($('#collapse'+id).attr('class'))=='panel-collapse collapse in'){
+      // $('#collapse1').removeClass('in');
+       $('.user-image').show();
+      $('.social').show();
+      $('.middle-block').css('visibility', 'visible');
+      
+   };
+  
+
+
+
+
+  }
+})
+</script>
