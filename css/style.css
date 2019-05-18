@@ -50,6 +50,7 @@ body {
     overflow: hidden
 }
 body {
+    font-family: 'PT Sans', sans-serif;
     font-size: 14px;
     color: #596475;
 }
@@ -138,6 +139,7 @@ p {
 .vm,
 .material-icons {
     vertical-align: middle;
+    font-size: 24px;
 }
 .grid-item {
     width: 33.3%;
@@ -1392,7 +1394,7 @@ a:hover {
 /* form control  */
 
 .form-control {
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .form-control:focus {
     box-shadow: none;
@@ -2387,7 +2389,26 @@ body.theme-dark.color-theme-black .page {
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
+@media screen and (max-width:360px) {
+    .page{
+        position: fixed;overflow-x:hidden;overflow-y: scroll;height: 580px;
+    }
+    .container{
+     height: 640px !important;   
+    }
+    }
+    @media screen and (device-aspect-ratio: 40/71) {
+  .content {
+    height: 504px !important;
+  }
+}
+@media screen and (device-aspect-ratio: 2/3) {
+  .content {
+   height: 416px !important;
+ }
+}
 @media screen and (max-width:350px) {
+
     header {
         height: 44px;
     }

@@ -15,7 +15,15 @@ var mainView = myApp.addView('.view-main', {
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
     // my_toast();
+var windowHeightSeventyPercent = parseInt(screen.height * 0.7); //To support multiple devices
 
+$("input").focusin(function(){
+   $("body").height($("body").height()+parseInt(windowHeightSeventyPercent)); //Make page body scroll by adding height to make user to fillup field.
+});
+
+ $("input").focusout(function(){
+   $("body").height($("body").height()-parseInt(windowHeightSeventyPercent));
+ });
 
         // myApp.alert('Here comes About page');
                 // window.localStorage.setItem("login",0);
@@ -1563,7 +1571,7 @@ $$(document).on('pageInit', '.page[data-page="company"]', function (e) {
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
  
  var company_name =  window.localStorage.getItem("company_name"); 
- alert(company_name);
+ // alert(company_name);
  var vision =  window.localStorage.getItem("vision"); 
  var mission =  window.localStorage.getItem("mission"); 
  var about_comp =  window.localStorage.getItem("about_comp"); 
@@ -1947,6 +1955,87 @@ $('.pages').prepend(' <div class="loader justify-content-center "><div class="ma
  
 
 
+})
+$$(document).on('pageInit', '.page[data-page="theme"]', function (e) {
+var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+ var theme =  window.localStorage.getItem("theme");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+   // alert(theme);
+      if(theme == 0){
+    $('#theme0').addClass('active');
+  }else if(theme == 1){
+    $('#theme1').addClass('active');
+   }else if(theme == 2){
+    $('#theme2').addClass('active');
+   }else if(theme == 3){
+    $('#theme3').addClass('active');
+   }
+})
+$$(document).on('pageInit', '.page[data-page="redeem"]', function (e) {
+ var user_id =  window.localStorage.getItem("user_id");
+var form_d = 'secrete=virus&user_id='+user_id+'';
+save_redeem(form_d);
+  $("#save_button").click(function() {
+   var form =$('#redeem_form').serialize()+ "&submit=1&" +form_d;
+save_redeem(form);
+
+                  })
+  function save_redeem(form){
+    
+ $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/redeem/", 
+            method: "POST",
+            data:form, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.status);
+              // alert(data.earning);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+                 $('#earning').html(' Current wallet = '+ data.earning);
+                 $('#approved').html('Approved Reedem  = '+ data.approved);
+                 $('#min_reedem').html('MINIMUM AMOUNT CAN BE REEDEM = RS.'+data.min_reedem);
+                 $('#max_reedem').html('MAXIMUM AMOUNT CAN BE REEDEM = RS.'+data.min_reedem);
+    
+  
+    $('.loader').css('display','none');
+    if(data.message !=''){
+
+                my_toast();
+    }
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+                 $('#earning').html(' Current wallet = '+ data.earning);
+                 $('#approved').html('Approved Reedem  = '+ data.approved);
+                 $('#min_reedem').html('MINIMUM AMOUNT CAN BE REEDEM = RS.'+data.min_reedem);
+                 $('#max_reedem').html('MAXIMUM AMOUNT CAN BE REEDEM = RS.'+data.min_reedem);
+
+                 
+     $('.snackbar').html(data.message);
+      
+  
+               if(data.message !=''){
+      
+                my_toast();
+    }
+    $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        }); 
+  }
 })
 $$(document).on('pageInit', '.page[data-page="vcard"]', function (e) {
 // myFunction();
@@ -2342,7 +2431,7 @@ $$(document).on('pageInit', '.page[data-page="viewcard"]', function (e) {
    $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
    $('.loader').css('display','flex');
  var user_id =  window.localStorage.getItem("user_id");
- // alert(search);
+ // alert(user_id);
                                 $.ajax({
             url: "https://digitalbcards.in/api/card_data/", 
             method: "POST",
@@ -2364,6 +2453,11 @@ $('#card').html(data);
         });  
 })
 // Option 2. Using live 'pageInit' event handlers for each page
+$$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
+ var user_id =  window.localStorage.getItem("user_id");
+ var referral =  window.localStorage.getItem("referral");
+   $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
+})
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   // my_toast();
    $(".segment").select2({
@@ -2374,6 +2468,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
 
 
 
+   
    $("#button").click(function() {
       
        var lable = $("#button").text().trim();
@@ -2389,15 +2484,20 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
         
       });
   
- var input = document.querySelector("#mobile");
+
+
+ var input = document.querySelector("#name");
+
     var a=window.intlTelInput(input, {
     initialCountry: "auto",
      geoIpLookup: function(success, failure) {
 
 
     $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      // alert(jsonp);
       var countryCode = (resp && resp.country) ? resp.country : "";
       success(countryCode);
+
    $('.country-name').css('color','black');
     });
     },
@@ -2422,10 +2522,10 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
            
             success: function(data) {
                 // var data = JSON.stringify(data);
-                // alert(data.fb_url);
+                // alert(data.theme);
                window.localStorage.setItem("user_id",data.id);
                window.localStorage.setItem("language",data.language);
-               // window.localStorage.setItem("referral",data.Refferal_id);
+               window.localStorage.setItem("referral",data.Refferal_id);
                window.localStorage.setItem("mobile",data.mobile);
                window.localStorage.setItem("profession",data.profession);
                window.localStorage.setItem("about_me",data.about_me);
@@ -2449,6 +2549,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
                window.localStorage.setItem("map_link",data.map_link);
                window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
                window.localStorage.setItem("company_img",data.company_img);
+               window.localStorage.setItem("theme",data.theme);
 
               
                // alert(data.fb_url);
@@ -2950,3 +3051,22 @@ function edit_offer(name,id,description,tag_line){
                             return true;
                         }
                         }
+                        function color(id) {
+ var user_id =  window.localStorage.getItem("user_id");
+                        
+                      jQuery.ajax({
+                                type: 'POST',
+                                data: {'action': 'setcolor', 'id': id,'user_id':user_id},
+                                url: 'https://digitalbcards.in/ajax.php',
+                                success: function (data) {
+                                    $('.snackbar').html(data);
+                                    my_toast();
+                                   location.reload();
+                                    
+                                },
+                                error: function (e) {
+
+                                }
+                                });
+
+        }

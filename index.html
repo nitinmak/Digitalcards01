@@ -20,6 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
 
+
     <!-- Your app title -->
     <title>My App</title>
 
@@ -46,10 +47,36 @@
     <!-- app CSS -->
     <link id="theme" rel="stylesheet" href="css/style.css" type="text/css">
     <link  rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
-<link rel="stylesheet" href="css/select2.min.css">
-<link rel="stylesheet" href="css/intlTelInput.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/intlTelInput.css">
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.css">
+       <link rel="stylesheet" type="text/css" href="css/crop_image/style.css" />
+          <link rel="stylesheet" type="text/css" href="css/crop_image/style-example.css" />
+          <link rel="stylesheet" type="text/css" href="css/crop_image/jquery.Jcrop.css" />
   <link rel="stylesheet" href="newassets/css/style.css">
+ <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+<style>
+  *{
+    font-family: 'PT Sans', sans-serif;
+  }
+  .navbar-inner{
+        background-color: #07314a;
+  }
+  .navbar .center {
+    color: white;
+}
+.form-control{
+  background: none;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-radius: 0px;
+  color: white;
+}
+.btn{
+  border-radius: 0px
+}
+</style>
 </head>
 
 <body>
@@ -115,6 +142,13 @@
                         <a href="referral.html" onclick="close_sidebar();" class="sidebar-close activex">
                             <div class="item-title">
                                <i class="fa fa-link"></i> My Referral
+                            </div>
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a href="redeem.html" onclick="close_sidebar();" class="sidebar-close activex">
+                            <div class="item-title">
+                               <i class="fa fa-exchange"></i> Referral Reward
                             </div>
                         </a>
                     </li>
@@ -197,7 +231,7 @@
                           Right link contains only icon - additional "icon-only" class
                           Additional "open-panel" class tells app to open panel when we click on this link
                         -->
-                        <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
+                        <a href="#" class="link icon-only open-panel"><i class="fa fa-bars" style="font-size:20px;color:#f8f9fa"></i></a>
                     </div>
                 </div>
             </div>
@@ -506,23 +540,28 @@ $('#view_card_in_popup').modal('show');
         <div class="page">
             <div class="page-content h-100" style="background: #EEEEEEEE;">
                 <div class="background theme-header"></div>
-                <div class="row mx-0 h-100 justify-content-center">
+                <div class="row mx-0 h-100 justify-content-center" >
                     <div class="col-10 col-md-6 col-lg-4 my-3 mx-auto text-center align-self-center">
-                        <img src="img/dbc.svg" width="200px"  height="200px" alt="" >
+                        <img src="img/logo.png" width="100px"  height="100px" alt="" >
                         <!-- <h1 class="login-title"><small>Welcome to,</small><br>DigitalBcards</h1> -->
                         <br>
-                        <h5 class="text-dark mb-4">Sing in</h5>
+                        <h5 class="text-dark " style="    background-color: #07314A;padding: 20px;color: white !important;">Log in</h5>
                         <form id="login_form" method="POST">
+
                         <div class="login-input-content ">
                             <div class="form-group">
-                                <input type="text" id="email" name="email" class="form-control rounded text-center" placeholder="Username">
+                                
+                    <input class="form-control" type="text" id="email" name="email" placeholder=" Email Id " required>
                             </div>
                             <div class="form-group">
-                                <input type="password" name="password" class="form-control rounded text-center" placeholder="Password">
+                                <input class="form-control" type="password"  id="password" name="password" placeholder="Password" required>
                             </div>
                             <input type="hidden" value="virus" name="secrete"  >
-
-                            <input type="submit" name="" id="login_user" class="btn btn-block btn-success rounded border-0 z-3" value="Sign in">
+   <input type="submit" value="LOGIN" name="save" id="login_user" class="btn btn-default   " style="    background-color: #07314A;
+    color: white;
+    font-weight: 600;
+    border-radius: 2px;">
+                            
                         </div>
                     </form>
 
@@ -604,12 +643,12 @@ $('#view_card_in_popup').modal('show');
 
 
 
-          <link rel="stylesheet" type="text/css" href="css/crop_image/style.css" />
-          <link rel="stylesheet" type="text/css" href="css/crop_image/style-example.css" />
-          <link rel="stylesheet" type="text/css" href="css/crop_image/jquery.Jcrop.css" />
+        
 </body>
 <style type="text/css">
-    
+    .errors{
+      color:red;
+    }
     .modal1{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1050;display:none;overflow:hidden;outline:0}
 </style>
 

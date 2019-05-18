@@ -1,11 +1,10 @@
 <!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
-
 <!-- Top Navbar-->
-<div class="navbar">
-    <div class="navbar-inner">
+<div class="navbar ">
+    <div class="navbar-inner nav-transparent no-hairline">
         <div class="left">
             <!-- <a href="javascript:void(0)" class="menu-left"><i class="material-icons">menu</i></a> -->
-            <a href="#" class="link icon-only open-panel menu-left"><i class="icon icon-bars"></i></a>
+            <a href="#" class="link icon-only open-panel menu-left"><i class="fa fa-bars" style="font-size:20px;color:#f8f9fa"></i></a>
             <!-- <a href="#" class="back link"> -->
                 <!-- <i class="icon icon-back"></i> -->
                 <!-- <span>Back</span> -->
@@ -17,17 +16,30 @@
     </div>
 </div>
 <div class="pages">
+
     <div data-page="home" class="page">
-       <div class="page-content" style="padding: 33px 0px 0px 0px">
+       <div class="page-content " style="padding: 33px 0px 0px 0px">
             <div class="content-sticky-footer" >
-                     <div class="footer-wrapper shadow-15" style="position: fixed;z-index: 9999;width: 100%;">
-                    <div class="footer" style="background-color: #d49100;">
+                <style type="text/css">
+    .navbar-transparent {
+    background: transparent !important;
+}
+.scrim-navbar {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.5) 0%,rgba(0,0,0,0) 100%);
+}
+</style>
+
+                <div style="text-align: center;margin-top: 20px;">
+                                    <img src="img/logo.png" style="width: 20%">
+                                </div>
+                     <div class="footer-wrapper shadow-15" style="position: fixed;z-index: 9999;width: 100%;padding: 2px 8px 8px 8px;">
+                    <div class="footer" style="background-color: #d49100; padding: 0;">
                         <div class="row mx-0">
                             <div class="col" style="color: white;text-align: center;margin-left: 18%;">
                                 YOUR DBCARD
                             </div>
                             <div class="col-2 text-right">
-                                <a href="#"  class="social" style="color: white;">
+                                <a href="profile.html"  class="social" style="color: white;">
                                  <i class="fa fa-pencil-square-o" style="font-size:20px;"></i></a>
                                <!--  <a href="#" class="social"><img src="img/googleplus.png" alt=""></a>
                                 <a href="#" class="social"><img src="img/linkedin.png" alt=""></a>
@@ -38,9 +50,10 @@
                    
                            
                 </div>
-                    <div class="container" style="padding: 55px 0px 0px 0px;position: fixed;overflow-x:hidden;overflow-y: scroll;height: 640px;  ">
+                    <div class="container" style="padding: 55px 0px 0px 0px;position: fixed;overflow-x:hidden;overflow-y: scroll;height: 640px;">
                         <div class="row" style="margin-top: 5px;">
-                            <div class="col-12" style="padding: 0px;">
+                            <div class="col-12" style="padding: 20px;">
+                                
                                 <div class="card rounded-50 border-0  bg-primary">
                                     <div class="card-header" style="background-color: #07314a;">
                                         <div class="row" style="width: 100%; margin: auto;">
@@ -190,33 +203,37 @@
                                             </div>
                                         </div>
                                         </div>
-                                        <br>
-                                        <div class="row" style="text-align: center;">
-                                            <div class="col-4">
-                                           <a href="#"  id="button" class="btn  mb-1 btn-light text-primary px-4" style="width: 85px;">More</a>
+                                        
+                                        <div class="row" style="text-align: center;margin-bottom: 5px;">
+                                            <div class="col-6">
+                                           <a href="#"  id="button" class="btn  mb-1 btn-light text-primary px-4" style="width: 100%;">More</a>
                                        </div>
-                                            <div class="col-4">
+                                            <div class="col-6">
 
                                        
-                                            <button  type="reset" onclick="location.href='index.html'" id="button" class="btn k mb-1 btn-light text-primary px-4" style="width:85px;" >Reset</button>
+                                            <button  type="reset" onclick="location.href='index.html'" id="button" class="btn k mb-1 btn-light text-primary px-4" style="width:100%;" >Reset</button>
                                         </div>
-                                            <div class="col-4">
-
-                                            <button type="submit" id="save_only" name="save_only" class="btn mb-1 btn-light text-primary px-4" style="width: 85px;">SAVE</button>
-                                        </div>
+                                            
                                     </div>
-                                    <div class="row" style="text-align: center;">
-                                            <div class="col-4">
+                                    <div class="row" style="text-align: center; margin-bottom: 5px;">
+                                        <div class="col-6">
 
-                                            <button type="submit" style="width: 85px;padding-left: 13px!important;" name="send_whatsapp" class="btn  mb-1 btn-light text-primary px-4">WhatsApp</button>
+                                            <button type="submit" id="save_only" name="save_only" class="btn mb-1 btn-light text-primary px-4" style="width: 100%;">SAVE NOW</button>
                                         </div>
-                                            <div class="col-4">
+                                            <div class="col-6">
 
-                                            <button type="submit"  name="send_email"  class="btn  mb-1 btn-light text-primary px-4" style="width: 85px;">Email</button>
+                                            <button type="submit" style="width: 100%;" name="send_whatsapp" class="btn  mb-1 btn-light text-primary px-4">WhatsApp</button>
                                         </div>
-                                            <div class="col-4">
+                                            
+                                    </div>
+                                    <div class="row" style="text-align: center;">        
+                                            <div class="col-6">
 
-                                            <button type="submit" name="send_sms" class="btn  mb-1 btn-light text-primary px-4" style="width: 85px;">SMS</button>
+                                            <button type="submit"  name="send_email"  class="btn  mb-1 btn-light text-primary px-4" style="width: 100%;">send Email</button>
+                                        </div>
+                                            <div class="col-6">
+
+                                            <button type="submit" name="send_sms" class="btn  mb-1 btn-light text-primary px-4" style="width: 100%;">send SMS</button>
                                         </div>
                                     </div>
                                 </form>
@@ -226,7 +243,7 @@
                         </div>
                      
                     </div>
-                    <br>
+                    <!-- <br><br><br><br><br><br><br> -->
             </div>
             <div class="modal1 fade" id="colorscheme" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
