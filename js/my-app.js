@@ -15,6 +15,7 @@ var mainView = myApp.addView('.view-main', {
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
     // my_toast();
+
 var windowHeightSeventyPercent = parseInt(screen.height * 0.7); //To support multiple devices
 
 $("input").focusin(function(){
@@ -2486,7 +2487,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   
 
 
- var input = document.querySelector("#name");
+ var input = document.querySelector("#mobile");
 
     var a=window.intlTelInput(input, {
     initialCountry: "auto",
@@ -2717,13 +2718,17 @@ $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
                       // alert(user_id);
                       get_contact(search);
                         
+  $('#search').click(function() {
+  $('#search input', this).focus();
 
-    $('#search').on('input', function(e){
-      var search = $(this).val();
-      // var search = $(this).val();
-        get_contact(search);
+  });
+    // $('#search').on('input', function(e){
+
+    //   var search = $(this).val();
+    //   // var search = $(this).val();
+    //     get_contact(search);
        
-    })        
+    // })        
 
         function get_contact(search){
            $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
@@ -2796,7 +2801,7 @@ $('#register_form').validate({ // initialize the plugin
             
         },
          re_pass: {
-                    equalTo: "#password"
+                    equalTo: "#c_password"
                 },
         
     },

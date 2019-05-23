@@ -24,6 +24,8 @@
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
     </platform>
+    <preference name="KeyboardDisplayRequiresUserAction" value="false" />
+     <plugin name="cordova-plugin-ionic-keyboard" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="KeyboardShrinksView" value="true" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
