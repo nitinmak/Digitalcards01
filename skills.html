@@ -18,23 +18,28 @@
 <div class="pages">
     <div data-page="skils" class="page">
        <div class="page-content" >
-            <div class="content-sticky-footer" >
-                     
-                           <div class="snackbar">Some text some message..</div>
-                    <div class="container" style="padding: 0px 0px 0px 0px;position: fixed; ">
-                        <div class="row">
-                            <div class="col-12" style="padding: 0px;">
-                                <div class="card rounded-0 border-0 mb-3 bg-primary">
-                                  <!--   <div class="card-header border-0">
-                                        
-                                    </div> -->
-                                     <!-- <form method="post" id="share_form">    -->
-                                    <div class="card-body  text-white">
-                                        <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
-                                         <div class="row mb-3">
-                                    <div class="col-xs-12 col-xl-12">
-                                        <div class="inbox-header">
-                                <div class="pull-right">
+        <style type="text/css">
+  html,body{
+   -webkit-overflow-scrolling : touch !important;
+   overflow: auto !important;
+   height: 100% !important;
+}
+
+input[type="text"] {
+    -webkit-user-select: text;
+}
+        </style>
+      
+<div class="card" style="background-color: #07314a;">
+   <div class="card-header">
+      <div class="col-50">
+        <div class="snackbar">Some text some message..</div>
+                                 <div class="pull-left">
+                                  <h5 class=" text-center text-white">Expertise</h5>
+                                 </div>
+                               </div>
+                               <div class="col-50">
+                                 <div class="pull-right">
                                       <a href="#" data-toggle="modal" data-target="#add_expertise" class="btn btn-primary btnsz1 ">
                                         <i class="fa fa-plus m-r-5"></i>
                                         <span class="btn-text">Add Expertise</span>
@@ -42,39 +47,59 @@
                                  
                                    
                                 </div>
-                                
                             </div>
+   </div>
+  <div class="card-body" >
+    
 
-                                </div>
-                                        
-                                    </div>
-
-                                        <div class="row">
-                                              <div class="col-12" style="overflow-y: scroll;overflow-x: hidden;height: 640px;">
-                                                <table class="responsive  table border-1" style="height: auto;" >
-                                                    <thead>
-                                                    <tr>
-                                                    <th>Sr.No.</th>
+                            <div class="col-12">
+                                            <!-- <div class="col-5 text-right mt-3">
+                                                <a href="#" data-toggle="modal" data-target="#colorscheme"><i class="fa fa-share-alt text-white" ></i></a>
+                                            </div> -->
+                                      
+                                     <form method="post" id="share_form">   
+                              
+                                        <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
+                                        <div class="row"  style="margin-top: 0px;">
+                                              <div class="col-12" style="padding: 5px;">
+                                                <table class="responsive table border-1" style="height: auto;" >
+                                                    <thead style="color: White">
+                                                        <tr>
+          <th>Sr.No.</th>
                                                      <th style="width: 70%"> Expertise Name</th>
                                                      <!-- <th>Skill Value</th> -->
                                                     <th>Edit</th>
 
                                                     <th>Delete</th>
-                                                </tr>
+      </tr>
                                                     </thead>
-                                                    <tbody id="my_skils" style="overflow: scroll;">
+                                                    <tbody id="my_skils" style="color: White" >
                                                         
                                                     </tbody>
                                                 </table>
-                                                <div class="row">
-                                                    <div class=" col-12 text-center">
-                                                 <a href="#"   class="btn view_card mb-1 btn-light text-primary px-4"style="margin-right: 5px;" >Preview Card</a>
-                                           <a href="profile.html"  class="btn  mb-1 btn-light text-primary px-4" style="width: 115px;margin-left: 5px;">Back</a>
-                                       </div>
-                                       </div>
                                             </div>
+                                          </div>
+                                        </form>
+                                      </div>
                                            
-         <form method="post" id="add_expertise_form">
+         
+               
+
+  <div class="card-footer" >
+    <div class="block" style="width: 100%; padding: 5px;">
+  <p class="row">
+    <button type="button" name="send_sms"  id="button" class="col-xs button button-fill view_card " style="width: 47%;">Preview Card</button>
+    <a href="profile.html"  class="col-xs button button-fill " style="width: 47%;">Back</a>
+   
+  </p> 
+</div>
+    
+  </div>
+</div>
+                       
+
+
+  <form method="post" id="add_expertise_form">
   <div class="modal1 fade" id="add_expertise" style="top:40px;" role="dialog">
     <div class="modal-dialog modal-sm">
     
@@ -143,10 +168,9 @@
 
     </div>
     </div>
-    </form>               
-        </div>
+    </form>          
+
+
     </div>
+  </div>
 </div>
-<script type="text/javascript">
-    
-</script>

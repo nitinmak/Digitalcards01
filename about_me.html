@@ -44,28 +44,21 @@
 
 </style>
                    
-                           <div class="snackbar">Some text some message..</div>
-                
-                    <div class="container" style="padding: 0px 0px 0px 0px;position: fixed;overflow-y: scroll;overflow-x: hidden;height: 640px; ">
-                        <div class="row">
-                            <div class="col-12" style="padding:0px;">
-                                <div class=" rounded-20 border-0 mb-3 bg-primary">
-                                    <div class="card-header">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <h5 class="card-title text-white" style="margin: 11px 0px 0px 18px;"> About Me Update</h5>
-                                            </div>
-                                         
-                                        </div>
-                                    </div>
+                         <div class="card" style="background-color: #07314a;">
+   <div class="card-header">
+      <div class="col-12">
+        <div class="snackbar">Some text some message..</div>
+                                 <div class="pull-left">
+                                  <h5 class=" text-center text-white">About me</h5>
+                                 </div>
+                               </div>
+                              
+   </div>
+  <div class="card-body" >
+    
 
-                                               <form method="post" id="about_me_form">
-                                    <div class="card-body  text-white">
-                                        <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
-                                       
-                                               
-                                                <!-- <p>You SMS credit is 1</p> -->
-                                             <div class="col-12">
+                            <div class="col-12">
+                                <form method="post" id="about_me_form">
                                                   <input type="hidden" name="secrete" value="virus">
 
                                             <input type="hidden" name="user_id" id="user_idq">
@@ -73,7 +66,7 @@
                                             </div>
                                              <div class="col-12">
                                                 <div class="form-group">
-                                                    <label>Full Name</label>
+                                                    <label class="text-white">Full Name</label>
                                                     <input type="text" class="form-control" id="f_name" name="f_name" value="<?= $my_profile['name'] ?>" onkeypress="return ((event.charCode >= 65 &amp;&amp; event.charCode <= 90) || (event.charCode >= 97 &amp;&amp; event.charCode <= 122) || (event.charCode == 32))">
                                                     <!-- <input type="text" class="form-control  text-white" value="+91"> -->
                                                 </div>
@@ -81,7 +74,7 @@
                                             <div class="col-12">
                                                <div class="form-group">
                                                
-                                                <label class="bmd-label-static">Profession</label>
+                                                <label class="text-white bmd-label-static">Profession</label>
                                                         <input type="text" class="form-control" id="profession" name="profession" >
                             </div>
                                             </div>
@@ -89,7 +82,7 @@
                                                <div class="form-group">
                                                
                                                
-                               <label class="bmd-label-static">About Me</label>
+                               <label class="text-white bmd-label-static">About Me</label>
                                                         <textarea class="form-control editor" id="editor1" rows="5" name="about" ></textarea>
                                                         <input type="hidden" name="about_me" id="about_me_vl">
                             </div>
@@ -99,7 +92,7 @@
                                                <div class="form-group">
                                                
                                                
-                               <label class="bmd-label-static">You Tube Link</label>
+                               <label class="text-white bmd-label-static">You Tube Link</label>
                                                         <input type="url" class="form-control" id="video" name="y_tube_link" >
                                                      
                             </div>
@@ -113,7 +106,7 @@
                                                <div class="form-group">
                                                
                                                
-                               <label class="bmd-label-static">Website</label>
+                               <label class="text-white bmd-label-static">Website</label>
                                                         <input type="url" class="form-control" id="website" name="website" >
                             </div>
                                             </div>
@@ -124,9 +117,9 @@
                                         <div class="text-center" style="padding-bottom: 10px;">
                                             <!-- <input type="hidden" name="add_am" value="1"> -->
                                            <!-- <button type="submit" id="save_button" class="button button-rounded button-green-3d button-green">Submit</button> -->
-                                            <button  type="button" name="add_am" id="save_button"  class="btn  mb-1 btn-light text-primary px-4" style="text-align: center;">Submit</button>
-                                           <a href="#"   class="btn view_card mb-1 btn-light text-primary px-4" style="text-align: center;margin: 0px 10px 0px 10px;">Preview Card</a>
-                                           <a href="profile.html"  class="btn  mb-1 btn-light text-primary px-4" style="text-align: center;">Back</a>
+                                            <button  type="button" name="add_am" id="save_button"  class="btn  mb-1 btn-light  px-4" style="text-align: center;background: #007aff;border:none;color:white">Submit</button>
+                                           <a href="#"   class="btn view_card mb-1 btn-light  px-4" style="text-align: center;margin: 0px 10px 0px 10px;background: #007aff;border:none;color:white">Preview Card</a>
+                                           <a href="profile.html"  class="btn  mb-1 btn-light  px-4" style="text-align: center;background: #007aff;border:none;color:white">Back</a>
                                            <!-- <a href="vcard.html" id="v"></a> -->
                                             
                                             

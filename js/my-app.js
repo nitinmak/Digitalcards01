@@ -15,7 +15,25 @@ var mainView = myApp.addView('.view-main', {
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
     // my_toast();
+  
+   $(document).on('click', '.t1', function() {
+    
+    $('.t1').addClass('active');
+    $('.t2').removeClass('active');
+    $('.t3').removeClass('active');
+   });
 
+   $(document).on('click', '.t2', function() {
+    $('.t2').addClass('active');
+    $('.t1').removeClass('active');
+    $('.t3').removeClass('active');
+   });
+
+   $(document).on('click', '.t3', function() {
+    $('.t3').addClass('active');
+    $('.t1').removeClass('active');
+    $('.t2').removeClass('active');
+   });
 var windowHeightSeventyPercent = parseInt(screen.height * 0.7); //To support multiple devices
 
 $("input").focusin(function(){
@@ -1324,6 +1342,7 @@ $$(document).on('pageInit', '.page[data-page="social_link"]', function (e) {
  var form_d = 'secrete=virus&user_id='+user_id+'';
  skils_action(form_d);
                   $("#add_tag").click(function() {
+                    // alert($('#s_name').val());
    var form =$('#add_social_link_form').serialize()+ "&add_tag=1&" +form_d;
 skils_action(form);
 
@@ -2429,6 +2448,27 @@ $$(document).on('pageInit', '.page[data-page="viewcard"]', function (e) {
  var referral =  window.localStorage.getItem("referral");
  // var user_id =  window.localStorage.getItem("user_id");
  // alert(referral)
+  
+   
+   $(document).on('click', '.t1', function() {
+
+    $('.t1').addClass('active');
+    $('.t2').removeClass('active');
+    $('.t3').removeClass('active');
+   });
+
+   $(document).on('click', '.t2', function() {
+    $('.t2').addClass('active');
+    $('.t1').removeClass('active');
+    $('.t3').removeClass('active');
+   });
+
+   $(document).on('click', '.t3', function() {
+    $('.t3').addClass('active');
+    $('.t1').removeClass('active');
+    $('.t2').removeClass('active');
+   });
+
    $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
    $('.loader').css('display','flex');
  var user_id =  window.localStorage.getItem("user_id");
@@ -2681,6 +2721,7 @@ $("#segment").trigger('create');
                 // alert(data.message);
                    $('.snackbar').html(data.message);
   
+             $('.loader').css('display','none');
                 my_toast();
             window.location.href = data.url;
               }else{
