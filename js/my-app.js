@@ -4,6 +4,13 @@ var myApp = new Framework7();
 
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
+// var ccavenue = require("ccavenue");
+// ccavenue.setMerchant("Merchant Id");
+// ccavenue.setWorkingKey("Working Key");
+
+ 
+
+
 
 // Add view
 var mainView = myApp.addView('.view-main', {
@@ -11,11 +18,43 @@ var mainView = myApp.addView('.view-main', {
     dynamicNavbar: true
 });
 
+
+
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
     // my_toast();
-  
+   
+
+$(document).on('click', '#pay_button', function() {
+
+       var http = require('http'),
+    fs = require('fs'),
+    ccav = require('./ccavutil.js'),
+    qs = require('querystring');
+
+exports.postReq = function(request,response){
+    var body = '',
+  workingKey = '',  //Put in the 32-Bit Key provided by CCAvenue.
+  accessCode = '',      //Put in the Access Code provided by CCAvenue.
+  encRequest = '',
+  formbody = '';
+        
+    request.on('data', function (data) {
+  body += data;
+  encRequest = ccav.encrypt(body,workingKey); 
+  formbody = '<form id="nonseamless" method="post" name="redirect" action="https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction"/> <input type="hidden" id="encRequest" name="encRequest" value="' + encRequest + '"><input type="hidden" name="access_code" id="access_code" value="' + accessCode + '"><script language="javascript">document.redirect.submit();</script></form>';
+    });
+        
+    request.on('end', function () {
+        response.writeHeader(200, {"Content-Type": "text/html"});
+  response.write(formbody);
+  response.end();
+    });
+   return; 
+};
+    });
+
    $(document).on('click', '.t1', function() {
     
     $('.t1').addClass('active');
@@ -2500,7 +2539,54 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
-  // my_toast();
+  
+
+ var redirect = confirm('please make a payment RS 500  to use Bcard features.');
+   if (redirect == true) {
+          form =$('#checkout_form').serialize();
+          // alert(form);
+   var http = require('http'),
+    fs = require('fs'),
+    ccav = require('./ccavutil.js'),
+    qs = require('querystring');
+
+exports.postReq = function(request,response){
+    var body = '',
+  workingKey = '2F3349E69042C120085299837D2B34B8',  //Put in the 32-Bit Key provided by CCAvenue.
+  accessCode = 'AVGK82GA88BF91KGFB',      //Put in the Access Code provided by CCAvenue.
+  encRequest = '',
+  formbody = '';
+        
+    request.on('data', function (data) {
+  body += data;
+  encRequest = ccav.encrypt(body,workingKey); 
+  formbody = '<form id="nonseamless" method="post" name="redirect" action="https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction"/> <input type="hidden" id="encRequest" name="encRequest" value="' + encRequest + '"><input type="hidden" name="access_code" id="access_code" value="' + accessCode + '"><script language="javascript">document.redirect.submit();</script></form>';
+    });
+     alert(formbody);   
+    request.on('end', function () {
+        response.writeHeader(200, {"Content-Type": "text/html"});
+  response.write(formbody);
+  response.end();
+    });
+   return; 
+};
+    // alert('fdfd');
+    // $$('#home').trigger("click");
+    // location.reload();
+       // document.forms['customerData'].submit();
+       // location.href='payment/public/dataFrom.htm';
+
+      // ccavenue.setOrderId("123");
+      // ccavenue.setRedirectUrl("https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction");
+      // ccavenue.setOrderAmount("1");
+   }else{
+
+    // location.reload();
+    $('#home').trigger("click");
+   }
+
+
+
    $(".segment").select2({
      'tags':true,
       placeholder: "Decide Segment"
@@ -2884,7 +2970,7 @@ $('#register_form').validate({ // initialize the plugin
         submitHandler: function (form) { // for demo
           form =$('#register_form').serialize();
           var  action = $('#action').val();
-          var  email = $('#email').val();
+          var  email = $('#reg_email').val();
           // var  email = $('#email').val();
            $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
     $('.loader').css('display','flex');
@@ -2904,8 +2990,11 @@ $('#register_form').validate({ // initialize the plugin
 
               }else{
 
+
+// alert(email);
                window.localStorage.setItem("login",1);
                window.localStorage.setItem("email",email);
+               // alert(window.localStorage.getItem("email"))
                 // myApp.alert(data.message);
                   $('.snackbar').html(data.message);
 // $$('#home').trigger("click");
