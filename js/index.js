@@ -89,6 +89,7 @@ function onSuccess(contacts){
 			var option = document.createElement("option");
 			option.text =  contacts[i].phoneNumbers[0].value;
 			option.value = contacts[i].displayName;
+            // alert(option)
 			x.add(option);
     }
 }
@@ -96,15 +97,25 @@ function onSuccess(contacts){
 function onError(){
     alert('Some Error');
 }
-
+$(document).on('click', '#choose_contact', function() {
+  
+    alert('ffd');
+      $('#contacts-list').click();
+// displaycontacts();
+   })
 function displaycontacts()
 {
-	var x = document.getElementById("showcontacts");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+    // alert('here');
+     $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    $('.loader').css('display','flex');
+      $('#contacts-list').click();
+       $('.loader').css('display','none');
+	// var x = document.getElementById("showcontacts");
+ //  if (x.style.display === "none") {
+ //    x.style.display = "block";
+ //  } else {
+ //    x.style.display = "none";
+ //  }
   document.getElementById('contacts-list').selectedIndex = 0;
 }
 
@@ -114,7 +125,8 @@ function updateContacts()
 	var selectBox = document.getElementById("contacts-list");
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
 	var selectedText = selectBox.options[selectBox.selectedIndex].text;
+
 	document.getElementById("receivername").value = selectedValue;
-	document.getElementById("receivermobile").value = selectedText;
+	document.getElementById("receivermobile").value =  selectedText.slice(-10);
 	displaycontacts();
 }

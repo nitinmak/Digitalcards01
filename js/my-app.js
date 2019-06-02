@@ -2575,6 +2575,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
 
 
    
+
    $("#button").click(function() {
       
        var lable = $("#button").text().trim();
@@ -2589,10 +2590,15 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
        }
         
       });
-  
+  // var list = $('.country-list');
 
+$(document).on('click', '.flag-container', function() {
+  // alert('dl');
+  $('.country-list').removeClass('hide');
+    // trigger.click();
+});
 
- var input = document.querySelector("#mobile");
+ var input = document.querySelector("#receivermobile");
 
     var a=window.intlTelInput(input, {
     initialCountry: "auto",
@@ -2602,6 +2608,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
     $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
       // alert(jsonp);
       var countryCode = (resp && resp.country) ? resp.country : "";
+      // alert(countryCode);
       success(countryCode);
 
    $('.country-name').css('color','black');
@@ -2611,6 +2618,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   hiddenInput: "full_phone",
   utilsScript: "js/utils.js?1537717752654" // just for formatting/placeholders etc
 });
+      // alert(a);
     // Following code will be executed for page with data-page attribute equal to "about"
    
     // myApp.alert(email);
