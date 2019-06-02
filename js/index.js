@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ //var MyContactList = new Array();
 var app = {
     // Application Constructor
     initialize: function() {
@@ -33,24 +34,28 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+		
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
+		//alert("inside here"+id);
+        //var listeningElement = parentElement.querySelector('.listening');
+		//alert("outside here");
+        //var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
+        //listeningElement.setAttribute('style', 'display:none;');
+        //receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
+        //console.log('Received Event: ' + id);
        // String [] permissions = { Manifest.permission.READ_CONTACTS, Manifest.permission.WRITE_CONTACTS };
        //  // alert(permissions.READ_CONTACTS);
        //  // permissions.checkPermission(permission.READ_CONTACTS, successCallback, errorCallback);
        //  // permissions.requestPermission(permission.READ_CONTACTS, successCallback, errorCallback);
        //  cordova.requestPermissions(this, 0, permissions);
         listContacts();
+		//alert("outside here");
     }
 };
 function listContacts(){
@@ -61,7 +66,7 @@ function listContacts(){
     options.multiple = true;
      // alert(navigator.contacts);
         options.hasPhoneNumber = true;
-    var fields = ["mobile"];
+    var fields = ["mobile","displayName"];
     // alert("100");
     // alert(navigator.contacts.find());
     navigator.contacts.find(fields, onSuccess, onError, options);
@@ -69,17 +74,47 @@ function listContacts(){
 }
 
 function onSuccess(contacts){
-// alert("1001");
+ //alert("1001");
 // alert(JSON.stringify(contacts));
-    var ul = document.getElementById('contacts-list');
+    //var ul = document.getElementById('contacts-list');
+	var x = document.getElementById("contacts-list");
     for (var i = 0; i < contacts.length; i++) {
 // alert(JSON.stringify(contacts[i]));
-        var newLI = document.createElement('li');
+		//MyContactList.push(contacts[i].phoneNumbers[0].value);
+        /*var newLI = document.createElement('li');
         newLI.innerHTML = contacts[i].phoneNumbers[0].value;
-        ul.appendChild(newLI);
+        ul.appendChild(newLI);*/
+		 
+			
+			var option = document.createElement("option");
+			option.text =  contacts[i].phoneNumbers[0].value;
+			option.value = contacts[i].displayName;
+			x.add(option);
     }
 }
 
 function onError(){
     alert('Some Error');
+}
+
+function displaycontacts()
+{
+	var x = document.getElementById("showcontacts");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+  document.getElementById('contacts-list').selectedIndex = 0;
+}
+
+function updateContacts()
+{
+	
+	var selectBox = document.getElementById("contacts-list");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+	var selectedText = selectBox.options[selectBox.selectedIndex].text;
+	document.getElementById("receivername").value = selectedValue;
+	document.getElementById("receivermobile").value = selectedText;
+	displaycontacts();
 }

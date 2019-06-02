@@ -1,18 +1,7 @@
 // Initialize app
 var myApp = new Framework7();
-
-
 // If we need to use custom DOM library, let's save it to $$ variable:
 var $$ = Dom7;
-// var ccavenue = require("ccavenue");
-// ccavenue.setMerchant("Merchant Id");
-// ccavenue.setWorkingKey("Working Key");
-
- 
-
-
-
-// Add view
 var mainView = myApp.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
     dynamicNavbar: true
@@ -40,7 +29,7 @@ exports.postReq = function(request,response){
   encRequest = '',
   formbody = '';
         
-    request.on('data', function (data) {
+ request.on('data', function (data) {
   body += data;
   encRequest = ccav.encrypt(body,workingKey); 
   formbody = '<form id="nonseamless" method="post" name="redirect" action="https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction"/> <input type="hidden" id="encRequest" name="encRequest" value="' + encRequest + '"><input type="hidden" name="access_code" id="access_code" value="' + accessCode + '"><script language="javascript">document.redirect.submit();</script></form>';
@@ -2532,6 +2521,11 @@ $('#card').html(data);
           }
         });  
 })
+$$(document).on('pageLoad', '.page[data-page="home"]', function (e) {
+  alert("page initialize");
+  app.initialize();
+})
+ 
 // Option 2. Using live 'pageInit' event handlers for each page
 $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
  var user_id =  window.localStorage.getItem("user_id");
@@ -2539,18 +2533,20 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
-  
-
- var redirect = confirm('please make a payment RS 500  to use Bcard features.');
+  //alert("page initialize");
+  app.initialize();
+  //alert("app started"); 
+ var redirect = confirm('please make a payment RS 500  to use Bcard feature');
    if (redirect == true) {
           form =$('#checkout_form').serialize();
-          // alert(form);
-   var http = require('http'),
+          //alert(form);
+   /*var http = require('http'),
     fs = require('fs'),
     ccav = require('./ccavutil.js'),
-    qs = require('querystring');
-
-exports.postReq = function(request,response){
+    qs = require('querystring');*/
+//alert("loooping bakc1");
+/*exports.postReq = function(request,response){
+	
     var body = '',
   workingKey = '2F3349E69042C120085299837D2B34B8',  //Put in the 32-Bit Key provided by CCAvenue.
   accessCode = 'AVGK82GA88BF91KGFB',      //Put in the Access Code provided by CCAvenue.
@@ -2568,8 +2564,10 @@ exports.postReq = function(request,response){
   response.write(formbody);
   response.end();
     });
+	
    return; 
-};
+};*/
+//alert("loooping bakc");
     // alert('fdfd');
     // $$('#home').trigger("click");
     // location.reload();
@@ -2582,6 +2580,7 @@ exports.postReq = function(request,response){
    }else{
 
     // location.reload();
+	//alert("ia m here");
     $('#home').trigger("click");
    }
 

@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"> -->
+
+    <!-- Required meta tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+
+
+    <!-- Your app title -->
+    <title>My App</title>
+
+    <!-- This template defaults to the iOS CSS theme. To support both iOS and material design themes, see the Framework7 Tutorial at the link below:
+        http://www.idangero.us/framework7/tutorials/maintain-both-ios-and-material-themes-in-single-app.html
+     -->
+
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="lib/framework7/css/framework7.ios.colors.min.css">
+
+    <link rel="stylesheet" href="css/styles.css">
+      <link rel="apple-touch-icon" href="img/f7-icon-square.html">
+    <link rel="icon" href="img/f7-icon.html">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="vendor/bootstrap-4.1.3/css/bootstrap.min.css">
+
+    <!-- Material design icons CSS -->
+    <link rel="stylesheet" href="vendor/materializeicon/material-icons.css">
+
+    <!-- swiper carousel CSS -->
+    <link rel="stylesheet" href="vendor/swiper/css/swiper.min.css">
+     
+    <!-- app CSS -->
+    <link id="theme" rel="stylesheet" href="css/style.css" type="text/css">
+    <link  rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/intlTelInput.css">
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.css">
+       <link rel="stylesheet" type="text/css" href="css/crop_image/style.css" />
+          <link rel="stylesheet" type="text/css" href="css/crop_image/style-example.css" />
+          <link rel="stylesheet" type="text/css" href="css/crop_image/jquery.Jcrop.css" />
+  <link rel="stylesheet" href="newassets/css/style.css">
+ <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+
+
+
+
+  
+    
+    
+    
+     
+     
+<style>
+  *{
+    font-family: 'PT Sans', sans-serif;
+  }
+  .navbar-inner{
+        background-color: #07314a;
+  }
+  .form-control{
+  background: none;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-radius: 0px;
+  color: white;
+}
+  .navbar .center {
+    color: white;
+}
+
+.btn{
+  border-radius: 0px
+}
+.form-control:focus{
+  background: none;
+  
+}
+</style>
+</head>
+
+<body>
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal sidebar sidebar-left ">
+       <!--  <div class="content-block">
+            <p>Left panel content goes here</p>
+        </div> -->
+        <div class="profile-link">
+                <a href="#" class="media">
+                    <div class="w-auto h-100">
+                        <figure class="avatar avatar-40"><img id="user_image"  alt=""> </figure>
+                    </div>
+                    <div class="media-body">
+                        <h5 id="user" class=" mb-0">John Doe <span class="status-online bg-success"></span></h5>
+                        <!-- <p>India</p> -->
+                    </div>
+                </a>
+            </div>
+             <nav class="navbar" style="background: none;">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="home.html" onclick="close_sidebar();" class="sidebar-close activex" >
+                            <div class="item-title">
+                                <i class="material-icons">dashboard</i> Dashboard
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="lead.html" onclick="close_sidebar();" class="sidebar-close ">
+                            <div class="item-title">
+                                <i class="fa fa-users"></i> My Contact
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="viewcard.html" onclick="close_sidebar();" class="sidebar-close ">
+                            <div class="item-title">
+                                <i class="fa fa-id-card" aria-hidden="true"></i> See DBCard
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="profile.html" onclick="close_sidebar();" class="sidebar-close activex">
+                            <div class="item-title">
+                                <i class="fa fa-pencil-square-o"></i> Change DBCard Info
+                            </div>
+                        </a>
+                    </li>
+                      <li class="nav-item">
+                        <a href="vcard.html" onclick="close_sidebar();" class="sidebar-close activex">
+                            <div class="item-title">
+                                <i class="material-icons pull-left icon">share</i> Card Message Template
+                            </div>
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a href="referral.html" onclick="close_sidebar();" class="sidebar-close activex">
+                            <div class="item-title">
+                               <i class="fa fa-link"></i> My Referral
+                            </div>
+                        </a>
+                    </li>
+                     <li class="nav-item">
+                        <a href="redeem.html" onclick="close_sidebar();" class="sidebar-close activex">
+                            <div class="item-title">
+                               <i class="fa fa-exchange"></i> Referral Reward
+                            </div>
+                        </a>
+                    </li>
+
+                     <li class="nav-item">
+                        <a href="directory.html" onclick="close_sidebar();" class="sidebar-close activex">
+                            <div class="item-title">
+                              <i class="material-icons pull-left icon">next_week</i> My Directory
+                            </div>
+                        </a>
+                    </li> 
+                    <li class="nav-item">
+                        <a href="support.html" onclick="close_sidebar();" class="sidebar-close activex">
+                            <div class="item-title">
+                             <i class="material-icons pull-left icon">contact_phone</i> Customer Care
+                            </div>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="settings.html" onclick="close_sidebar();" class="sidebar-close activex">
+                            <div class="item-title">
+                            <i class="fa fa-cogs pull-left icon"></i> Settings
+                            </div>
+                        </a>
+                    </li>                    
+                    
+                     <li class="nav-item">
+                        <a href="#" onclick="logout(),close_sidebar()" class="sidebar-close">
+                            <div class="item-title">
+                              <i class="material-icons pull-left icon">exit_to_app</i> Sign Out
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+    </div>
+
+    <!-- Views -->
+    <div class="views">
+        <!-- Your main view, should have "view-main" class -->
+        <div class="view view-main">
+            <!-- Top Navbar-->
+             <div class="modal1 fade"  id="view_card_in_popup" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header border-bottom theme-header">
+                        <p class="title text-uppercase font-weight-bold text-dark my-2">Choose your color</p>
+                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" id="card_body" style="overflow: scroll;height: 450px;padding: 0px">
+                        <div class="text-center theme-color">
+                            <p class="text-uppercase font-weight-bold text-dark text-center">Share Me</p>
+                            <p>Share my Digital BCard in your network.</p>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
+                            <button class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
+                            <button class="m-2 btn btn-warning rounded sq-btn text-white" data-theme="color-theme-yellow"><i class="fa fa-twitter facardtt"></i></button>
+                            <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
+                            <br>
+                            <button class="m-2 btn btn-pink rounded sq-btn text-white" data-theme="color-theme-pink"><i class="fa fa-linkedin facardld"></i></button>
+                            <button class="m-2 btn btn-orange rounded sq-btn text-white" data-theme="color-theme-orange"><i class="fa fa-envelope facardml"></i></button>
+                         
+                        </div>
+                        <hr class="mt-4">
+                        <div class="row align-items-center mt-4">
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="navbar" style="display: none;">
+                <div class="navbar-inner">
+                    <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+                    <div class="center sliding">Awesome App</div>
+                    <div class="right">
+                        <!--
+                          Right link contains only icon - additional "icon-only" class
+                          Additional "open-panel" class tells app to open panel when we click on this link
+                        -->
+                        <a href="#" class="link icon-only open-panel"><i class="fa fa-bars" style="font-size:20px;color:#f8f9fa"></i></a>
+                    </div>
+                </div>
+            </div>
+            <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+            <div class="pages navbar-through toolbar-through">
+                <!-- Page, "data-page" contains page name -->
+                <div data-page="index" class="page">
+                    <!-- Scrollable page content -->
+                    <div class="page-content" >
+                        <div class="loader justify-content-center ">
+        <div class="maxui-roller align-self-center">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+       <div style="display: none">
+                        <form method="post" id="checkout_form" name="customerData" >
+    <table width="40%" height="100" border='1' align="center"><caption><font size="4" color="blue"><b>Integration Kit</b></font></caption></table>
+      <table width="50%" height="100" border='1' align="center">
+        <tr>
+          <td>Parameter Name:</td><td>Parameter Value:</td>
+        </tr>
+        <tr>
+          <td colspan="2"> Compulsory information</td>
+        </tr>
+        <tr>
+                    <td>Tid</td>
+                    <td><input readonly="readonly" type="text" name="tid" id="tid" value=""/></td>
+                </tr>
+        <tr>
+          <td>Merchant Id :</td><td><input type="text" name="merchant_id" value="205165"/></td>
+        </tr>
+        <tr>
+          <td>Order Id  :</td><td><input type="text" name="order_id" value="123654789"/></td>
+        </tr>
+        <tr>
+          <td>Amount  :</td><td><input type="text" name="amount" value="6000.00"/></td>
+        </tr>
+        <tr>
+          <td>Currency  :</td><td><input type="text" name="currency" value="INR"/></td>
+        </tr>
+        <tr>
+          <td>Redirect URL  :</td><td><input type="text" name="redirect_url" value="http://192.168.0.89:8080/ccavResponseHandler.asp"/></td>
+        </tr>
+        <tr>
+          <td>Cancel URL  :</td><td><input type="text" name="cancel_url" value="http://192.168.0.89:8080/ccavResponseHandler.asp"/></td>
+        </tr>
+        <tr>
+          <td>Language  :</td><td><input type="text" name="language" value="EN"/></td>
+        </tr>
+          <tr>
+            <td colspan="2">Billing information(optional):</td>
+          </tr>
+            <tr>
+              <td>Billing Name  :</td><td><input type="text" name="billing_name" value="Charli"/></td>
+            </tr>
+            <tr>
+              <td>Billing Address :</td><td><input type="text" name="billing_address" value="Room no 1101, near Railway station Ambad"/></td>
+            </tr>
+            <tr>
+              <td>Billing City  :</td><td><input type="text" name="billing_city" value="Indore"/></td>
+            </tr>
+            <tr>
+              <td>Billing State :</td><td><input type="text" name="billing_state" value="MH"/></td>
+            </tr>
+            <tr>
+              <td>Billing Zip :</td><td><input type="text" name="billing_zip" value="425001"/></td>
+            </tr>
+            <tr>
+              <td>Billing Country :</td><td><input type="text" name="billing_country" value="India"/></td>
+            </tr>
+            <tr>
+              <td>Billing Tel :</td><td><input type="text" name="billing_tel" value="9896226054"/></td>
+            </tr>
+            <tr>
+              <td>Billing Email :</td><td><input type="text" name="billing_email" value="test@gmail.com"/></td>
+            </tr>
+            <tr>
+              <td colspan="2">Shipping information(optional)</td>
+            </tr>
+            <tr>
+              <td>Shipping Name :</td><td><input type="text" name="delivery_name" value="Chaplin"/></td>
+            </tr>
+            <tr>
+              <td>Shipping Address  :</td><td><input type="text" name="delivery_address" value="room no.701 near bus stand"/></td>
+            </tr>
+            <tr>
+              <td>shipping City :</td><td><input type="text" name="delivery_city" value="Hyderabad"/></td>
+            </tr>
+            <tr>
+              <td>shipping State  :</td><td><input type="text" name="delivery_state" value="Andhra"/></td>
+            </tr>
+            <tr>
+              <td>shipping Zip  :</td><td><input type="text" name="delivery_zip" value="425001"/></td>
+            </tr>
+            <tr>
+              <td>shipping Country  :</td><td><input type="text" name="delivery_country" value="India"/></td>
+            </tr>
+            <tr>
+              <td>Shipping Tel  :</td><td><input type="text" name="delivery_tel" value="9896226054"/></td>
+            </tr>
+            <tr>
+              <td>Merchant Param1 :</td><td><input type="text" name="merchant_param1" value="additional Info."/></td>
+            </tr>
+            <tr>
+              <td>Merchant Param2 :</td><td><input type="text" name="merchant_param2" value="additional Info."/></td>
+            </tr>
+        <tr>
+          <td>Merchant Param3 :</td><td><input type="text" name="merchant_param3" value="additional Info."/></td>
+        </tr>
+        <tr>
+          <td>Merchant Param4 :</td><td><input type="text" name="merchant_param4" value="additional Info."/></td>
+        </tr>
+        <tr>
+          <td>Merchant Param5 :</td><td><input type="text" name="merchant_param5" value="additional Info."/></td>
+        </tr>
+         
+         <tr>
+            <td colspan="2">Payment information:</td>
+          </tr>
+         <tr> <td> Payment Option: </td> 
+                <td> 
+                    <input class="payOption" type="radio" name="payment_option" value="OPTCRDC">Credit Card
+                    <input class="payOption" type="radio" name="payment_option" value="OPTDBCRD">Debit Card  <br/>
+                    <input class="payOption" type="radio" name="payment_option" value="OPTNBK">Net Banking 
+                    <input class="payOption" type="radio" name="payment_option" value="OPTCASHC">Cash Card <br/>
+                    <input class="payOption" type="radio" name="payment_option" value="OPTMOBP">Mobile Payments
+                    <input class="payOption" type="radio" name="payment_option" value="OPTEMI">EMI
+                    <input class="payOption" type="radio" name="payment_option" value="OPTWLT">Wallet
+                 </td>
+             </tr>
+             
+             <!-- EMI section start -->
+             
+             <tr >
+             <td  colspan="2">
+              <div id="emi_div" style="display: none">
+               <table border="1" width="100%">
+               <tr> <td colspan="2">EMI Section </td></tr>
+               <tr> <td> Emi plan id: </td>
+                  <td><input readonly="readonly" type="text" id="emi_plan_id"  name="emi_plan_id" value=""/> </td>
+               </tr>
+               <tr> <td> Emi tenure id: </td>
+                  <td><input readonly="readonly" type="text" id="emi_tenure_id" name="emi_tenure_id" value=""/>  </td>
+               </tr>
+               <tr><td>Pay Through</td>
+                 <td>
+                   <select name="emi_banks"  id="emi_banks">
+                   </select>
+                 </td>
+              </tr>
+              <tr><td colspan="2">
+                 <div id="emi_duration" class="span12">
+                      <span class="span12 content-text emiDetails">EMI Duration</span>
+                        <table id="emi_tbl" cellpadding="0" cellspacing="0" border="1" >
+              </table> 
+                    </div>
+                </td>
+              </tr>
+              <tr>
+                 <td id="processing_fee" colspan="2">
+                </td>
+              </tr>
+              </table>
+            </div>
+            </td>
+            </tr>
+            <!-- EMI section end -->
+             
+             
+             <tr> <td> Card Type: </td>
+                 <td><input type="text" id="card_type" name="card_type" value="" readonly="readonly"/></td>
+             </tr>
+            
+            <tr> <td> Card Name: </td>
+                 <td> <select name="card_name" id="card_name"> <option value="">Select Card Name</option> </select> </td>
+            </tr>
+            
+            <tr> <td> Data Accepted At </td>
+                 <td><input type="text" id="data_accept" name="data_accept" readonly="readonly"/></td>
+            </tr>
+             
+             <tr> <td> Card Number: </td>
+                <td> <input type="text" id="card_number" name="card_number" value=""/>e.g. 4111111111111111 </td>
+             </tr>
+              <tr> <td> Expiry Month: </td>
+                   <td> <input type="text" name="expiry_month" value=""/>e.g. 07 </td>
+             </tr>
+              <tr> <td> Expiry Year: </td>
+                   <td> <input type="text" name="expiry_year" value=""/>e.g. 2027</td>
+             </tr>
+              <tr> <td> CVV Number:</td>
+                   <td> <input type="text" name="cvv_number" value=""/>e.g. 328</td>
+             </tr>
+             <tr> <td> Issuing Bank:</td>
+                <td><input type="text" name="issuing_bank" value=""/>e.g. State Bank Of India</td>
+             </tr>
+      <tr> 
+        <td> Mobile Number:</td>
+                  <td><input type="text" name="mobile_number" value=""/>e.g. 9770707070</td>
+             </tr>
+      <tr> 
+        <td> MMID:</td>
+                  <td><input type="text" name="mm_id" value=""/>e.g. 1234567</td>
+             </tr>
+      <tr> 
+        <td> OTP:</td>
+                  <td><input type="text" name="otp" value=""/>e.g. 123456</td>
+             </tr>
+             <tr> 
+            <td> Promotions:</td>
+                <td> <select name="promo_code" id="promo_code"> <option value="">All Promotions &amp; Offers</option> </select> </td>
+            </tr>
+         
+            <tr>
+              <td></td><td><INPUT TYPE="button" id="pay_button" value="CheckOut"></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+                        <script type="text/javascript">
+                            function my_toast(){
+    $('.snackbar').css('visibility','visible');
+  setTimeout(function(){ $('.snackbar').css('visibility','hidden'); }, 3000);
+}
+
+
+
+ function collapse(id){
+
+
+ $('.user-image').hide();
+   $('.social').hide();
+   $('.middle-block').css('visibility', 'hidden');
+   
+       if (id!=1) {
+       if(($('#collapse1').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse1').removeClass('in');
+   };
+
+     }
+     
+
+     if (id!=2) {
+       if(($('#collapse2').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse2').removeClass('in');
+
+  
+      
+
+   };
+
+     }
+
+
+     if (id!=3) {
+      if(($('#collapse3').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse3').removeClass('in');
+   };
+   //   $('.user-image').hide();
+   // $('.social').hide();
+   // $('.middle-block').css('visibility', 'hidden');
+      
+
+}
+   
+   if (id!=4) {
+   if(($('#collapse4').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse4').removeClass('in');
+   };}
+
+if (id!=5) {
+   if(($('#collapse5').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse5').removeClass('in');
+   };}
+
+   if (id!=6) {
+   if(($('#collapse6').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse6').removeClass('in');
+   };}
+
+   if (id!=7) {
+   if(($('#collapse7').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse7').removeClass('in');
+   };}
+
+   if (id!=8) {
+   if(($('#collapse8').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse8').removeClass('in');
+   };}
+
+   if (id!=9) {
+   if(($('#collapse9').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse9').removeClass('in');
+   };}
+
+   if (id!=10) {
+   if(($('#collapse10').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse10').removeClass('in');
+   };}
+
+   if (id!=11){
+   if(($('#collapse11').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse11').removeClass('in');
+   };
+   }
+
+   if (id!=12){
+   if(($('#collapse12').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse12').removeClass('in');
+   };
+   }
+
+   if (id!=13){
+   if(($('#collapse13').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse13').removeClass('in');
+   };
+   }
+
+      if (id!=14){
+   if(($('#collapse14').attr('class'))=='panel-collapse collapse in'){
+      $('#collapse14').removeClass('in');
+   };
+   }
+
+
+     if(($('#collapse'+id).attr('class'))=='panel-collapse collapse in'){
+      // $('#collapse1').removeClass('in');
+       $('.user-image').show();
+      $('.social').show();
+      $('.middle-block').css('visibility', 'visible');
+      
+   };
+  
+
+
+
+  }
+  function myFunction() {
+    //   navigator.notification.confirm('Do you want to quit', 
+    //     function(){
+    //         if(button == "1"){
+    //             navigator.myApp.exitApp(); 
+    //         }
+    //     }, 
+    //     'QUIT TITLE', 
+    //     'OK,Cancel'  
+    // );
+  
+}
+
+
+    function zoomimage(id){
+                
+                var target='#zoom'+id;
+                 
+
+                $(target).fancybox({
+                    openEffect  : 'elastic',
+        closeEffect : 'elastic',
+
+        helpers : {
+            title : {
+                type : 'inside'
+            }
+        }
+              });
+ 
+            }
+
+                 function zoomimages(id){
+                
+                var target='#zooms'+id;
+                 
+
+                $(target).fancybox({
+                    openEffect  : 'elastic',
+        closeEffect : 'elastic',
+
+        helpers : {
+            title : {
+                type : 'inside'
+            }
+        }
+              });
+ 
+            }
+
+
+      function check_email_exist(){
+     
+         var email = $('#reg_email').val();
+         var testEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+
+         if(email != ''){
+            if (testEmail.test(email)){
+             // alert("hii");
+            }
+            else{
+               $('.snackbar').html("Please Enter Valid Email-Id");
+               my_toast();
+                $('#reg_email').val('');
+                }
+            }
+
+         if(email != ''){
+                 jQuery.ajax({
+                            type: 'POST',
+                            data: {'action': 'check_email', 'email': email},
+                            url: 'https://digitalbcards.in/ajax.php',
+                            success: function (data) {
+                              // alert(data);
+                                if(data){
+$('.snackbar').html('Email-Id Already Exist.');
+my_toast();
+                                    $('#reg_email').val('');
+                                }
+                                
+                            },
+                            error: function (e) {
+
+                            }
+                            });
+             }
+        
+        }
+           function copyToClipboard(element) {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(element).val()).select();
+  document.execCommand("copy");
+  $temp.remove();
+  // alert('');
+  $('.snackbar').html('Copied successfully');
+  
+                my_toast();
+}
+
+        function share_social(link){
+            // alert(link);
+            window.location.href = link;
+        }
+
+         function check_repass(){
+
+         var pass = $('#password').val();
+         var re_pass = $('#re_pass').val();
+         if(pass != '' && re_pass != ''){
+           if(pass != re_pass){
+            //myApp.alert('Password not matched.');
+            $('.snackbar').html('Password not matched.');
+            my_toast();
+
+            $('#re_pass').val('');
+           }
+         }
+
+        }
+          function view_card(ref_id,id){
+                              //alert(id);
+                              //alert(ref_id);
+                              $.ajax({
+            url: "https://digitalbcards.in/api/card_data/", 
+            method: "POST",
+            data:{zxc:ref_id,user_id:id,secrete:"virus"}, 
+            dataType:"json",            
+           
+            success: function(data) {
+                // var data = JSON.stringify(data);
+// alert(data);
+$('#card_body').html(data);
+$('#view_card_in_popup').modal('show');
+                              $('.title').html('DBCard');
+    // $('.loader').css('display','none');
+
+            //    $('#username').html(data.name);
+             //   $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+              
+            //location.reload();
+          }
+        });  
+                              
+                            }
+                            function close_sidebar(){
+                              $('body').removeClass('with-panel-left-reveal');
+                              // $('body').css('width','100%');
+                              $('.sidebar-left').removeClass('active');
+                              $('.sidebar-left').css('display','none');
+                            }
+         function logout(){
+      localStorage.clear()
+                window.localStorage.setItem("login",0);
+ window.location = "index.html";
+           // window.location.href = "index.html";
+    // $$('#loginn').trigger("click");
+
+    }
+
+                        </script>
+              
+                        <div class="content-block">
+                          
+    </div>
+    <div class="wrapper">
+        <!-- page main start -->
+        <div class="page">
+            <div class="page-content " style="background: #EEEEEEEE;">
+                <div class="background theme-header"></div>
+                <div class="row  h-100 justify-content-center" style="margin-top:-50px " >
+                    <div class="col-10 col-md-6 col-lg-4   text-center align-self-center">
+                       
+                        <!-- <h1 class="login-title"><small>Welcome to,</small><br>DigitalBcards</h1> -->
+                    
+                        
+                        <form id="login_form" method="POST">
+                              <div class="item-content " style="margin: 20px 0px 20px 0px">
+                            <div class="item-media">
+                                <img src="img/logo.png" width="100px"  height="100px" alt="" >
+                            </div>
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    <div class="card" >
+  <div class="card-header" style=" background-color: #07314A;padding: 20px;color: white !important; ">
+    Log in
+  </div>
+
+  <style type="text/css">
+    
+  .form-control{
+  background: none;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-radius: 0px;
+  color: white;
+}
+  </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"  crossorigin="anonymous">
+    
+                                <div class="item-after">
+                                   <div class="card-content card-content-padding">
+     <div class="form-group item-input-wrap" style="margin: 25px;border: groove;">
+      <div class="col-md-8 col-sm-8 input-group item-input-wrap">
+                           <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="glyphicon glyphicon-user"></i></span>     
+                  <input class="form-control" type="text" id="email" name="email" placeholder=" Email Id " required="">
+                            </div>
+                          </div>
+                          <div class="form-group item-input-wrap" style="margin: 25px;border: groove;">
+      <div class="col-md-8 col-sm-8 input-group item-input-wrap">
+                           <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="fa fa-key"></i></span>  
+                           <input type="hidden" name="secrete" value="virus">  
+                           <a href="home.html" id="home"> </a>
+                <input class="form-control" type="password" id="password" name="password" placeholder="Password" required="">
+                            </div>
+                          </div>
+                       
+
+  </div>
+  <div class="card-footer">
+    <a href="#" class="link"></a>
+    <input  type="submit" value="LOGIN" name="save" id="login_user" class="btn btn-default link  " style="background-color: #07314A;
+    color: white;
+    
+    font-weight: 600;
+    width: 100px;
+    padding: 10px;
+
+    border-radius: 8px;">
+    <a href="#" class="link"></a></div>
+                        </div>
+                            </div>
+                        </div>
+                         <div class="snackbar">Some text some message..</div>
+                        <div class="row no-gutters ">
+                          <center>
+                <p class="mgt"><a href="forgot-password.php" style="color:#333;">Forgot Password ?</a><br><a href="register.html"> <span class="color">Create an account</span></a></p>
+               </center>
+                        </div>                        
+                    </div>
+                        </form>
+
+                        <br>
+                        <br>
+
+                         <div class="snackbar">Some text some message..</div>
+       
+                                           
+                    </div>
+                </div>
+
+                
+
+            
+
+        </div>
+        <!-- page main ends -->
+
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Toolbar-->
+            <!-- <div class="toolbar">
+                <div class="toolbar-inner" style="background: blue">
+                  
+                    <a href="#" class="link">Link 1</a>
+                    <a href="#" class="link">Link 2</a>
+                </div>
+            </div> -->
+        </div>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/framework7/js/framework7.min.js"></script>
+    <script type="text/javascript" src="js/my-app.js"></script>
+     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="vendor/bootstrap-4.1.3/js/bootstrap.min.js"></script>
+
+<!-- <script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script> -->
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+    <!-- Cookie jquery file -->
+    <script src="vendor/cookie/jquery.cookie.js"></script>
+
+    <!-- sparklines chart jquery file -->
+    <script src="vendor/sparklines/jquery.sparkline.min.js"></script>
+
+    <!-- Circular progress gauge jquery file -->
+    <script src="vendor/circle-progress/circle-progress.min.js"></script>
+
+    <!-- Swiper carousel jquery file -->
+    <script src="vendor/swiper/js/swiper.min.js"></script>
+
+    <!-- Application main common jquery file -->
+    <script src="js/main.js"></script>
+    <script src="js/select2.min.js"></script>
+  <script src="js/intlTelInput.js"></script>
+  <script class="iti-load-utils" async="" src="js/utils.js?1537717752654"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.4.1/jquery.fancybox.js"></script>
+    <script src="https://cdn.ckeditor.com/4.7.1/standard/ckeditor.js"></script>
+    <script src="js/jquery.cropit.js"></script>
+     <script type="text/javascript" src="js/index.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.1/croppie.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.1/croppie.css" />
+     <script type="text/javascript" src="js/jquery.Jcrop.js"></script>
+
+          <script type="text/javascript" src="js/jquery.SimpleCropper.js"></script>
+          <!-- <script type="text/javascript" src="./node_modules/ccavenue/index.js"></script> -->
+
+ 
+
+
+
+        
+</body>
+<style type="text/css">
+    .errors{
+      color:red;
+    }
+    .pages{
+      background:white !important; 
+    }
+    .modal1{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1050;display:none;overflow:hidden;outline:0}
+</style>
+
+</html>

@@ -1,0 +1,254 @@
+<!-- We don't need a full layout in this file because this page will be parsed with Ajax. -->
+
+<!-- Top Navbar-->
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="left">
+            <!-- <a href="javascript:void(0)" class="menu-left"><i class="material-icons">menu</i></a> -->
+            <a href="#" class="link icon-only open-panel menu-left"><i class="fa fa-bars" style="font-size:20px;color:#f8f9fa"></i></a>
+            <!-- <a href="#" class="back link"> -->
+                <!-- <i class="icon icon-back"></i> -->
+                <!-- <span>Back</span> -->
+            <!-- </a> -->
+        </div>
+        <div class="center sliding" style="text-align: center;">Dashboard</div>
+        <div class="right">
+        </div>
+    </div>
+</div>
+<div class="pages">
+    <div data-page="home" class="page">
+       <div class="page-content" >
+        <div class="col-12">
+          <center><img src="img/new_logo.jpg" width="100%"  height="100px" alt="" style="margin-top: 10px" ></center>
+        </div>
+            <div class="card">
+    <div class="card-header"  style="background-color: #d49100; padding: 0;">
+         <div class="col-60" style="color: white;">
+                      YOUR DBCARD
+                    </div>
+                    <div class="col-40">
+                         <a href="profile.html"  class="social" style="color: white;">
+                                 <i class="fa fa-pencil-square-o" style="font-size:20px;"></i></a>
+                    </div>
+    </div>
+    <div class="card-content mt-1" style=" padding: 0;">
+         <div class="card rounded-50 border-0  bg-primary" style="margin: 0">
+                                    <div class="card-header" style="background-color: #07314a;">
+                                        <div class="row" style="width: 100%; margin: auto;">
+                                            <div class="col-md-12 col-sm-12" >
+                                                <div style="float: left;">
+                                                <h5 class="card-title  text-white"><p class="mb-0" style="font-size: 15px;color:white">Share DBcard / Save Contact</p></h5>
+                                                </div>
+                                                <div style="float: right;">
+                                                <a style="text-align: right;"  href="#" data-toggle="modal" data-target="#colorscheme"><i class="fa fa-share-alt text-white" ></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                     <form method="post" id="share_form">   
+                                    <div class="card-body  text-white" style="background-color: #07314a;">
+                                        <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
+                                        <div class="row">
+                                              <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                 <input type="text" class="form-control" required="" id="receivername" name="name" placeholder="Type Receiver’s Name" > 
+												 <div style="float: right;">
+												 <a style="text-align: right;"  href="#"  onclick="displaycontacts()"><i class="fa fa-share-alt text-white" ></i></a> 
+												 </div>
+												 <div id="showcontacts" style="display:none;">
+													<select id="contacts-list" class="form-control" name="phoneno" onchange="updateContacts();">
+												    </select>
+												 </div>
+                                                <input type="hidden" class="form-control"  id="language" name="language" >
+                                                <input type="hidden" class="form-control"  id="referral" name="referral" >
+                                                <input type="hidden" class="form-control"  id="user_id" name="user_id" >
+                                                <input type="hidden" class="form-control"  id="user_name" name="user_name" >
+                                                  <input type="hidden" name="secrete" value="virus">
+                                                </div>
+                                            </div>
+                                                <div class="col-12">
+                                                <div class="form-group">
+                                                    <div class="snackbar">Some text some message..</div>
+                                                <!-- <label>Phone Number</label> -->
+                                                     <div class = "list-block">
+                                                        <ul>
+                                                           
+<!-- Open In Popup + Searchbar + Multiple -->
+<li>
+  <a class="item-link smart-select smart-select-init" data-open-in="popup"  data-searchbar="true" data-searchbar-placeholder="Search car">
+    <select placeholder="Decide Segment" class="form-control select2 selid" style="width:100%" id="segment" name="segment[]"  multiple required="">
+      <optgroup label="Japanese">
+        <!-- <option value="honda" selected>Honda</option> -->
+        <option value="-1" selected></option>
+        <!-- <option value="mazda">Mazda</option> -->
+        <!-- <option value="nissan">Nissan</option> -->
+        <!-- <option value="toyota">Toyota</option> -->
+      </optgroup>
+     
+    </select>
+    <div class="item-content">
+      <div class="item-inner">
+        <div class="item-title">Segment</div>
+      </div>
+    </div>
+  </a>
+</li>
+<!-- Open In Sheet -->
+
+<!-- Open In Popover -->
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                              <style type="text/css">
+        
+       input, input:before, input:after {
+      -webkit-user-select: initial;
+      -khtml-user-select: initial;
+      -moz-user-select: initial;
+      -ms-user-select: initial;
+      user-select: initial;
+     } 
+          </style>
+                                             <div class="col-12">
+                                                <div class="form-group">
+                                                    <input type="text" pattern="\d*" class="form-control" id="receivermobile" name="mobile"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric"> 
+													<!-- <ul id="contacts-list"></ul> -->
+                                                    <!-- <input type="text" class="form-control  text-white" value="+91"> -->
+                                                </div>
+                                            </div>
+                                           <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                  <input type="email" class="form-control" id="email" name="email" placeholder="Type Receiver’s Email">
+                                                </div>
+                                            </div>
+                                            <div id="test" style="display: none;width: 100%">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" class="form-control" id="position" name="position" autocomplete="off" placeholder="Position">
+                                                
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" class="form-control" id="address" name="address" placeholder="Address Line 1">
+                                                 
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" class="form-control" id="address2" name="address2" placeholder="Address Line 2">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" class="form-control" id="city" name="city" placeholder="City">
+
+                                                </div>
+                                            </div>
+                                         
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" class="form-control" id="zip_code" name="zip_code" placeholder="Zip Code">
+                                                 
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" class="form-control" id="state" name="state" placeholder="State">
+                                                 
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <!-- <label>Phone Number</label> -->
+                                                <input type="text" class="form-control" id="country" name="country" placeholder="Country Name">
+                                                  
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <input type="text" class="form-control" id="website" name="website" placeholder="Website">
+                                                
+                                                  
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <label>Birthdate</label>
+                                                <input type="date" placeholder="Birthday" class="form-control" id="birthday" name="birthday">
+                                                  
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                <label>Anniversory</label>
+                                                <input type="date" class="form-control" id="anniversory" name="anniversory">
+                                                  
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    </div>
+    <div class="card-footer" >
+<!-- <div class="block">
+  <div class="row">
+    <button type="submit" name="send_sms" class="col button button-fill button-round" style="width: 100%;">send SMS</button>
+    <button type="submit" name="send_sms" class="col button button-fill button-round" style="width: 100%;">send SMS</button>
+  </div>
+</div>
+ -->
+<!-- <div class="block">
+  <div class="row">
+    <button type="submit" name="send_sms" class="col button button-fill button-round" style="width: 100%;">send SMS</button>
+    <button type="submit" name="send_sms" class="col button button-fill button-round" style="width: 100%;">send fdfd</button>
+  </div>
+</div>
+
+<div class="block">
+  <div class="row">
+    <button type="submit" name="send_sms" class="col button button-fill button-round" style="width: 100%;">send SMffdS</button>
+    <button type="submit" name="send_sms" class="col button button-fill button-round" style="width: 100%;">send SMS</button>
+</div> -->
+
+<div class="block" style="width: 100%; padding: 5px;">
+  <p class="row">
+    <button type="button" name="send_sms"  id="button" class="col-xs button button-fill color-orange" style="width: 47%;">More</button>
+    <button type="button" onclick="location.href='index.html'" name="send_sms" class="col-xs button button-fill color-orange" style="width: 47%;">Reset</button>
+   
+  </p> 
+  <p class="row">
+    <button type="submit" id="save_only" name="save_only" class="col-xs button button-fill color-orange" style="width: 47%;"
+style="width: 47%;">SAVE NOW</button>
+    <button type="submit" name="send_whatsapp" class="col-xs button button-fill color-orange"style="width: 47%;"
+style="width: 47%;" >WhatsApp</button>
+ <!-- <button class="col button color-orange">colcol-xs-3tton button-fill color-orange -->
+  </p>
+  <p class="row">
+    <button type="submit" name="send_email" class="col-xs button button-fill color-orange" style="width: 47%;"
+style="width: 47%;">Send Email</button>
+    <button type="submit" name="send_sms" class="col-xs button button-fill color-orange" style="width: 47%;"
+style="width: 47%;">Send SMS</button>
+  </p>
+</div>
+
+    </div>
+</div>
+                  
+           
+               
+        </div>
+    </div>
+</div>
+

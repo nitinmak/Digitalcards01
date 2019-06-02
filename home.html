@@ -53,8 +53,14 @@
                                               <div class="col-12">
                                                 <div class="form-group">
                                                 <!-- <label>Phone Number</label> -->
-                                                 <!-- <input type="text" class="form-control" required="" id="name" name="name" placeholder="Type Receiver’s Name"> -->
-                                                 <ul id="contacts-list"></ul>
+                                                 <input type="text" class="form-control" required="" id="name" name="name" placeholder="Type Receiver’s Name">
+                                                  <div style="float: right;">
+                         <a style="text-align: right;"  href="#"  onclick="displaycontacts()"><i class="fa fa-share-alt text-white" ></i></a> 
+                         </div>
+                         <div id="showcontacts" style="display:none;">
+                          <select id="contacts-list" class="form-control" name="phoneno" onchange="updateContacts();">
+                            </select>
+                         </div>
                                                    <input type="hidden" class="form-control"  id="language" name="language" >
                                                 <input type="hidden" class="form-control"  id="referral" name="referral" >
                                                 <input type="hidden" class="form-control"  id="user_id" name="user_id" >
