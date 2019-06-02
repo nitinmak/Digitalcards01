@@ -87,8 +87,8 @@ function onSuccess(contacts){
 		 
 			
 			var option = document.createElement("option");
-			option.text =  contacts[i].phoneNumbers[0].value;
-			option.value = contacts[i].displayName;
+			option.value =  contacts[i].phoneNumbers[0].value;
+			option.text = contacts[i].displayName;
             // alert(option)
 			x.add(option);
     }
@@ -125,8 +125,8 @@ function updateContacts()
 	var selectBox = document.getElementById("contacts-list");
     var selectedValue = selectBox.options[selectBox.selectedIndex].value;
 	var selectedText = selectBox.options[selectBox.selectedIndex].text;
-
-	document.getElementById("receivername").value = selectedValue;
-	document.getElementById("receivermobile").value =  selectedText.slice(-10);
+alert($.trim(selectedValue.slice(-11)));
+	document.getElementById("receivermobile").value = $.trim(selectedValue.slice(-11));
+	document.getElementById("receivername").value =  selectedText;
 	displaycontacts();
 }
