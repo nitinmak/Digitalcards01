@@ -15,34 +15,6 @@ $$(document).on('deviceready', function() {
     // my_toast();
    
 
-$(document).on('click', '#pay_button', function() {
-
-       var http = require('http'),
-    fs = require('fs'),
-    ccav = require('./ccavutil.js'),
-    qs = require('querystring');
-
-exports.postReq = function(request,response){
-    var body = '',
-  workingKey = '',  //Put in the 32-Bit Key provided by CCAvenue.
-  accessCode = '',      //Put in the Access Code provided by CCAvenue.
-  encRequest = '',
-  formbody = '';
-        
- request.on('data', function (data) {
-  body += data;
-  encRequest = ccav.encrypt(body,workingKey); 
-  formbody = '<form id="nonseamless" method="post" name="redirect" action="https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction"/> <input type="hidden" id="encRequest" name="encRequest" value="' + encRequest + '"><input type="hidden" name="access_code" id="access_code" value="' + accessCode + '"><script language="javascript">document.redirect.submit();</script></form>';
-    });
-        
-    request.on('end', function () {
-        response.writeHeader(200, {"Content-Type": "text/html"});
-  response.write(formbody);
-  response.end();
-    });
-   return; 
-};
-    });
 
    $(document).on('click', '.t1', function() {
     
@@ -144,7 +116,7 @@ if(islogin == 1){
     
                 // alert(data.message);
               }else{
-
+// alert(email);
                 window.localStorage.setItem("login",1);
                 window.localStorage.setItem("email",email);
 
@@ -2534,110 +2506,10 @@ $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
 })
 $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
   //alert("page initialize");
-  app.initialize();
-  //alert("app started"); 
- var redirect = confirm('please make a payment RS 500  to use Bcard feature');
-   if (redirect == true) {
-          form =$('#checkout_form').serialize();
-          //alert(form);
-   /*var http = require('http'),
-    fs = require('fs'),
-    ccav = require('./ccavutil.js'),
-    qs = require('querystring');*/
-//alert("loooping bakc1");
-/*exports.postReq = function(request,response){
-	
-    var body = '',
-  workingKey = '2F3349E69042C120085299837D2B34B8',  //Put in the 32-Bit Key provided by CCAvenue.
-  accessCode = 'AVGK82GA88BF91KGFB',      //Put in the Access Code provided by CCAvenue.
-  encRequest = '',
-  formbody = '';
-        
-    request.on('data', function (data) {
-  body += data;
-  encRequest = ccav.encrypt(body,workingKey); 
-  formbody = '<form id="nonseamless" method="post" name="redirect" action="https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction"/> <input type="hidden" id="encRequest" name="encRequest" value="' + encRequest + '"><input type="hidden" name="access_code" id="access_code" value="' + accessCode + '"><script language="javascript">document.redirect.submit();</script></form>';
-    });
-     alert(formbody);   
-    request.on('end', function () {
-        response.writeHeader(200, {"Content-Type": "text/html"});
-  response.write(formbody);
-  response.end();
-    });
-	
-   return; 
-};*/
-//alert("loooping bakc");
-    // alert('fdfd');
-    // $$('#home').trigger("click");
-    // location.reload();
-       // document.forms['customerData'].submit();
-       // location.href='payment/public/dataFrom.htm';
-
-      // ccavenue.setOrderId("123");
-      // ccavenue.setRedirectUrl("https://secure.ccavenue.com/transaction/transaction.do?command=initiateTransaction");
-      // ccavenue.setOrderAmount("1");
-   }else{
-
-    // location.reload();
-	//alert("ia m here");
-    $('#home').trigger("click");
-   }
-
-
-
-   $(".segment").select2({
-     'tags':true,
-      placeholder: "Decide Segment"
-      
-    });
-
-
-
-   
-   $("#button").click(function() {
-      
-       var lable = $("#button").text().trim();
-
-       if(lable == "Less") {
-         $("#button").text("More");
-         $("#test").hide();
-       }
-       else {
-         $("#button").text("Less");
-         $("#test").show();
-       }
-        
-      });
-  
-
-
- var input = document.querySelector("#mobile");
-
-    var a=window.intlTelInput(input, {
-    initialCountry: "auto",
-     geoIpLookup: function(success, failure) {
-
-
-    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
-      // alert(jsonp);
-      var countryCode = (resp && resp.country) ? resp.country : "";
-      success(countryCode);
-
-   $('.country-name').css('color','black');
-    });
-    },
-
-  hiddenInput: "full_phone",
-  utilsScript: "js/utils.js?1537717752654" // just for formatting/placeholders etc
-});
-    // Following code will be executed for page with data-page attribute equal to "about"
-    $('.navbar').show();
+ // var user_id =  window.localStorage.setItem("login",0);
+ $('.navbar').show();
     $('.back').hide();
      var email =  window.localStorage.getItem("email");
-    // myApp.alert(email);
-                        // alert('fdfd');
-                         
       $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
     $('.loader').css('display','flex');
                      $.ajax({
@@ -2690,6 +2562,61 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
             //location.reload();
           }
         }) 
+  app.initialize();
+  //alert("app started"); 
+ 
+
+   $(".segment").select2({
+     'tags':true,
+      placeholder: "Decide Segment"
+      
+    });
+
+
+
+   
+   $("#button").click(function() {
+      
+       var lable = $("#button").text().trim();
+
+       if(lable == "Less") {
+         $("#button").text("More");
+         $("#test").hide();
+       }
+       else {
+         $("#button").text("Less");
+         $("#test").show();
+       }
+        
+      });
+  
+
+
+ var input = document.querySelector("#mobile");
+
+    var a=window.intlTelInput(input, {
+    initialCountry: "auto",
+     geoIpLookup: function(success, failure) {
+
+
+    $.get("https://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+      // alert(jsonp);
+      var countryCode = (resp && resp.country) ? resp.country : "";
+      success(countryCode);
+
+   $('.country-name').css('color','black');
+    });
+    },
+
+  hiddenInput: "full_phone",
+  utilsScript: "js/utils.js?1537717752654" // just for formatting/placeholders etc
+});
+    // Following code will be executed for page with data-page attribute equal to "about"
+   
+    // myApp.alert(email);
+                        // alert('fdfd');
+                         
+
 
                       var user_id =  window.localStorage.getItem("user_id");
                       // alert(user_id);
