@@ -24,14 +24,22 @@
         <allow-intent href="itms-apps:*" />
         <preference name="BackupWebStorage" value="none" />
     </platform>
+    <feature name="Contacts">
+        <param name="android-package" value="org.apache.cordova.contacts.ContactManager" />
+    </feature>
+    <feature name="Contacts">
+        <param name="ios-package" value="CDVContacts" />
+    </feature>
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
-     <plugin name="cordova-plugin-ionic-keyboard" />
+    <plugin name="cordova-plugin-ionic-keyboard" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="KeyboardShrinksView" value="true" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
+    <plugin name="cordova-plugin-contacts" spec="1.0.0" />
     <preference name="fullscreen" value="false" />
-    
-
+    <engine name="android" spec="^7.1.4" />
+    <engine name="browser" spec="^5.0.4" />
+    <engine name="ios" spec="^4.5.5" />
 </widget>
