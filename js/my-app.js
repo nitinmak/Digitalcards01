@@ -2521,10 +2521,10 @@ $('#card').html(data);
           }
         });  
 })
-$$(document).on('pageLoad', '.page[data-page="home"]', function (e) {
-  alert("page initialize");
-  app.initialize();
-})
+// $$(document).on('pageLoad', '.page[data-page="home"]', function (e) {
+//   alert("page initialize");
+//   app.initialize();
+// })
  
 // Option 2. Using live 'pageInit' event handlers for each page
 $$(document).on('pageInit', '.page[data-page="profile"]', function (e) {
