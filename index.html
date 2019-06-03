@@ -206,10 +206,46 @@
         <!-- Your main view, should have "view-main" class -->
         <div class="view view-main">
             <!-- Top Navbar-->
-             <div class="modal1 fade"  id="view_card_in_popup" tabindex="-1" role="dialog">
+
+ <div class="modal1 fade" id="colors" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content ">
                     <div class="modal-header border-bottom theme-header">
+                        <p class="text-uppercase font-weight-bold text-white my-2">Choose your color</p>
+                        <button type="button" class="close " data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center theme-color">
+                            <p class="text-uppercase font-weight-bold text-dark text-center">Share Me</p>
+                            <p>Share my Digital BCard in your network.</p>
+                            <button id="wp_link" class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
+                            <button id="twiter" class="m-2 btn btn-warning rounded sq-btn text-white" data-theme="color-theme-yellow"><i class="fa fa-twitter facardtt"></i></button>
+                            <button id="google" class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
+                            <button id="fb_link" class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
+                            <br>
+                          
+                            <button id="linklind" class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-linkedin facardld"></i></button>
+                            <button id="mail_link" class="m-2 btn btn-orange rounded sq-btn text-white" data-theme="color-theme-orange"><i class="fa fa-envelope facardml"></i></button>
+                         
+                        </div>
+                        <hr class="mt-4">
+                        <div class="row align-items-center mt-4">
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+
+
+             <div class="modal1 fade"  id="view_card_in_popup" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header border-bottom">
                         <p class="title text-uppercase font-weight-bold text-dark my-2">Choose your color</p>
                         <button type="button" class="close " data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
@@ -221,7 +257,7 @@
                             <p>Share my Digital BCard in your network.</p>
                             <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-whatsapp facardwt"></i></button>
                             <button class="m-2 btn btn-primary rounded sq-btn text-white" data-theme="color-theme-blue"><i class="fa fa-facebook facardfb"></i></button>
-                            <button class="m-2 btn btn-warning rounded sq-btn text-white" data-theme="color-theme-yellow"><i class="fa fa-twitter facardtt"></i></button>
+                            <button class="m-2 btn btn-warning rounded sq-btn text-white" data-theme=""><i class="fa fa-twitter facardtt"></i></button>
                             <button class="m-2 btn btn-success rounded sq-btn text-white" data-theme="color-theme-green"><i class="fa fa-google-plus facardgp"></i></button>
                             <br>
                             <button class="m-2 btn btn-pink rounded sq-btn text-white" data-theme="color-theme-pink"><i class="fa fa-linkedin facardld"></i></button>
@@ -761,7 +797,7 @@ $('#view_card_in_popup').modal('show');
         <!-- page main start -->
         <div class="page">
             <div class="page-content " style="background: #EEEEEEEE;">
-                <div class="background theme-header"></div>
+                <div class="background"></div>
                 <div class="row  h-100 justify-content-center" style="margin-top:-50px " >
                     <div class="col-10 col-md-6 col-lg-4   text-center align-self-center">
                        
@@ -922,7 +958,7 @@ $('#view_card_in_popup').modal('show');
     .pages{
       background:white !important; 
     }
-    .modal1{position:fixed;top:0;right:0;bottom:0;left:0;z-index:1050;display:none;overflow:hidden;outline:0}
+    .modal1{position:fixed;top:0;right:0;bottom:0;left:0;z-index:9999;opacity:1;display:none;overflow:hidden;outline:0}
 </style>
 
 </html>

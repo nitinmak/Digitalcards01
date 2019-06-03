@@ -2590,6 +2590,13 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
        }
         
       });
+
+
+      $("#reset_form").click(function() {
+      
+       $('#share_form')[0].reset();
+        
+      });
   // var list = $('.country-list');
 
 $(document).on('click', '.flag-container', function() {
@@ -2659,6 +2666,7 @@ $("#segment").trigger('create');
              $('#language').val(language);
              $('#referral').val(referral);
              $('#user_name').val(name);
+             
              var mail_link = 'mailto:?subject=Digital%20Bcard&body=Hey%2C%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link%20%0Ahttps%3A%2F%2Fdigitalbcards.in%2FBcard.php%3Fzxc%3D'+referral+'%20%0A%0A%0ASay%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.%0A%0A%0A'+name;
              var linklind = 'https://www.linkedin.com/shareArticle?mini=true&url=https://digitalbcards.in/Bcard.php?zxc=DBC100751&title=Hey%2C%20%20I%20am%20using%20this%20Digital%20Business%20Card.%20I%20loved%20using%20it.%20Have%20a%20look%20at%20it%20from%20the%20below%20link%20%0Ahttps%3A%2F%2Fdigitalbcards.in%2FBcard.php%3Fzxc%3D'+referral+'%20%0A%0A%0ASay%20goodbye%20to%20Cards.%20%20Use%20Digital%20Business%20Cards%20-%20You%20are%20one%20click%20away.%20.%20.%0A%0A%0A'+name+'&source=LinkedIn';
              var google = 'https://plus.google.com/share?url=https://digitalbcards.in/Bcard.php?zxc='+referral;

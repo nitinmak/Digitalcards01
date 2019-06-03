@@ -105,11 +105,21 @@ $(document).on('click', '#choose_contact', function() {
    })
 function displaycontacts()
 {
+navigator.contacts.pickContact(function(contact){
+    var  contact_name =  contact.displayName;
+    var contact_number = contact.phoneNumbers[0].value;
+    var trim = contact_number.replace(/\s/g,'');
+    document.getElementById("receivermobile").value = trim.slice(-10);
+    document.getElementById("receivername").value =  contact_name;
+        // alert('The following contact has been selected:' + JSON.stringify(contact));
+    },function(err){
+        console.log('Error: ' + err);
+    });
     // alert('here');
-     $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
-    $('.loader').css('display','flex');
-      $('#contacts-list').click();
-       $('.loader').css('display','none');
+    //  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+    // $('.loader').css('display','flex');
+    //   $('#contacts-list').click();
+    //    $('.loader').css('display','none');
 	// var x = document.getElementById("showcontacts");
  //  if (x.style.display === "none") {
  //    x.style.display = "block";

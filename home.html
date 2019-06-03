@@ -41,7 +41,7 @@
                                                 <h5 class="card-title  text-white"><p class="mb-0" style="font-size: 15px;color:white">Share DBcard / Save Contact</p></h5>
                                                 </div>
                                                 <div style="float: right;">
-                                                <a style="text-align: right;"  href="#" data-toggle="modal" data-target="#colorscheme"><i class="fa fa-share-alt text-white" ></i></a>
+                                                <a style="text-align: right;"  href="#" data-toggle="modal" data-target="#colors"><i class="fa fa-share-alt text-white" ></i></a>
                                                 </div>
                                             </div>
                                         </div>
@@ -51,54 +51,28 @@
                                         <!-- <h3 class="f-light mb-3 text-white">What’s your phone number?</h3> -->
                                         <div class="row">
                                            <div class="row" style="width: 100%; margin: auto;">
-                                            <div class="col-md-12 col-sm-12" >
-                                                <div style="width:75%;float: left;">
-                                                <h5 class="card-title  text-white"><p class="mb-0" style="font-size: 15px;color:white"> <input type='text' value=''  class='form-control icon-input' id="receivername" name="name"placeholder="Type Receiver’s Name"></p></h5>
+                                            <div class="col-100" >
+                                                <div style="width:80%;float: left;">
+                                              
+                                                 
+                                                     
+                                              
                                                 </div>
-                                                <div style="width:25%;float: right;">
-                                             <div class = "list-block">
-                                                        <ul>
-                                                           
-<!-- Open In Popup + Searchbar + Multiple -->
-<li>
-  <a class="item-link smart-select smart-select-init" data-open-in="popup"  data-searchbar="true" data-searchbar-placeholder="Search Contact">
-    <select placeholder="Decide Segment" class="form-control select2 selid" style="width:100%;background-color: white" id="contacts-list" name="phoneno" onchange="updateContacts();">
-      <optgroup label="Japanese">
-        <!-- <option value="honda" selected>Honda</option> -->
-        <option value="-1" selected>Select Contact</option>
-        <!-- <option value="mazda">Mazda</option> -->
-        <!-- <option value="nissan">Nissan</option> -->
-        <!-- <option value="toyota">Toyota</option> -->
-      </optgroup>
-     
-    </select>
-    <div class="item-content">
-      <div class="item-inner">
-        <div class="item-title"><i class="fa fa-user"></i></div>
-      </div>
-    </div>
-  </a>
-</li>
-<!-- Open In Sheet -->
-
-<!-- Open In Popover -->
-
-                                                        </ul>
-                                                    </div>
-                                                </div>
+                                              
                                             </div>
                                         </div>
                                               <div class="col-12">
                                                 <div class="form-group">
+                                                  <input type='text' value=''  class='form-control icon-input' id="receivername" name="name"placeholder="Type Receiver’s Name"><a><i class='fa fa-users fa-2x times-icon' onclick="displaycontacts();" style="color: #d49100" aria-hidden='true'></i></a>
                                                 <!-- <label>Phone Number</label> -->
                                                  <!-- <input type="text" class="form-control " required="" id="receivername" name="name" placeholder="Type Receiver’s Name" > -->
                                                <!--   <input type='text' value='' onclick="displaycontacts()" class='form-control icon-input' id="receivername" name="name"placeholder="Type Receiver’s Name">   -->
-												<!-- </div> -->
-												 <div id="showcontacts" style="display:none;">
-													<!-- <select id="contacts-list" class="form-control" name="phoneno" onchange="updateContacts();">
-												    </select>
+                        <!-- </div> -->
+                         <div id="showcontacts" style="display:none;">
+                          <!-- <select id="contacts-list" class="form-control" name="phoneno" onchange="updateContacts();">
+                            </select>
  -->                           
-												 </div>
+                         </div>
                                                 <input type="hidden" class="form-control"  id="language" name="language" >
                                                 <input type="hidden" class="form-control"  id="referral" name="referral" >
                                                 <input type="hidden" class="form-control"  id="user_id" name="user_id" >
@@ -175,7 +149,7 @@ padding-right:60px !important;
                                              <div class="col-12">
                                                 <div class="form-group">
                                                     <input type="text" pattern="\d*" class="form-control " id="receivermobile" name="mobile"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric"> 
-													<!-- <ul id="contacts-list"></ul> -->
+                          <!-- <ul id="contacts-list"></ul> -->
                                                     <!-- <input type="text" class="form-control  text-white" value="+91"> -->
                                                 </div>
                                             </div>
@@ -284,7 +258,7 @@ padding-right:60px !important;
 <div class="block" style="width: 100%; padding: 5px;">
   <p class="row">
     <button type="button" name="send_sms"  id="button" class="col-xs button button-fill color-orange" style="width: 47%;">More</button>
-    <button type="button" onclick="location.href='index.html'" name="send_sms" class="col-xs button button-fill color-orange" style="width: 47%;">Reset</button>
+    <button type="button" id="reset_form" name="send_sms" class="col-xs button button-fill color-orange" style="width: 47%;">Reset</button>
    
   </p> 
   <p class="row">
@@ -305,9 +279,12 @@ style="width: 47%;">Send SMS</button>
     </div>
 </div>
                   
-           
+
+
+          
                
         </div>
     </div>
 </div>
+
 
