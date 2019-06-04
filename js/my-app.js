@@ -1928,65 +1928,20 @@ $$(document).on('pageInit', '.page[data-page="about_me"]', function (e) {
                                                         }
                                                     }
                    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
-$("#save_button").click(function() {
-  // alert('fdfd');
-$('#about_me_form').validate({ // initialize the plugin
-        errorLabelContainer: "#cs-error-note",
+
+                   $("#save_button").click(function() {
+                    // var content = $( 'textarea.editor' ).val();
+                    //alert( );
+$('#about_me_vl').val(editor.getData());
+   var form =$('#about_me_form').serialize();
+                        // alert(form);
+$('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
    
-     errorClass: 'errors',
-    rules: {
-     
-       
-        f_name: {
-           
-            required: true,
-            
-            
-        },
-         profession: {
-           
-            required: true,
-            
-        },
-        about_me_vl: {
-           
-            required: true,
-            
-        },
-         y_tube_link: {
-           
-            required: true,
-            
-        },
-        
-    },
-    messages: {
-       
-        
-         f_name: {
-           
-            required: "Please enter  Name.",
-            
-            
-        },
-         profession: {
-           
-            required: "Please enter  Password.",
-            
-            
-        },
-        
-       
-         
-    },
-        submitHandler: function (form) { // for demo
-          form =$('#about_me_form').serialize();
-         
-          
-         $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
-    $('.loader').css('display','flex');
-                
-                     $.ajax({
+
+
+ 
+                                $.ajax({
             url: "https://digitalbcards.in/api/about_me/", 
             method: "POST",
             data:form, 
@@ -2014,16 +1969,13 @@ $('#about_me_form').validate({ // initialize the plugin
               }     
           }
         });  
-           
-            return false; // for demo
-        }
-    });
-});
-})
-                 
+                      
+
+                      })
  
 
 
+})
 $$(document).on('pageInit', '.page[data-page="theme"]', function (e) {
 var user_id =  window.localStorage.getItem("user_id");
  var referral =  window.localStorage.getItem("referral");
@@ -2568,8 +2520,7 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
            
             success: function(data) {
                 // var data = JSON.stringify(data);
-                // alert(data.pay_status);
-               window.localStorage.setItem("payment",data.pay_status);
+                // alert(data.theme);
                window.localStorage.setItem("user_id",data.id);
                window.localStorage.setItem("language",data.language);
                window.localStorage.setItem("referral",data.Refferal_id);
@@ -2766,18 +2717,12 @@ $("#segment").trigger('create');
         submitHandler: function (form) { // for demo
           form =$('#share_form').serialize();
          // alert(form);
-                      var payment =  window.localStorage.getItem("payment");
-
          var segment = $("#segment").val();
          if(segment == '-1'){
             $('.snackbar').html('Plese Select Segment');
             my_toast();
           return false;
-         }else if(payment == 0){
-   $('.snackbar').html('Make a payment to use Bcard features.');
-            my_toast();
-          return false;
-}else{
+         }else{
 
           var  action = $('#action').val();
           var  email = $('#email').val();
@@ -2835,24 +2780,24 @@ $("#segment").trigger('create');
 
 })
 $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
+// myApp.alert('my leads');
                     
      
  var search = '';
                       // alert(user_id);
                       get_contact(search);
                         
-//   $('#search').click(function() {
-// // myApp.alert('my leads');
-//   $('#search input', this).focus();
+  $('#search').click(function() {
+  $('#search input', this).focus();
 
-//   });
-    $('#search').on('input', function(e){
+  });
+    // $('#search').on('input', function(e){
 
-      var search = $(this).val();
-      // var search = $(this).val();
-        get_contact(search);
+    //   var search = $(this).val();
+    //   // var search = $(this).val();
+    //     get_contact(search);
        
-    })        
+    // })        
 
         function get_contact(search){
            $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
