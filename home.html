@@ -20,9 +20,10 @@
     <div data-page="home" class="page">
        <div class="page-content" >
         <div class="col-12">
-          <center><img src="img/new_logo.jpg" width="100%"  height="100px" alt="" style="margin-top: 10px" ></center>
+          <center><img src="img/new_logo.jpg" width="100%"  height="100px" alt="" style="margin-top: 10px;margin-bottom: 10px;padding: 8px;" ></center>
         </div>
             <div class="card">
+               <a href="profile.html"  style="color: white;">
     <div class="card-header"  style="background-color: #d49100; padding: 0;">
          <div class="col-60" style="color: white;">
                       YOUR DBCARD
@@ -32,6 +33,7 @@
                                  <i class="fa fa-pencil-square-o" style="font-size:20px;"></i></a>
                     </div>
     </div>
+  </a>
     <div class="card-content mt-1" style=" padding: 0;">
          <div class="card rounded-50 border-0  bg-primary" style="margin: 0">
                                     <div class="card-header" style="background-color: #07314a;">
@@ -63,9 +65,9 @@
                                         </div>
                                               <div class="col-12">
                                                 <div class="form-group">
-                                                  <input type='text' value=''  class='form-control icon-input' id="receivername" name="name"placeholder="Type Receiver’s Name"><a><i class='fa fa-users fa-2x times-icon' onclick="displaycontacts();" style="color: #d49100" aria-hidden='true'></i></a>
+                                                  <input type='text' value=''  class='form-control icon-input text-white' id="receivername" name="name"placeholder="Type Receiver’s Name"><a><i class='fa fa-users fa-2x times-icon' onclick="displaycontacts();" style="color: #d49100" aria-hidden='true'></i></a>
                                                 <!-- <label>Phone Number</label> -->
-                                                 <!-- <input type="text" class="form-control " required="" id="receivername" name="name" placeholder="Type Receiver’s Name" > -->
+                                                 <!-- <input type="text" class="form-control text-white " required="" id="receivername" name="name" placeholder="Type Receiver’s Name" > -->
                                                <!--   <input type='text' value='' onclick="displaycontacts()" class='form-control icon-input' id="receivername" name="name"placeholder="Type Receiver’s Name">   -->
                         <!-- </div> -->
                          <div id="showcontacts" style="display:none;">
@@ -141,14 +143,23 @@ top:5px;
 font-size: 1.5em;
     color: black;
 }
-
+.country-list{
+  z-index: 99;
+}
 .icon-input {
 padding-right:60px !important;
+}
+.form-control{
+  background: none;
+  color:white;
+  /*border: none;*/
+  /*border-bottom: 1px groove;*/
+  
 }
           </style>
                                              <div class="col-12">
                                                 <div class="form-group">
-                                                    <input type="text" pattern="\d*" class="form-control " id="receivermobile" name="mobile"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric"> 
+                                                    <input type="text" pattern="\d*" class="form-control text-white " id="receivermobile" name="mobile"   maxlength="10" placeholder="Type Receiver’s Mobile" inputmode="numeric"> 
                           <!-- <ul id="contacts-list"></ul> -->
                                                     <!-- <input type="text" class="form-control  text-white" value="+91"> -->
                                                 </div>

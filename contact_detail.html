@@ -57,7 +57,7 @@
    </div>
   <div class="card-body" >
     
-
+<form id="contact_form" method="POST">
                             <div class="col-12">
                                                   <input type="hidden" name="secrete" value="virus">
 
@@ -68,7 +68,7 @@
                                                 <div class="form-group">
                                                   
                                                         <label class="text-white bmd-label-static">Phone</label>
-                                                        <input type="text" class="form-control" id="phone" name="phone" minlength="10" maxlength="10" >
+                                                        <input type="text" class="form-control text-white" id="phone" inputmode="numeric" pattern="\d*" name="phone" minlength="10" maxlength="10" >
                                                         <small class="form-control-feedback"></small>
                                                     
                                                     <!-- <input type="text" class="form-control  text-white" value="+91"> -->
@@ -77,14 +77,14 @@
                                             <div class="col-12">
                                               <div class="form-group bmd-form-group">
                                                         <label class="text-white bmd-label-static">Email</label>
-                                                        <input type="email" class="form-control" id="email" name="email" >
+                                                        <input type="email" class="form-control text-white" id="email" name="email" >
                                                         <small class="form-control-feedback"></small>
                                                     </div>
                                             </div>
                                              <div class="col-12">
                                                <div class="form-group bmd-form-group">
                                                         <label class="text-white bmd-label-static">Whatsapp</label>
-                                                        <input type="text" class="form-control" id="whatsapp_no" name="whatsapp_no"  minlength="10" maxlength="10">
+                                                        <input type="text" class="form-control text-white" id="whatsapp_no" name="whatsapp_no"  minlength="10" maxlength="10">
                                                         <small class="form-control-feedback"></small>
                                                     </div>
                                             </div>
@@ -92,7 +92,7 @@
                                               <div class="col-12">
                                               <div class="form-group bmd-form-group">
                                                         <label class="text-white bmd-label-static">Skype</label>
-                                                        <input class="form-control" type="text" id="skype" name="skype">
+                                                        <input class="form-control text-white" type="text" id="skype" name="skype">
                                                         <small class="form-control-feedback"></small>
                                                     </div>
                                             </div>
@@ -101,7 +101,7 @@
                                             <div class="col-12">
                                                <div class="form-group bmd-form-group">
                                                         <label class="text-white bmd-label-static">FB Page Messenger URL</label>
-                                                        <input type="text" class="form-control" id="fb_url" name="fb_url">
+                                                        <input type="text" class="form-control text-white" id="fb_url" name="fb_url">
                                                         <small class="form-control-feedback"></small>
                                                     </div>
                                             </div>
@@ -111,14 +111,13 @@
                                         <div class="text-center">
                                             <!-- <input type="hidden" name="add_am" value="1"> -->
                                            <!-- <button type="submit" id="save_button" class="button button-rounded button-green-3d button-green">Submit</button> -->
-                                            <button  type="button-green" name="add_am" id="save_button"  class="btn  mb-1 btn-light  px-4" style="background: #007aff;border:none;color:white">Submit</button>
+                                            <button  type="button" name="add_am" id="save_button"  class="btn  mb-1 btn-light  px-4" style="background: #007aff;border:none;color:white">Submit</button>
                                            <a href="#"   class="btn view_card mb-1 btn-light  px-4"style="text-align: center;margin: 0px 10px 0px 10px;background: #007aff;border:none;color:white">Preview Card</a>
                                            <a href="profile.html"  class="btn  mb-1 btn-light  px-4" style="background: #007aff;border:none;color:white">Back</a>
                                            <!-- <a href="vcard.html" id="v"></a> -->
                                             
                                         </div>
                                             
-                                </form>
                                         </div>
                                     </div>
                                 </div>
@@ -127,6 +126,7 @@
                         </div>
                      
                     </div>
+                                </form>
                     <br>
             </div>
 

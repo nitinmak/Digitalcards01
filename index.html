@@ -513,6 +513,8 @@
                         <script type="text/javascript">
                             function my_toast(){
     $('.snackbar').css('visibility','visible');
+    $('.snackbar').css('z-index','9999999999999');
+    $('.snackbar').css('font-size','14px');
   setTimeout(function(){ $('.snackbar').css('visibility','hidden'); }, 3000);
 }
 
@@ -627,6 +629,24 @@ if (id!=5) {
 
 
 
+  }
+
+  function export_csv(id){
+  location.href = "https://digitalbcards.in/vcf_download.php?zxc="+id;
+
+//get as formatted string
+// c/onsole.log(vCard.getFormattedString());
+      $.ajax({
+        // C:\Users\Traya_IT\AppData\Local\Temp\fz3temp-2\vcf_download.php
+            url: "https://digitalbcards.in/vcf_download.php?zxc="+id, 
+            method: "POST",
+            data:{zxc:id}, 
+            dataType:"json",            
+           
+            success: function(data) {
+                alert('fdf');
+            }
+        })
   }
   function myFunction() {
     //   navigator.notification.confirm('Do you want to quit', 
@@ -836,7 +856,7 @@ $('#view_card_in_popup').modal('show');
      <div class="form-group item-input-wrap" style="margin: 25px;border: groove;">
       <div class="col-md-8 col-sm-8 input-group item-input-wrap">
                            <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="glyphicon glyphicon-user"></i></span>     
-                  <input class="form-control" type="text" id="email" name="email" placeholder=" Email Id " required="">
+                  <input class="form-control text-dark" type="text" id="email" name="email" placeholder=" Email Id " required="">
                             </div>
                           </div>
                           <div class="form-group item-input-wrap" style="margin: 25px;border: groove;">
@@ -844,7 +864,7 @@ $('#view_card_in_popup').modal('show');
                            <span class="input-group-addon" style=" background-color: #07314A;"><i style="color: white" class="fa fa-key"></i></span>  
                            <input type="hidden" name="secrete" value="virus">  
                            <a href="home.html" id="home"> </a>
-                <input class="form-control" type="password" id="password" name="password" placeholder="Password" required="">
+                <input class="form-control text-dark" type="password" id="password" name="password" placeholder="Password" required="">
                             </div>
                           </div>
                        
@@ -867,7 +887,8 @@ $('#view_card_in_popup').modal('show');
                          <div class="snackbar">Some text some message..</div>
                         <div class="row no-gutters ">
                           <center>
-                <p class="mgt"><a href="forgot-password.php" style="color:#333;">Forgot Password ?</a><br><a href="register.html"> <span class="color">Create an account</span></a></p>
+                <p class="mgt"><a href="forgot_password.html" style="color:#333;">Forgot Password ?</a>
+                    <a style="margin-left: 60px" href="register.html"> <span class="color">Create an account</span></a></p>
                </center>
                         </div>                        
                     </div>
@@ -926,7 +947,7 @@ $('#view_card_in_popup').modal('show');
 
     <!-- Swiper carousel jquery file -->
     <script src="vendor/swiper/js/swiper.min.js"></script>
-
+<script src='node_modules/vcards-js/index.js'></script>
     <!-- Application main common jquery file -->
     <script src="js/main.js"></script>
     <script src="js/select2.min.js"></script>

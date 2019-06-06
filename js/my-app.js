@@ -172,11 +172,31 @@ $$(document).on('pageInit', '.page[data-page="achievement"]', function (e) {
  skils_action(form_d);
                   $("#add_tag").click(function() {
    var form =$('#add_achievement_form').serialize()+ "&add_tag=1&" +form_d;
+   if($('#name').val() == ''){
+    $('.snackbar').html('Please Enter Name');
+    my_toast();
+    return false;
+   }
+   if($('#s_value').val() == ''){
+    $('.snackbar').html('Please Enter Description');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
                    $("#update_tag").click(function() {
    var form =$('#update_achievement_form').serialize()+ "&update_tag=1&" +form_d;
+    if($('#e_name').val() == ''){
+    $('.snackbar').html('Please Enter Name');
+    my_toast();
+    return false;
+   }
+   if($('#e_value').val() == ''){
+    $('.snackbar').html('Please Enter Description');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
@@ -242,11 +262,41 @@ $$(document).on('pageInit', '.page[data-page="testimonial"]', function (e) {
  skils_action(form_d);
                   $("#add_tag").click(function() {
    var form =$('#add_testimonial_form').serialize()+ "&add_tag=1&" +form_d;
+    if($('#name').val() == ''){
+    $('.snackbar').html('Please Enter Name');
+    my_toast();
+    return false;
+   }
+   if($('#s_value').val() == ''){
+    $('.snackbar').html('Please Enter Tagline');
+    my_toast();
+    return false;
+   }
+   if($('#msg').val() == ''){
+    $('.snackbar').html('Please Enter Message');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
                    $("#update_tag").click(function() {
    var form =$('#update_testimonial_form').serialize()+ "&update_tag=1&" +form_d;
+    if($('#e_name').val() == ''){
+    $('.snackbar').html('Please Enter Name');
+    my_toast();
+    return false;
+   }
+   if($('#e_value').val() == ''){
+    $('.snackbar').html('Please Enter Tagline');
+    my_toast();
+    return false;
+   }
+   if($('#e_msg').val() == ''){
+    $('.snackbar').html('Please Enter Message');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
@@ -315,11 +365,41 @@ $$(document).on('pageInit', '.page[data-page="experience"]', function (e) {
  skils_action(form_d);
                   $("#add_tag").click(function() {
    var form =$('#add_experience_form').serialize()+ "&add_tag=1&" +form_d;
+    if($('#name').val() == ''){
+    $('.snackbar').html('Please Enter Name');
+    my_toast();
+    return false;
+   }
+   if($('#s_value').val() == ''){
+    $('.snackbar').html('Please Enter Duration');
+    my_toast();
+    return false;
+   }
+   if($('#msg').val() == ''){
+    $('.snackbar').html('Please Enter Message');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
                    $("#update_tag").click(function() {
    var form =$('#update_experience_form').serialize()+ "&update_tag=1&" +form_d;
+     if($('#e_name').val() == ''){
+    $('.snackbar').html('Please Enter Name');
+    my_toast();
+    return false;
+   }
+   if($('#e_value').val() == ''){
+    $('.snackbar').html('Please Enter Duration');
+    my_toast();
+    return false;
+   }
+   if($('#e_msg').val() == ''){
+    $('.snackbar').html('Please Enter Message');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
@@ -415,11 +495,29 @@ $$(document).on('pageInit', '.page[data-page="offer"]', function (e) {
                     // alert('add');
 
    var form =$('#add_offer_form').serialize()+ "&add_tag=1&" +form_d;
+   if($('#upload_image').val() == ''){
+  // alert('fdf');
+  $('.snackbar').html('Please Select Iamge');
+  my_toast();
+  return false;
+}
  }else{
    var form =$('#add_offer_form').serialize()+ "&update_tag=1&" +form_d;
 
  }
 
+if($('#name').val() == ''){
+  // alert('fdf');
+  $('.snackbar').html('Please Enter  Title');
+  my_toast();
+  return false;
+}
+if($('#s_value').val() == ''){
+  // alert('fdf');
+  $('.snackbar').html('Please Enter  Description');
+  my_toast();
+  return false;
+}
 skils_action(form);
 
                   })
@@ -608,6 +706,12 @@ $$(document).on('pageInit', '.page[data-page="gallery"]', function (e) {
 
  }
 
+if($('#upload_image').val() == ''){
+    $('.snackbar').html('Please Select Image');
+    my_toast();
+    return false;
+   }
+   
 skils_action(form);
 
                   })
@@ -781,10 +885,41 @@ $$(document).on('pageInit', '.page[data-page="memberships"]', function (e) {
                     if('add_tag' == $('.o_btn').attr('id')){
    
   var formData = new FormData($("#add_memberships_form")[0]);                    
+     if($('#name').val() == ''){
+  // alert('fdf');
+  $('.snackbar').html('Please Enter Title');
+  my_toast();
+  return false;
+}
+ if($('#image').val() == ''){
+  // alert('fdf');
+  $('.snackbar').html('Please Select Image');
+  my_toast();
+  return false;
+}   
+  if($('#s_value').val() == ''){
+  // alert('fdf');
+  $('.snackbar').html('Please Enter Description');
+  my_toast();
+  return false;
+}                 
  }else{
   var formData = new FormData($("#add_memberships_form")[0]); 
+   if($('#name').val() == ''){
+  // alert('fdf');
+  $('.snackbar').html('Please Enter Title');
+  my_toast();
+  return false;
+}
 
+  if($('#s_value').val() == ''){
+  // alert('fdf');
+  $('.snackbar').html('Please Enter Description');
+  my_toast();
+  return false;
+}                 
  }
+
  
 skils_action(formData);
 
@@ -1004,7 +1139,11 @@ var user_id =  window.localStorage.getItem("user_id");
   var formData = new FormData($("#company_form")[0]);                    
  // alert(formData);
  
-
+if($('#upload_image').val() == ''){
+   $('.snackbar').html('Please Select Image..!');
+               my_toast();
+  return false;
+}
  
 
    $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
@@ -1025,8 +1164,15 @@ processData:false,
               // alert(data.message);
               $('.snackbar').html(data.message);
                my_toast();
+    // $('.loader').css('display','none');
+     var email =  window.localStorage.getItem("email");
+update_profile(email);
+    setTimeout(function(){ 
+
+     $$('.backpage').trigger('click');
     $('.loader').css('display','none');
-    location.reload();
+     }, 2000);
+    // location.reload();
 
             }
           })
@@ -1061,12 +1207,36 @@ $$(document).on('pageInit', '.page[data-page="key_client"]', function (e) {
                                 $("#add_tag").click(function() {
                     if('add_tag' == $('.o_btn').attr('id')){
    
-  var formData = new FormData($("#add_key_client_form")[0]);                    
+  var formData = new FormData($("#add_key_client_form")[0]); 
+ if($('#name').val() == ''){
+  // alert('fdf');
+  $('.snackbar').html('Please Enter Title');
+  my_toast();
+  return false;
+}
+    if($('#image').val() == ''){
+  // alert('fdf');
+  $('.snackbar').html('Please Select Iamge');
+  my_toast();
+  return false;
+} 
+             
  }else{
   var formData = new FormData($("#add_key_client_form")[0]); 
-
+  
  }
- 
+ if($('#name').val() == ''){
+  // alert('fdf');
+  $('.snackbar').html('Please Enter Title');
+  my_toast();
+  return false;
+}
+  if($('#s_value').val() == ''){
+  // alert('fdf');
+  $('.snackbar').html('Please Enter Description');
+  my_toast();
+  return false;
+}
 skils_action(formData);
 
                   })
@@ -1203,11 +1373,33 @@ $$(document).on('pageInit', '.page[data-page="education"]', function (e) {
  skils_action(form_d);
                   $("#add_tag").click(function() {
    var form =$('#add_education_form').serialize()+ "&add_tag=1&" +form_d;
+     if($('#name').val() == ''){
+    $('.snackbar').html('Please Enter Title');
+    my_toast();
+    return false;
+   }
+  
+   if($('#msg').val() == ''){
+    $('.snackbar').html('Please Enter Description');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
                    $("#update_tag").click(function() {
    var form =$('#update_education_form').serialize()+ "&update_tag=1&" +form_d;
+    if($('#e_name').val() == ''){
+    $('.snackbar').html('Please Enter Title');
+    my_toast();
+    return false;
+   }
+  
+   if($('#e_msg').val() == ''){
+    $('.snackbar').html('Please Enter Description');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
@@ -1273,11 +1465,31 @@ $$(document).on('pageInit', '.page[data-page="payment_link"]', function (e) {
  skils_action(form_d);
                   $("#add_tag").click(function() {
    var form =$('#add_payment_link_form').serialize()+ "&add_tag=1&" +form_d;
+   if($('#name').val() == ''){
+    $('.snackbar').html('Please Enter  Getway name');
+    my_toast();
+    return false;
+   }
+   if($('#s_value').val() == ''){
+    $('.snackbar').html('Please Enter Link');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
                    $("#update_tag").click(function() {
    var form =$('#update_payment_link_form').serialize()+ "&update_tag=1&" +form_d;
+   if($('#e_name').val() == ''){
+    $('.snackbar').html('Please Enter  Getway name');
+    my_toast();
+    return false;
+   }
+   if($('#e_value').val() == ''){
+    $('.snackbar').html('Please Enter Link');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
@@ -1344,11 +1556,22 @@ $$(document).on('pageInit', '.page[data-page="social_link"]', function (e) {
                   $("#add_tag").click(function() {
                     // alert($('#s_name').val());
    var form =$('#add_social_link_form').serialize()+ "&add_tag=1&" +form_d;
+  
+   if($('#s_value').val() == ''){
+    $('.snackbar').html('Please Enter Link');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
                    $("#update_tag").click(function() {
    var form =$('#update_social_link_form').serialize()+ "&update_tag=1&" +form_d;
+   if($('#e_value').val() == ''){
+    $('.snackbar').html('Please Enter Link');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
@@ -1424,11 +1647,31 @@ $$(document).on('pageInit', '.page[data-page="product"]', function (e) {
  skils_action(form_d);
                   $("#add_tag").click(function() {
    var form =$('#add_product_form').serialize()+ "&add_tag=1&" +form_d;
+   if($('#name').val() == ''){
+    $('.snackbar').html('Please Enter Name');
+    my_toast();
+    return false;
+   }
+   if($('#s_value').val() == ''){
+    $('.snackbar').html('Please Enter Description');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
                    $("#update_tag").click(function() {
    var form =$('#update_product_form').serialize()+ "&update_tag=1&" +form_d;
+   if($('#e_name').val() == ''){
+    $('.snackbar').html('Please Enter Name');
+    my_toast();
+    return false;
+   }
+   if($('#e_value').val() == ''){
+    $('.snackbar').html('Please Enter Description');
+    my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
@@ -1493,12 +1736,27 @@ $$(document).on('pageInit', '.page[data-page="skils"]', function (e) {
  var form_d = 'secrete=virus&user_id='+user_id+'';
  skils_action(form_d);
                   $("#add_tag").click(function() {
+
    var form =$('#add_expertise_form').serialize()+ "&add_tag=1&" +form_d;
+   if($('.name').val() == ''){
+    // alert('fdfd');
+     $('.snackbar').html('Please Enter name');
+     my_toast();
+    return false;
+   }
 skils_action(form);
 
                   })
                    $("#update_tag").click(function() {
    var form =$('#update_expertise_form').serialize()+ "&update_tag=1&" +form_d;
+   if($('#e_name').val() == ''){
+    // alert('fdfd');
+     $('.snackbar').html('Please Enter name');
+     my_toast();
+    return false;
+   }
+    // return false;
+
 skils_action(form);
 
                   })
@@ -1614,6 +1872,17 @@ $$(document).on('pageInit', '.page[data-page="company"]', function (e) {
 // $('#about_me_vl').val(editor.getData());
    var form =$('#contact_form').serialize();
                         // alert(form);
+                         if($('#c_name').val() == ''){
+                          $('.snackbar').html('Enter company name');
+                          my_toast();
+                          return false;
+                        }
+                        if($('#comp_address').val() == ''){
+                          $('.snackbar').html('Enter Address');
+                          my_toast();
+                          return false;
+                        }
+
 $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
    $('.loader').css('display','flex');
    
@@ -1641,7 +1910,14 @@ $('.pages').prepend(' <div class="loader justify-content-center "><div class="ma
                  $('.snackbar').html(data.message);
   
                 my_toast();
+                 var email =  window.localStorage.getItem("email");
+update_profile(email);
+    setTimeout(function(){ 
+
+     $$('.backpage').trigger('click');
     $('.loader').css('display','none');
+     }, 2000);
+    // $('.loader').css('display','none');
     // $$('#v').trigger("click");
                 // location.reload();
 
@@ -1693,6 +1969,12 @@ $$(document).on('pageInit', '.page[data-page="contact_detail"]', function (e) {
 // $('#about_me_vl').val(editor.getData());
    var form =$('#contact_form').serialize();
                         // alert(form);
+                        if($('#email').val() == ''){
+                          // alert('fdfd');
+                 $('.snackbar').html('Please Enter Email...!');
+                 my_toast();
+                          return false;
+                        }
 $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
    $('.loader').css('display','flex');
    
@@ -1720,7 +2002,14 @@ $('.pages').prepend(' <div class="loader justify-content-center "><div class="ma
                  $('.snackbar').html(data.message);
   
                 my_toast();
+                 var email =  window.localStorage.getItem("email");
+update_profile(email);
+    setTimeout(function(){ 
+
+     $$('.backpage').trigger('click');
     $('.loader').css('display','none');
+     }, 2000);
+    // $('.loader').css('display','none');
     // $$('#v').trigger("click");
                 // location.reload();
 
@@ -1732,10 +2021,53 @@ $('.pages').prepend(' <div class="loader justify-content-center "><div class="ma
                       })
 
 })
+$$(document).on('pageInit', '.page[data-page="forgot_password"]', function (e) {
+                  $("#save_button").click(function() {
+ 
+  var form =$('#forgot_password').serialize();
+  alert(form);
+  $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
+   $('.loader').css('display','flex');
+   
+
+
+ 
+                                $.ajax({
+            url: "https://digitalbcards.in/api/forgot_password/", 
+            method: "POST",
+            data:form, 
+            dataType:"json",            
+           
+            success: function(data) {
+              // alert(data.message);
+         if(data.status == 0){
+                 $('.snackbar').html(data.message);
+  
+    $('.loader').css('display','none');
+                my_toast();
+                 // alert(data.message);
+            // location.reload();
+
+              }else{
+               
+                 $('.snackbar').html(data.message);
+  
+                my_toast();
+            
+    // $('.loader').css('display','none');
+    // $$('#v').trigger("click");
+                // location.reload();
+
+              }     
+          }
+        });  
+})
+})
 $$(document).on('pageInit', '.page[data-page="upload_profile"]', function (e) {
 var user_id =  window.localStorage.getItem("user_id"); 
  var referral =  window.localStorage.getItem("referral"); 
  var user_image =  window.localStorage.getItem("user_image"); 
+ // alert(user_image);
  var bg ='url("https://digitalbcards.in/upload/'+user_image+'")';
                             $("#imagePreview0").css("background-image",bg);
    $('.view_card').attr('onClick', 'view_card("'+referral+'","'+user_id+'");');
@@ -1825,7 +2157,12 @@ var user_id =  window.localStorage.getItem("user_id");
  // alert(formData);
  
 
- 
+      if($('#upload_image').val() == ''){
+        // alert('gfgf');
+          $('.snackbar').html('Please Select image..!');
+               my_toast();
+        return false;
+      } 
 
    $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
    $('.loader').css('display','flex');
@@ -1845,8 +2182,15 @@ processData:false,
               // alert(data.message);
               $('.snackbar').html(data.message);
                my_toast();
+ var email =  window.localStorage.getItem("email");
+update_profile(email);
+    setTimeout(function(){ 
+
+     $$('.backpage').trigger('click');
     $('.loader').css('display','none');
-    location.reload();
+     }, 2000);
+// location.href = 'upload_profile.html';
+    // location.reload();
 
             }
           })
@@ -1932,6 +2276,11 @@ $$(document).on('pageInit', '.page[data-page="about_me"]', function (e) {
                    $("#save_button").click(function() {
                     // var content = $( 'textarea.editor' ).val();
                     //alert( );
+                    if($('#f_name').val() == ''){
+                      $('.snackbar').html('Please Enter Full Name ');
+                      my_toast();
+                      return false;
+                    }
 $('#about_me_vl').val(editor.getData());
    var form =$('#about_me_form').serialize();
                         // alert(form);
@@ -1960,6 +2309,8 @@ $('.pages').prepend(' <div class="loader justify-content-center "><div class="ma
               }else{
                
                  $('.snackbar').html(data.message);
+ var email =  window.localStorage.getItem("email");
+ update_profile(email);
   
                 my_toast();
     $('.loader').css('display','none');
@@ -1998,6 +2349,31 @@ var form_d = 'secrete=virus&user_id='+user_id+'';
 save_redeem(form_d);
   $("#save_button").click(function() {
    var form =$('#redeem_form').serialize()+ "&submit=1&" +form_d;
+   if($('#amount').val() == ''){
+    $('.snackbar').html('Please Enter AMOUNT');
+    my_toast();
+    return false;
+   }
+   if($('#name').val() == ''){
+    $('.snackbar').html('Please Enter Name');
+    my_toast();
+    return false;
+   }
+   if($('#bank_name').val() == ''){
+    $('.snackbar').html('Please Enter Bank Name');
+    my_toast();
+    return false;
+   }
+   if($('#account_no').val() == ''){
+    $('.snackbar').html('Please Enter Account No');
+    my_toast();
+    return false;
+   }
+    if($('#ifsc').val() == ''){
+    $('.snackbar').html('Please Enter Ifsc ');
+    my_toast();
+    return false;
+   }
 save_redeem(form);
 
                   })
@@ -2202,70 +2578,27 @@ $("input[type='radio']").bind( "change", function(event, ui) {
                 
 })
 $$(document).on('pageInit', '.page[data-page="support"]', function (e) {
-
     $(document).on('click', '#save_button', function(){  
+// alert('gf');
  
-$('#support_form').validate({ // initialize the plugin
-        errorLabelContainer: "#cs-error-note",
-   
-     errorClass: 'errors',
-    rules: {
-     
-        query: {
-           
-            required: true,
-           
-            
-        },
-        mobile: {
-           
-            required: true,
-            number:true,
-            maxlength:10,
-            minlength:10,
-           
-            
-        },
-        email: {
-           
-            required: true,
-            email:true,
-            
-        },
-         
-        
-    },
-    messages: {
-       
-         query: {
-           
-            required: "Please enter  Query.",
-          
-            
-        },
-         email: {
-           
-            required: "Please enter  Email.",
-            email:"Please Enter Proper Email",
-            
-        },
-         mobile: {
-           
-            required: "Please enter  Mobile.",
-            number:"Please Enter Proper Mobile",
-            maxlength:"Please Enter Proper Mobile",
-            minlength:"Please Enter Proper Mobile",
-            
-        },
-        
-        
-       
-         
-    },
-        submitHandler: function (form) { // for demo
+
           form =$('#support_form').serialize();
-       
-          // var  email = $('#email').val();
+       if($('#query').val() == ''){
+
+        // alert('gfgf');
+        $('.snackbar').html('Please Enter Your Query');
+        my_toast();
+        return false;
+       }
+       if($('#phone').val() == ''){
+
+        // alert('gfgf');
+        $('.snackbar').html('Please Enter Your Phone ');
+        my_toast();
+        return false;
+       }
+      // alert(form);
+
            $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
     $('.loader').css('display','flex');
      $.ajax({
@@ -2295,11 +2628,12 @@ $('#support_form').validate({ // initialize the plugin
           }
         })
             return false; // for demo
-        }
-    });
+     
 })
 
 })
+
+
 $$(document).on('pageInit', '.page[data-page="settings"]', function (e) {
  var user_id =  window.localStorage.getItem("user_id");
  var email =  window.localStorage.getItem("email");
@@ -2520,7 +2854,8 @@ $$(document).on('pageInit', '.page[data-page="home"]', function (e) {
            
             success: function(data) {
                 // var data = JSON.stringify(data);
-                // alert(data.theme);
+                // alert(data.pay_status);
+               window.localStorage.setItem("payment",data.pay_status);
                window.localStorage.setItem("user_id",data.id);
                window.localStorage.setItem("language",data.language);
                window.localStorage.setItem("referral",data.Refferal_id);
@@ -2717,12 +3052,13 @@ $("#segment").trigger('create');
         submitHandler: function (form) { // for demo
           form =$('#share_form').serialize();
          // alert(form);
-         var segment = $("#segment").val();
-         if(segment == '-1'){
-            $('.snackbar').html('Plese Select Segment');
+                      var payment =  window.localStorage.getItem("payment");
+
+        if(payment == 0){
+   $('.snackbar').html('Make a payment to use Bcard features.');
             my_toast();
           return false;
-         }else{
+}else{
 
           var  action = $('#action').val();
           var  email = $('#email').val();
@@ -2780,24 +3116,24 @@ $("#segment").trigger('create');
 
 })
 $$(document).on('pageInit', '.page[data-page="lead"]', function (e) {
-// myApp.alert('my leads');
                     
      
  var search = '';
                       // alert(user_id);
                       get_contact(search);
                         
-  $('#search').click(function() {
-  $('#search input', this).focus();
+//   $('#search').click(function() {
+// // myApp.alert('my leads');
+//   $('#search input', this).focus();
 
-  });
-    // $('#search').on('input', function(e){
+//   });
+    $('#search').on('input', function(e){
 
-    //   var search = $(this).val();
-    //   // var search = $(this).val();
-    //     get_contact(search);
+      var search = $(this).val();
+      var search = $(this).val();
+        get_contact(search);
        
-    // })        
+    })        
 
         function get_contact(search){
            $('.pages').prepend(' <div class="loader justify-content-center "><div class="maxui-roller align-self-center"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>');
@@ -3146,4 +3482,59 @@ function edit_offer(name,id,description,tag_line){
                                 }
                                 });
 
+        }
+
+
+        function update_profile(email){
+               $.ajax({
+            url: "https://digitalbcards.in/api/user_profile/", 
+            method: "POST",
+            data:{email:email,secrete:"virus"}, 
+            dataType:"json",            
+           
+            success: function(data) {
+                // var data = JSON.stringify(data);
+                // alert(data.pay_status);
+               window.localStorage.setItem("payment",data.pay_status);
+               window.localStorage.setItem("user_id",data.id);
+               window.localStorage.setItem("language",data.language);
+               window.localStorage.setItem("referral",data.Refferal_id);
+               window.localStorage.setItem("mobile",data.mobile);
+               window.localStorage.setItem("profession",data.profession);
+               window.localStorage.setItem("about_me",data.about_me);
+               window.localStorage.setItem("skype",data.skype);
+               window.localStorage.setItem("fb_url",data.fb_url);
+
+               window.localStorage.setItem("y_tube_link",data.y_tube_link);
+               window.localStorage.setItem("website",data.website);
+                
+               window.localStorage.setItem("whatsapp",data.whatsapp);
+               window.localStorage.setItem("whatsapp_no",data.whatsapp_no);
+               window.localStorage.setItem("name",data.name);
+               //window.localStorage.setItem("username",data.name);
+               window.localStorage.setItem("user_image",data.profile_img);
+
+               window.localStorage.setItem("company_name",data.company_name);
+               window.localStorage.setItem("vision",data.vision);
+               window.localStorage.setItem("mission",data.mission);
+               window.localStorage.setItem("about_comp",data.about_comp);
+               window.localStorage.setItem("comp_address",data.comp_address);
+               window.localStorage.setItem("map_link",data.map_link);
+               window.localStorage.setItem("about_cyoutube",data.about_cyoutube);
+               window.localStorage.setItem("company_img",data.company_img);
+               window.localStorage.setItem("theme",data.theme);
+
+              
+               // alert(data.fb_url);
+                $('#user').html(data.name);
+                $('#user_image').attr("src",'https://digitalbcards.in/upload/'+data.profile_img);
+                // $('#user_image').css("height",'80px');
+                // $('#user_image').css("width",'80px');
+               // $('#preloader').hide();
+    $('.loader').css('display','none');
+                
+              
+            //location.reload();
+          }
+        })
         }
